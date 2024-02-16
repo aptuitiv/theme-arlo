@@ -1,0 +1,31 @@
+{% macro recursivelyGenerateNavigationItems(items) %}
+    {% for item in items %}
+        <li class="MenuNav-item">
+            {% if item.subItems %}
+                <span class="MenuNav-link">
+            {% else %}
+                {% set item.link.text %}
+                    {{ item.link.text }}
+                    {% if item.subItems %}
+                        <svg class="MenuNav-icon Icon"><use xlink:href="#icon-caret-down" /></svg>
+                    {% endif %}
+                {% endset %}
+                {% set item.link.class = "MenuNav-link" %}
+                {{ item.link.tag }}
+            {% endif %}
+
+            {% if item.subItems %}
+                {{ item.link.text }}<svg class="MenuNav-icon Icon"><use xlink:href="#icon-caret-down" /></svg></span>
+                {% import _self as macros %}
+                <ul class="MenuNav-sub">
+                    {{ macros.recursivelyGenerateNavigationItems(item.subItems) }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+{% import _self as macros %}
+
+<ul class="MenuNav">
+    {{ macros.recursivelyGenerateNavigationItems(items) }}
+</ul>

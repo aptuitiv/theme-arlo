@@ -1,0 +1,36 @@
+/* =========================================================================== *\
+    Hamburger Menu
+\* =========================================================================== */
+
+/* @define Hamburger */
+.Hamburger {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--HamburgerMenu-color);
+    cursor: pointer;
+    display: flex;
+    font-size: 3.5rem;
+    height: fit-content;
+    margin-left: 30px;
+    padding: 10px;
+    transition: background-color 250ms;
+    width: fit-content;
+}
+
+.Hamburger:focus,
+.Hamburger:active,
+.Hamburger:hover {
+    color: var(--HamburgerMenu-colorHover);
+    outline: none;
+}
+
+.Hamburger-icon {
+    margin: 0 !important;
+}
+
+@media (--c-bp-md) {
+    .Hamburger {
+        margin-left: 15px;
+    }
+}

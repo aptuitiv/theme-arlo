@@ -1,0 +1,21 @@
+/* ===========================================================================
+    Header bar styles
+=========================================================================== */
+
+/* @define HeaderBar */
+
+.HeaderBar {
+    align-items: stretch;
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    line-height: 1;
+    padding: 0 45px 0 80px;
+}
+
+/* postcss-bem-linter: ignore */
+.HeaderBar a {
+    color: inherit;
+}

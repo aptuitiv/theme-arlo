@@ -1,0 +1,221 @@
+/* =========================================================================== *\
+    Header
+\* =========================================================================== */
+
+:root {
+    --Header-buttonBackground: var(--color-secondary);
+    --Header-buttonBorderColor: var(--Header-buttonBackground);
+    --Header-buttonColor: var(--color-primary);
+    --Header-buttonBackgroundHover: var(--color-primary);
+    --Header-buttonBorderColorHover: var(--Header-buttonBackgroundHover);
+    --Header-buttonColorHover: var(--color-secondary);
+    --Header-dropShadow-offsetX: 0;
+    --Header-dropShadow-offsetY: 3px;
+    --Header-dropShadow-blurRadius: 20px;
+    --Header-dropShadow-color: #00000029;
+}
+
+/* @define Header */
+.Header {
+    display: unset;
+}
+
+/* ------------------------------------ *\
+    Bar
+\* ------------------------------------ */
+
+.Header-bar {
+    align-items: stretch;
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    line-height: 1;
+    padding: 0 45px 0 80px;
+}
+
+/* postcss-bem-linter: ignore */
+.Header-bar a {
+    color: inherit;
+}
+
+.Header-barRight {
+    column-gap: 20px;
+    display: flex;
+}
+
+.Header-phone,
+.Header-login {
+    align-items: center;
+    column-gap: 5px;
+    display: flex;
+}
+
+.Header-phone {
+    color: var(--color-secondary) !important;
+    font-size: 1.8rem;
+    padding: 15px 0;
+}
+
+.Header-login {
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+}
+
+.Header-login:active,
+.Header-login:focus,
+.Header-login:hover {
+    border-bottom: 4px solid var(--color-accent1);
+    text-decoration: none;
+}
+
+.Header-loginIcon {
+    font-size: 1.8rem;
+}
+
+/* ------------------------------------ *\
+    Main
+\* ------------------------------------ */
+
+.Header-main {
+    align-items: center;
+    background-color: #fff;
+    box-shadow: var(--Header-dropShadow-offsetX) var(--Header-dropShadow-offsetY) var(--Header-dropShadow-blurRadius)
+        var(--Header-dropShadow-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 35px 25px 75px;
+    position: sticky;
+    top: 0;
+    transition: padding 250ms, top 250ms;
+    z-index: 900;
+}
+
+.Header-main.is-sticky {
+    padding: 23px 35px 23px 75px;
+}
+
+.Header-logo {
+    transition: max-width 250ms;
+}
+
+.Header-main.is-sticky .Header-logo {
+    max-width: 200px;
+}
+
+.Header-right {
+    align-items: center;
+    display: flex;
+}
+
+.Header-phone--lg {
+    display: none;
+}
+
+/* ------------------------------------ *\
+    Buttons
+\* ------------------------------------ */
+
+.Header-button {
+    background: var(--Header-buttonBackground);
+    border-color: var(--Header-buttonBorderColor);
+    color: var(--Header-buttonColor);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .Header-button:hover {
+        background: var(--Header-buttonBackgroundHover);
+        border-color: var(--Header-buttonBorderColorHover);
+        color: var(--Header-buttonColorHover);
+    }
+}
+
+.Header-button:focus-visible {
+    background: var(--Header-buttonBackgroundHover);
+    border-color: var(--Header-buttonBorderColorHover);
+    color: var(--Header-buttonColorHover);
+}
+
+/* ------------------------------------ *\
+    Responsive
+\* ------------------------------------ */
+
+@media (width <= 1300px) {
+    .Header-bar {
+        display: none;
+    }
+
+    .Header-main {
+        padding: 20px 35px !important;
+    }
+
+    .Header-main.is-sticky {
+        padding: 15px 35px !important;
+    }
+
+    .Header-logo {
+        max-width: 230px;
+    }
+
+    .Header-main.is-sticky .Header-logo {
+        max-width: 175px;
+    }
+
+    .Header-navWrapper {
+        display: none;
+    }
+
+    .Header-phone--lg {
+        display: block;
+    }
+
+    .Header-phone {
+        color: var(--color-primary) !important;
+        margin-right: 30px;
+    }
+}
+
+@media (--c-bp-md) {
+    .Header-main {
+        padding: 20px 10px 20px 20px !important;
+    }
+
+    .Header-main.is-sticky {
+        padding: 20px 10px 20px 20px !important;
+    }
+
+    .Header-main.is-shown {
+        top: 0;
+    }
+
+    .Header-main.is-closed {
+        top: -100px;
+    }
+
+    .Header-phone {
+        font-size: 3rem;
+        margin-right: 0;
+    }
+
+    /* postcss-bem-linter: ignore */
+    .Header-phone span {
+        display: none;
+    }
+
+    .Header-phoneIcon {
+        margin: 0 !important;
+    }
+
+    .Header-logo {
+        max-width: 180px;
+    }
+
+    .Header-main.is-sticky .Header-logo {
+        max-width: 180px;
+    }
+
+    .Header-buttons {
+        display: none;
+    }
+}

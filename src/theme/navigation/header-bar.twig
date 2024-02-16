@@ -1,0 +1,8 @@
+<ul class="HeaderBarNav">
+    {% for item in items %}
+        <li class="HeaderBarNav-item">
+            {% set item.link.class = "HeaderBarNav-link" ~ (item.isCurrent ? " is-current") %}
+            {{ item.link.tag }}
+        </li>
+    {% endfor %}
+</ul>

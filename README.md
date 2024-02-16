@@ -39,20 +39,21 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
    - Set the "Banner" *Content Layout's* available *Content Areas* to be only the "Banner" *Content Area* under Content -> Content Layouts -> Banner -> Edit this Content Layout.
    - Set up **Template Content Layout Assignments** to map the "Banner" *Content Layout* to the "Banner" *Content Area* for the "One Column" and "Two Column" *Page Templates* under Content -> Page Settings -> Template Content Layout Assignments.
 
-5.  Navigation
-    -  Create a "Main" *Navigation Menu* using the "Main" *Navigation Template* and select "Show sub navigation all the time" from Design -> Navigation -> Navigation Menus.
-    -  Create a "Pop Out Menu" *Navigation Menu* using the "Menu" *Navigation Template* from Design -> Navigation -> Navigation Menus.
-    -  Create a "Footer" *Navigation Menu* using the "Footer" *Navigation Template* from Design -> Navigation -> Navigation Menus.
-6.  Prime the **Content Builder Elements** by visiting Design -> Content Builder.
-7.  Prime the **Collection Widgets** by visiting Widgets -> Collections -> Notifications.
+5. Navigation
+    - Create a "Main" *Navigation Menu* using the "Main" *Navigation Template* and select "Show sub navigation all the time" from Design -> Navigation -> Navigation Menus.
+    - Create a "Pop Out Menu" *Navigation Menu* using the "Menu" *Navigation Template* from Design -> Navigation -> Navigation Menus.
+    - Create a "Footer" *Navigation Menu* using the "Footer" *Navigation Template* from Design -> Navigation -> Navigation Menus.
+6. Prime the **Content Builder Elements** by visiting Design -> Content Builder.
+7. Prime the **Collection Widgets** by visiting Widgets -> Collections -> Notifications.
 8. Search
-   -  Prime the **Search Templates** by visiting Site Manager -> Search -> Templates -> Templates.
-   -  Edit and save the **Search Form** under Site Manager -> Search -> Forms. This will generate the form fields.
-
+   - Prime the **Search Templates** by visiting Site Manager -> Search -> Templates -> Templates.
+   - Edit and save the **Search Form** under Site Manager -> Search -> Forms. This will generate the form fields.
 
 ### Deploying the Theme
 
-Deploy the theme files using the `gulp deploy` command and wait until completed (~30 seconds).
+1. Install packages with `npm i`.
+2. Build the theme with `gulp build`.
+3. Deploy the theme files using the `gulp deploy` command and wait until completed (~30 seconds).
 
 ### Configuring the Theme
 

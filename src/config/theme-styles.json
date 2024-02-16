@@ -558,7 +558,7 @@
                             "name": "buttonBorderColor",
                             "label": "Border color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Button-borderColor"
@@ -593,7 +593,7 @@
                             "name": "buttonBorderColorHover",
                             "label": "Border color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Button-borderColorHover"
@@ -2333,7 +2333,7 @@
                             "name": "paginationItemColor",
                             "label": "Text color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Pagination-item-color"
@@ -2728,7 +2728,7 @@
                             "name": "themeTypographyLinkColor",
                             "label": "Link color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#0000EE",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-link-color"
@@ -2763,7 +2763,7 @@
                             "name": "themeTypographyLinkColorHover",
                             "label": "Link color (hover)",
                             "type": "color",
-                            "default": "#7a0504",
+                            "default": "#0000CD",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-link-colorHover"
@@ -2792,7 +2792,7 @@
                             "name": "baseTypographyH1Color",
                             "label": "Color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-h1-color"
@@ -2823,7 +2823,7 @@
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "27",
+                            "default": "32",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h1-fontSize",
@@ -2879,7 +2879,7 @@
                             "name": "baseTypographyH2Color",
                             "label": "Color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-h2-color"
@@ -2910,7 +2910,7 @@
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "27",
+                            "default": "28",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h2-fontSize",
@@ -2966,7 +2966,7 @@
                             "name": "baseTypographyH3Color",
                             "label": "Color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-h3-color"
@@ -2997,7 +2997,7 @@
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "27",
+                            "default": "24",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h3-fontSize",
@@ -3053,7 +3053,7 @@
                             "name": "baseTypographyH4Color",
                             "label": "Color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-h4-color"
@@ -3084,7 +3084,7 @@
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "27",
+                            "default": "20",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h4-fontSize",
@@ -3140,7 +3140,7 @@
                             "name": "baseTypographyH5Color",
                             "label": "Color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-h5-color"
@@ -3171,7 +3171,7 @@
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "27",
+                            "default": "20",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h5-fontSize",
@@ -3227,7 +3227,7 @@
                             "name": "baseTypographyH6Color",
                             "label": "Color",
                             "type": "color",
-                            "default": "#920504",
+                            "default": "#333333",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--theme-typography-h6-color"
@@ -3258,7 +3258,7 @@
                             "label": "Font size",
                             "type": "stepper",
                             "after": "px",
-                            "default": "27",
+                            "default": "18",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h6-fontSize",

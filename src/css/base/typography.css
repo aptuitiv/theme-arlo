@@ -42,7 +42,7 @@ html {
 body {
     color: var(--base-typography-color);
     font-family: var(--base-typography-font-family);
-    font-size: calc(var(--base-typography-font-size));
+    font-size: var(--base-typography-font-size);
     font-weight: var(--base-typography-font-weight);
     letter-spacing: var(--base-typography-letter-spacing);
     line-height: var(--base-typography-line-height);

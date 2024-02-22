@@ -2,6 +2,7 @@
     Header
 \* =========================================================================== */
 
+/*
 :root {
     --Header-buttonBackground: var(--color-secondary);
     --Header-buttonBorderColor: var(--Header-buttonBackground);
@@ -14,6 +15,7 @@
     --Header-dropShadow-blurRadius: 20px;
     --Header-dropShadow-color: #00000029;
 }
+*/
 
 /* @define Header */
 .Header {

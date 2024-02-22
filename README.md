@@ -39,10 +39,20 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
    - Set the "Banner" *Content Layout's* available *Content Areas* to be only the "Banner" *Content Area* under Content -> Content Layouts -> Banner -> Edit this Content Layout.
    - Set up **Template Content Layout Assignments** to map the "Banner" *Content Layout* to the "Banner" *Content Area* for the "One Column" and "Two Column" *Page Templates* under Content -> Page Settings -> Template Content Layout Assignments.
 
-5. Navigation
-    - Create a "Main" *Navigation Menu* using the "Main" *Navigation Template* and select "Show sub navigation all the time" from Design -> Navigation -> Navigation Menus.
-    - Create a "Pop Out Menu" *Navigation Menu* using the "Menu" *Navigation Template* from Design -> Navigation -> Navigation Menus.
-    - Create a "Footer" *Navigation Menu* using the "Footer" *Navigation Template* from Design -> Navigation -> Navigation Menus.
+5. Navigation. Go to Design -> Navigation -> Navigation Menus
+    - Create a navigation menu called `Footer`.
+      - Template: `Footer`
+      - Show sub navigation: `Never`.
+    - Create a navigation menu called `Header bar`.
+      - Template: `Header bar`
+      - Show sub navigation: `Never`.
+    - Create a navigation menu called `Main`.
+      - Template: `Main`
+      - Show sub navigation: `Show all sub navigation all the time`
+    - Create a navigation menu called `Pop out menu`.
+      - Template: `Pop out menu`
+      - Show sub navigation: `Show all sub navigation all the time`
+
 6. Prime the **Content Builder Elements** by visiting Design -> Content Builder.
 7. Prime the **Collection Widgets** by visiting Widgets -> Collections -> Notifications.
 8. Search

@@ -1,0 +1,7 @@
+<div class="{% if background != 'None' %}u-background{{ background|pascal }} py-5{% endif %}">
+    <div class="Container {{ width == 'Narrow' ? 'Container--narrow' : 'Container--pad' }}">
+        {% for element in content.elements %}
+            {{ element.content }}
+        {% endfor %}
+    </div>
+</div>

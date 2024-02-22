@@ -2713,7 +2713,7 @@
                     "fields": [
                         {
                             "label": "Links",
-                            "name": "baseTypography",
+                            "name": "baseTypographyLink",
                             "type": "typography",
                             "useHover": true,
                             "collapsable": false,
@@ -2744,7 +2744,7 @@
                     "fields": [
                         {
                             "label": "H1",
-                            "name": "h1Typography",
+                            "name": "baseTypographyH1",
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
@@ -2782,7 +2782,7 @@
                     "fields": [
                         {
                             "label": "H2",
-                            "name": "h2Typography",
+                            "name": "baseTypographyH2",
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
@@ -2814,7 +2814,7 @@
                     "fields": [
                         {
                             "label": "H3",
-                            "name": "h3Typography",
+                            "name": "baseTypographyH3",
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
@@ -2846,7 +2846,7 @@
                     "fields": [
                         {
                             "label": "H4",
-                            "name": "h4Typography",
+                            "name": "baseTypographyH4",
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
@@ -2878,7 +2878,7 @@
                     "fields": [
                         {
                             "label": "H5",
-                            "name": "h5Typography",
+                            "name": "baseTypographyH5",
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
@@ -2910,7 +2910,7 @@
                     "fields": [
                         {
                             "label": "H6",
-                            "name": "h6Typography",
+                            "name": "baseTypographyH6",
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,

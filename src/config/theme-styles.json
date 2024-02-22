@@ -2748,6 +2748,7 @@
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
+                            "useTextShadow": true,
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h1"
@@ -2786,6 +2787,7 @@
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
+                            "useTextShadow": true,
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h2"
@@ -2818,6 +2820,7 @@
                             "type": "typography",
                             "collapsable": false,
                             "useMargin": true,
+                            "useTextShadow": true,
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-h3"

@@ -1,4 +1,4 @@
-<div class="{% if background != 'None' %}u-background{{ background|pascal }} py-5{% endif %}">
+<div class="Wrapper Wrapper--bg{{ background|pascal}}{% if background == 'None' %} Wrapper--noPad{% endif %}">
     <div class="Container {{ width == 'Narrow' ? 'Container--narrow' : 'Container--pad' }}">
         {% for element in content.elements %}
             {{ element.content }}

@@ -1,0 +1,18 @@
+/* ===========================================================================
+    Wrapper block around content
+=========================================================================== */
+
+/* @define Wrapper */
+
+.Wrapper {
+    margin: var(--Wrapper-margin);
+    padding: var(--Wrapper-padding);
+}
+
+.Wrapper--noPad {
+    padding: 0;
+}
+
+.Wrapper--bgGray {
+    background-color: var(--Wrapper-background-grey);
+}

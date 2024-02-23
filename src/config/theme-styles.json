@@ -370,6 +370,51 @@
             ]
         },
         {
+            "name": "Blocks - Wrapper",
+            "description": "Styles for the \"Wrapper\" block.",
+            "fields": [
+                {
+                    "name": "blockWrapperBackgroundGray",
+                    "label": "Gray background color",
+                    "type": "color",
+                    "default": "#f4f4f4",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-background-grey"
+                    }
+                },
+                {
+                    "name": "blockWrapperMargin",
+                    "label": "Margin",
+                    "type": "margin",
+                    "default": {
+                        "top": "25px",
+                        "right": "0",
+                        "bottom": "25px",
+                        "left": "0"
+                    },
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-margin"
+                    }
+                },
+                {
+                    "name": "blockWrapperPadding",
+                    "label": "Padding",
+                    "type": "padding",
+                    "default": {
+                        "top": "50px",
+                        "right": "0",
+                        "bottom": "50px",
+                        "left": "0"
+                    },
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-padding"
+                    }
+                }
+            ]
+        {
             "name": "Body",
             "description": "Base styles for the website body. See the Typography section for core font styles.",
             "fields": [

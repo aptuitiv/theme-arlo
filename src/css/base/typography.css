@@ -189,6 +189,7 @@ h1,
     margin: var(--base-typography-h1-margin);
     text-align: var(--base-typography-h1-text-align);
     text-decoration: var(--base-typography-h1-text-decoration);
+    text-shadow: var(--base-typograpy-h1-text-shadow);
     text-transform: var(--base-typography-h1-text-transform);
 }
 

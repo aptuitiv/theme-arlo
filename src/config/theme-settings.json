@@ -75,6 +75,22 @@
                         "cssVariable": "--Footer-logo-width",
                         "template": "{{ value }}px"
                     }
+                },
+                {
+                    "name": "footerAbovePhoneContent",
+                    "label": "Content to show on the right, above the phone number",
+                    "type": "text"
+                },
+                {
+                    "name": "footerAfterCopyrightContent",
+                    "label": "Text to show after the copyright",
+                    "type": "text"
+                },
+                {
+                    "name": "footerShowCredit",
+                    "label": "Show Aptuitiv credit",
+                    "type": "switch",
+                    "default": "yes"
                 }
             ]
         },
@@ -130,6 +146,7 @@
                                 "tiktok": "TikTok",
                                 "whatsapp": "WhatsApp",
                                 "x": "X (Twitter)",
+                                "yelp": "Yelp",
                                 "youtube": "YouTube"
                             },
                             "columnWidth": "1fr"

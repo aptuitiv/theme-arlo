@@ -847,6 +847,51 @@
             ]
         },
         {
+            "name": "Container Widths",
+            "description": "Styles for page width containers.",
+            "fields": [
+                {
+                    "name": "containerWidth",
+                    "label": "Default page container width",
+                    "description": "The maximum page content width.",
+                    "type": "stepper",
+                    "after": "px",
+                    "default": "1450",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Container-width",
+                        "template": "{{ value }}px"
+                    }
+                },
+                {
+                    "name": "containerWidthNarrow",
+                    "label": "Narrow page container width",
+                    "description": "Used for the narrow width option on the \"Content\" block.",
+                    "type": "stepper",
+                    "after": "px",
+                    "default": "900",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Container-narrow-width",
+                        "template": "{{ value }}px"
+                    }
+                },
+                {
+                    "name": "containerWidthSmall",
+                    "label": "Small page container width",
+                    "description": "Mainly used on the search form.",
+                    "type": "stepper",
+                    "after": "px",
+                    "default": "600",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Container-small-width",
+                        "template": "{{ value }}px"
+                    }
+                }
+            ]
+        },
+        {
             "name": "Footer",
             "description": "Styles for the footer of the website.",
             "sections": [
@@ -2270,51 +2315,7 @@
                 }
             ]
         },
-        {
-            "name": "Page Containers",
-            "description": "Styles for page width containers.",
-            "fields": [
-                {
-                    "name": "containerWidth",
-                    "label": "Default page container width",
-                    "description": "The maximum page content width.",
-                    "type": "stepper",
-                    "after": "px",
-                    "default": "1450",
-                    "preview": {
-                        "type": "css-head",
-                        "cssVariable": "--Container-width",
-                        "template": "{{ value }}px"
-                    }
-                },
-                {
-                    "name": "containerWidthNarrow",
-                    "label": "Narrow page container width",
-                    "description": "Used for the narrow width option on the \"Content\" block.",
-                    "type": "stepper",
-                    "after": "px",
-                    "default": "900",
-                    "preview": {
-                        "type": "css-head",
-                        "cssVariable": "--Container-narrow-width",
-                        "template": "{{ value }}px"
-                    }
-                },
-                {
-                    "name": "containerWidthSmall",
-                    "label": "Small page container width",
-                    "description": "Mainly used on the search form.",
-                    "type": "stepper",
-                    "after": "px",
-                    "default": "600",
-                    "preview": {
-                        "type": "css-head",
-                        "cssVariable": "--Container-small-width",
-                        "template": "{{ value }}px"
-                    }
-                }
-            ]
-        },
+
         {
             "name": "Pagination",
             "description": "Styles for the pagination at the bottom of app pages.",

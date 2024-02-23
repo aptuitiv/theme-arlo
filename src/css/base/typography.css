@@ -189,7 +189,7 @@ h1,
     margin: var(--base-typography-h1-margin);
     text-align: var(--base-typography-h1-text-align);
     text-decoration: var(--base-typography-h1-text-decoration);
-    text-transform: var(--base-typography-h1-textTransform);
+    text-transform: var(--base-typography-h1-text-transform);
 }
 
 h2,
@@ -204,7 +204,7 @@ h2,
     margin: var(--base-typography-h2-margin);
     text-align: var(--base-typography-h2-text-align);
     text-decoration: var(--base-typography-h2-text-decoration);
-    text-transform: var(--base-typography-h2-textTransform);
+    text-transform: var(--base-typography-h2-text-transform);
 }
 
 h3,
@@ -219,7 +219,7 @@ h3,
     margin: var(--base-typography-h3-margin);
     text-align: var(--base-typography-h3-text-align);
     text-decoration: var(--base-typography-h3-text-decoration);
-    text-transform: var(--base-typography-h3-textTransform);
+    text-transform: var(--base-typography-h3-text-transform);
 }
 
 h4,
@@ -234,7 +234,7 @@ h4,
     margin: var(--base-typography-h4-margin);
     text-align: var(--base-typography-h4-text-align);
     text-decoration: var(--base-typography-h4-text-decoration);
-    text-transform: var(--base-typography-h4-textTransform);
+    text-transform: var(--base-typography-h4-text-transform);
 }
 
 h5,
@@ -249,7 +249,7 @@ h5,
     margin: var(--base-typography-h5-margin);
     text-align: var(--base-typography-h5-text-align);
     text-decoration: var(--base-typography-h5-text-decoration);
-    text-transform: var(--base-typography-h5-textTransform);
+    text-transform: var(--base-typography-h5-text-transform);
 }
 
 h6,
@@ -264,5 +264,5 @@ h6,
     margin: var(--base-typography-h6-margin);
     text-align: var(--base-typography-h6-text-align);
     text-decoration: var(--base-typography-h6-text-decoration);
-    text-transform: var(--base-typography-h6-textTransform);
+    text-transform: var(--base-typography-h6-text-transform);
 }

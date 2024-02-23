@@ -3,14 +3,14 @@
         {
             "name": "Banner Images",
             "description": "These settings change the behavior of banner images before a user loads them. This allows for faster page load times.",
-            "sidebarSize": "medium",
+            "sidebarSize": "small",
             "fields": [
                 {
                     "name": "bannerImageSizes",
                     "label": "Image Sizes",
                     "type": "repeatingGrid",
                     "description": "These sizes do not adjust the size of the banner itself, just the underlying image. To adjust the size of the banner itself, see the padding options under Styles &rarr; Banner &rarr; Padding.",
-                    "itemName": "Image",
+                    "itemName": "Image size",
                     "children": [
                         {
                             "name": "maxWidth",
@@ -21,6 +21,27 @@
                         {
                             "name": "maxHeight",
                             "label": "Max height",
+                            "type": "stepper",
+                            "after": "px"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Full Width Image",
+            "description": "These settings set the responsive sizes for the \"Full Width Image\" block.",
+            "sidebarSize": "small",
+            "fields": [
+                {
+                    "name": "blockFullWidthImageSizes",
+                    "label": "Image Sizes",
+                    "type": "repeatingGrid",
+                    "itemName": "Image size",
+                    "children": [
+                        {
+                            "name": "maxWidth",
+                            "label": "Max width",
                             "type": "stepper",
                             "after": "px"
                         }

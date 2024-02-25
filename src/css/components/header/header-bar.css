@@ -8,6 +8,10 @@
     background: var(--HeaderBar-background, transparent);
 }
 
+.HeaderBar--contained {
+    max-width: var(--Container-width);
+}
+
 .HeaderBar-inner {
     align-items: center;
     column-gap: var(--HeaderBar-column-gap, 30px);
@@ -18,8 +22,10 @@
     padding: var(--HeaderBar-padding);
 }
 
-.HeaderBar-phone {
+.HeaderBar-phone[href^='tel'] {
     color: var(--HeaderBar-phone-color, #333);
+    column-gap: var(--HeaderBar-phone-column-gap, 10px);
+    display: flex;
     font-family: var(--HeaderBar-phone-font-family);
     font-size: var(--HeaderBar-phone-font-size, 1.8rem);
     font-style: var(--HeaderBar-phone-font-style, normal);
@@ -32,8 +38,8 @@
     text-transform: var(--HeaderBar-phone-text-transform, none);
 }
 
-.HeaderBar-phone:focus-visible,
-.HeaderBar-phone:hover {
+.HeaderBar-phone[href^='tel']:focus-visible,
+.HeaderBar-phone[href^='tel']:hover {
     color: var(--HeaderBar-phone-hover-color, var(--HeaderBar-phone-color));
     font-style: var(--HeaderBar-phone-hover-font-style, var(--HeaderBar-phone-font-style));
     text-decoration: var(--HeaderBar-phone-hover-text-decoration, var(--HeaderBar-phone-text-decoration));

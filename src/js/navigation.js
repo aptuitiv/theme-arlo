@@ -69,52 +69,55 @@ const smallScreenNav = {
             }
         });
 
+        // The following code is for showing/hiding the header on mobile.
+        // This was implemented on some of the other pest sites (GetEm, for example);
+
         // Provide event throttling utility
-        let throttleTimer;
-        const throttle = (callback, time) => {
-            if (throttleTimer) return;
-            throttleTimer = true;
-            setTimeout(() => {
-                callback();
-                throttleTimer = false;
-            }, time);
-        };
+        // let throttleTimer;
+        // const throttle = (callback, time) => {
+        //     if (throttleTimer) return;
+        //     throttleTimer = true;
+        //     setTimeout(() => {
+        //         callback();
+        //         throttleTimer = false;
+        //     }, time);
+        // };
 
         // Handle showing/hiding the header on mobile
-        let lastScroll = 0;
-        const header = document.querySelector('.Header-main');
-        const calcScroll = () => {
-            const currScroll = window.scrollY;
-            if (currScroll < lastScroll) {
-                header.classList.add('is-shown');
-                header.classList.remove('is-closed');
-            } else {
-                header.classList.add('is-closed');
-                header.classList.remove('is-shown');
-            }
-            lastScroll = currScroll;
-        };
+        // let lastScroll = 0;
+        // const header = document.querySelector('.Header-main');
+        // const calcScroll = () => {
+        //     const currScroll = window.scrollY;
+        //     if (currScroll < lastScroll) {
+        //         header.classList.add('is-shown');
+        //         header.classList.remove('is-closed');
+        //     } else {
+        //         header.classList.add('is-closed');
+        //         header.classList.remove('is-shown');
+        //     }
+        //     lastScroll = currScroll;
+        // };
 
         // Handle mobile header hide/show on scroll
-        const handleScollHeader = () => {
-            document.addEventListener('scroll', () => {
-                throttle(calcScroll, 250);
-            }, { passive: true });
-        };
+        // const handleScollHeader = () => {
+        //     document.addEventListener('scroll', () => {
+        //         throttle(calcScroll, 250);
+        //     }, { passive: true });
+        // };
 
-        const checkForScollHeader = () => {
-            if (window.innerWidth <= 800) {
-                handleScollHeader();
-            } else {
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth <= 800) {
-                        handleScollHeader();
-                    }
-                });
-            }
-        };
+        // const checkForScollHeader = () => {
+        //     if (window.innerWidth <= 800) {
+        //         handleScollHeader();
+        //     } else {
+        //         window.addEventListener('resize', () => {
+        //             if (window.innerWidth <= 800) {
+        //                 handleScollHeader();
+        //             }
+        //         });
+        //     }
+        // };
 
-        checkForScollHeader();
+        // checkForScollHeader();
     },
 };
 

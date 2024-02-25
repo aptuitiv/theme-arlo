@@ -36,8 +36,8 @@
     {{ _page.bodyStartCode() }}
     <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
     {{ _api.widgets.collection.get('notifications') }}
-    <header id="top">
-        <div class="HeaderBar">
+    <header id="top" class="HeaderWrap js-stickyHeader">
+        <div class="HeaderBar{% if _core.theme.settings.headerBarWidth == 'contained' %} HeaderBar--contained{% endif %}">
             <div class="Container">
                 <div class="HeaderBar-inner">
                     <div class="HeaderBar-navigation">{{ _api.navigation.get.key('header-bar') }}</div>
@@ -50,24 +50,27 @@
                 </div>
             </div>
         </div>
-        <div class="Header">
+        <div class="Header{% if _core.theme.settings.headerWidth == 'contained' %} Header--contained{% endif %}">
             <div class="Container">
-                <div class="Header-logoWrapper">
-                    {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
-                    {% set _core.theme.settings.headerLogo.class = "Header-logo" %}
-                    <a href="/">{{ _core.theme.settings.headerLogo.tag }}</a>
-                </div>
-                <div class="Header-nav">
-                    {{ _api.navigation.get.key('main') }}
-                    {% if _core.theme.settings.headerButton %}
-                        {% set _core.theme.settings.headerButton.class = 'Button Header-button' %}
-                        {{_core.theme.settings.headerButton.tag}}
-                    {% endif %}
-                </div>
-                <div class="Header-hamburger">
-                    <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
-                        <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
-                    </button>
+                <div class="Header-inner">
+                    <div class="Header-logoWrapper">
+                        {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
+                        {% set _core.theme.settings.headerLogo.class = "Header-logo" %}
+                        {% do _core.theme.settings.headerLogo.resize(_core.theme.settings.headerLogoWidth.size + 100) %}
+                        <a href="/" class="Header-logoLink" aria-label="Go to home page">{{ _core.theme.settings.headerLogo.tag }}</a>
+                    </div>
+                    <div class="Header-nav">
+                        {{ _api.navigation.get.key('main') }}
+                        {% if _core.theme.settings.headerButton %}
+                            {% set _core.theme.settings.headerButton.class = 'Button Header-button' %}
+                            {{_core.theme.settings.headerButton.tag}}
+                        {% endif %}
+                    </div>
+                    <div class="Header-hamburger">
+                        <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
+                            <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

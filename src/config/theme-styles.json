@@ -53,6 +53,25 @@
                                 "type": "css-head",
                                 "cssVariable": "--Banner-text-align"
                             }
+                        },
+                        {
+                            "name": "bannerContentWidth",
+                            "label": "Max width for the content",
+                            "type": "size",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-content-width"
+                            }
+                        },
+                        {
+                            "name": "bannerContentButtonGap",
+                            "label": "Space between buttons",
+                            "description": "If there are multiple buttons beside each other in the banner, this will be the horizontal space between them.,",
+                            "type": "size",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-content-button-gap"
+                            }
                         }
                     ]
                 },
@@ -115,6 +134,145 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Banner-padding-no-image-sm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Slider",
+                    "fields": [
+                        {
+                            "name": "bannerSliderDotPaginationPosition",
+                            "label": "Dot pagination position",
+                            "type": "select",
+                            "default": "center",
+                            "options": {
+                                "start": "Left",
+                                "center": "Center",
+                                "end": "Right"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-dot-pagination-position"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderDotPadding",
+                            "label": "Dot pagination padding",
+                            "type": "padding",
+                            "default": "0 4px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-dot-pagination-padding"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderDotPaginationColor",
+                            "label": "Dot pagination color",
+                            "type": "color",
+                            "default": "#fff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-dot-pagination-color"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderDotPaginationColorActive",
+                            "label": "Dot pagination color (active)",
+                            "type": "color",
+                            "default": "#f3f3f3",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-dot-pagination-color-active"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Slider text pagination",
+                    "description": "These style apply when text pagination is used for the slider",
+                    "fields": [
+                        {
+                            "name": "bannerSliderTextPaginationGap",
+                            "label": "Horizontal space between text pagination",
+                            "type": "size",
+                            "default": "10px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-pagination-gap"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderTextPaginationItemWidth",
+                            "label": "Width for each item",
+                            "type": "size",
+                            "useAuto": true,
+                            "default": "auto",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-pagination-item-width"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderTextPaginationBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#a21514",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-background"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderTextPaginationBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "default": "#7a0504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-background-hover"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderTextPaginationBottomBorderSize",
+                            "label": "Bottom border size",
+                            "type": "size",
+                            "default": "2px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-pagination-bottom-border-size"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderTextPaginationBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "default": "#ffffff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-border-color"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderTextPaginationBorderColorHover",
+                            "label": "Border color (hover)",
+                            "type": "color",
+                            "default": "#ffffff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-border-color-hover"
+                            }
+                        },
+                        {
+                            "name": "bannerSliderTextPagination",
+                            "label": "Text paginatin",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "usePadding": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-slider-text-pagination"
                             }
                         }
                     ]
@@ -617,7 +775,106 @@
                         }
                     ]
                 },
-
+                {
+                    "name": "Alternate button",
+                    "fields": [
+                        {
+                            "name": "alt1ButtonBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#a21514",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-background"
+                            }
+                        },
+                        {
+                            "name": "alt1ButtonBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "default": "#7a0504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-background-hover"
+                            }
+                        },
+                        {
+                            "name": "alt1ButtonTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "fontSizePreview": {
+                                "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                            },
+                            "color": {
+                                "default": "#333333"
+                            },
+                            "fontSize": {
+                                "default": "18px",
+                                "allowedUnits": ["px"]
+                            },
+                            "lineHeight": {
+                                "default": "1.4"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-typography"
+                            }
+                        },
+                        {
+                            "name": "alt1ButtonBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "default": "#333333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-border-color"
+                            }
+                        },
+                        {
+                            "name": "alt1ButtonBorderColorHover",
+                            "label": "Border color (hover)",
+                            "type": "color",
+                            "default": "#333333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-border-color-hover"
+                            }
+                        },
+                        {
+                            "name": "alt1ButtonBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "default": "4px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-border-radius"
+                            }
+                        },
+                        {
+                            "name": "alt1ButtonBorderWidth",
+                            "label": "Border width",
+                            "type": "size",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-border-width"
+                            }
+                        },
+                        {
+                            "name": "alt1ButtonPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "6px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt-padding"
+                            }
+                        }
+                    ]
+                },
                 {
                     "name": "Size variants",
                     "fields": [
@@ -1230,6 +1487,20 @@
             "description": "Styles for the header of the website.",
             "groups": [
                 {
+                    "name": "Background and text",
+                    "fields": [
+                        {
+                            "name": "headerBackground",
+                            "label": "Color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-background"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Hamburger Menu",
                     "fields": [
                         {
@@ -1384,6 +1655,15 @@
                             }
                         },
                         {
+                            "name": "headerBarWidth",
+                            "label": "Background width",
+                            "type": "select",
+                            "options": {
+                                "contained": "Same width as the content",
+                                "full": "Full width"
+                            }
+                        },
+                        {
                             "name": "headerBarJustify",
                             "label": "Alignment",
                             "type": "select",
@@ -1503,6 +1783,16 @@
                                 "type": "css-head",
                                 "cssVariable": "--HeaderBar-phone-text"
                             }
+                        },
+                        {
+                            "name": "headerBarPhoneTextSpace",
+                            "label": "Space between the navigation and phone number",
+                            "type": "size",
+                            "default": "10px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-phone-column-gap"
+                            }
                         }
                     ]
                 }
@@ -1512,60 +1802,6 @@
             "name": "Main Navigation",
             "description": "Styles for the main website navigation.",
             "sections": [
-                {
-                    "name": "General",
-                    "fields": [
-                        {
-                            "name": "mainNavFontFamily",
-                            "label": "Font family",
-                            "type": "fontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-fontFamily"
-                            }
-                        },
-                        {
-                            "name": "mainNavFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "16",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "mainNavLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.58",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "mainNavTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-textTransform"
-                            }
-                        }
-                    ]
-                },
                 {
                     "name": "Items",
                     "fields": [
@@ -1579,6 +1815,17 @@
                                 "type": "css-head",
                                 "cssVariable": "--MainNav-item-gap",
                                 "template": "{{ value }}px"
+                            }
+                        },
+                        {
+                            "name": "mainNavTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav"
                             }
                         },
                         {
@@ -1653,31 +1900,6 @@
                             }
                         },
                         {
-                            "name": "mainNavLinkBackground",
-                            "label": "Background color",
-                            "type": "color",
-                            "default": "#00000000",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-link-background"
-                            }
-                        },
-                        {
-                            "name": "mainNavLinkColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#00263E",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-link-color"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Items (Hover)",
-                    "fields": [
-                        {
                             "name": "mainNavLinkBackgroundHover",
                             "label": "Background color (hover)",
                             "type": "color",
@@ -1688,13 +1910,13 @@
                             }
                         },
                         {
-                            "name": "mainNavLinkColorHover",
-                            "label": "Text color (hover)",
+                            "name": "mainNavLinkBackground",
+                            "label": "Background color",
                             "type": "color",
-                            "default": "#6AAC44",
+                            "default": "#00000000",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-link-color--hover"
+                                "cssVariable": "--MainNav-link-background"
                             }
                         }
                     ]
@@ -2667,7 +2889,6 @@
                         {
                             "name": "baseListPadding",
                             "label": "List padding",
-                            "description": "This is for the \"ol\" and \"ul\" elements.",
                             "type": "padding",
                             "default": "0 0 0 2.4em",
                             "preview": {
@@ -2678,7 +2899,6 @@
                         {
                             "name": "listTextAlign",
                             "label": "Text alignment",
-                            "description": "This is for the \"ol\" and \"ul\" elements.",
                             "default": "left",
                             "type": "textalign",
                             "preview": {
@@ -2689,7 +2909,7 @@
                         {
                             "name": "baseListItemMargin",
                             "label": "List item margin",
-                            "description": "This is for the \"li\" elements.",
+                            "description": "This is for each list item.",
                             "type": "margin",
                             "preview": {
                                 "type": "css-head",
@@ -2699,11 +2919,47 @@
                         {
                             "name": "baseListItemPadding",
                             "label": "List item padding",
-                            "description": "This is for the \"li\" elements.",
+                            "description": "This is for each list item.",
                             "type": "padding",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-list-item-padding"
+                            }
+                        },
+                        {
+                            "name": "columnListGap",
+                            "label": "Column list gap",
+                            "description": "When converting an ordered or unordered list to display in columns, this is the gap between the columns.",
+                            "type": "size",
+                            "default": "50px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ColumnList-list-gap"
+                            }
+                        },
+                        {
+                            "name": "columnListBulletStyle",
+                            "label": "Column list bullet style",
+                            "description": "When converting an ordered or unordered list to display in columns, this is the style of the bullets.",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "No bullets or numbers",
+                                "initial": "Default bullets or numbers"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ColumnList-list-style"
+                            }
+                        },
+                        {
+                            "name": "columnListPadding",
+                            "label": "Column list padding",
+                            "description": "When converting an ordered or unordered list to display in columns, this is the padding for the ordered or unordered list.",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ColumnList-padding"
                             }
                         }
                     ]

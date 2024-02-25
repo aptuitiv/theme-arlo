@@ -7,6 +7,10 @@
     position: relative;
 }
 
+.Banner--noMedia {
+    background-color: var(--Banner-background);
+}
+
 .Banner-bg {
     height: 100%;
     left: 0;
@@ -27,6 +31,14 @@
     width: 100%;
 }
 
+.Banner-image--top {
+    object-position: top;
+}
+
+.Banner-image--bottom {
+    object-position: bottom;
+}
+
 .Banner-fg {
     align-items: center;
     background-color: var(--Banner-overlay, transparent);
@@ -45,12 +57,12 @@
 
 .Banner-fg--noImage {
     aspect-ratio: var(--Banner-content-aspect-ratio);
-    background-color: var(--Banner-background);
     padding: var(--Banner-padding-no-image-sm);
 }
 
 .Banner-content {
-    max-width: var(--Container-width);
+    max-width: var(--Banner-content-width);
+    text-align: var(--Banner-text-align);
 }
 
 @media (--c-bp-lg) {
@@ -63,42 +75,12 @@
     }
 }
 
-/* ------------------------------------ *\
-    Splide
-\* ------------------------------------ */
-
 /* postcss-bem-linter: ignore */
-.Banner .splide__track {
-    height: 100%;
+.Banner .Button {
+    margin-left: var(--Banner-content-button-gap, 10px);
 }
 
 /* postcss-bem-linter: ignore */
-.Banner .splide__pagination {
-    bottom: 25px;
-    justify-content: flex-start;
-    padding: 0 var(--Banner-paddingHorizontal--sm) 0;
-}
-
-/* postcss-bem-linter: ignore */
-.Banner .splide__pagination__page {
-    background-color: var(--Banner-pagination-color);
-    height: 17px;
-    opacity: 1;
-    transition: 250ms;
-    width: 17px;
-}
-
-/* postcss-bem-linter: ignore */
-.Banner .splide__pagination__page.is-active,
-.Banner .splide__pagination__page:hover {
-    background-color: var(--Banner-pagination-color--active);
-    opacity: 1;
-    transform: none;
-}
-
-@media (--c-bp-lg) {
-    /* postcss-bem-linter: ignore */
-    .Banner .splide__pagination {
-        padding: 0 var(--Banner-paddingHorizontal) 0;
-    }
+.Banner .Button:first-child {
+    margin-left: 0;
 }

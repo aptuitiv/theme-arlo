@@ -1,0 +1,38 @@
+/* =========================================================================== *\
+    Header Bar
+\* =========================================================================== */
+
+/* @define HeaderBarNav */
+.HeaderBarNav {
+    column-gap: var(--HeaderBarNavigation-gap);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.HeaderBarNav-item {
+    list-style: none;
+}
+
+.HeaderBarNav-link {
+    color: var(--HeaderBarNavigation-color, #333);
+    font-family: var(--HeaderBarNavigation-font-family);
+    font-size: var(--HeaderBarNavigation-font-size, 1.8rem);
+    font-style: var(--HeaderBarNavigation-font-style, normal);
+    font-weight: var(--HeaderBarNavigation-font-weight, 400);
+    letter-spacing: var(--HeaderBarNavigation-letter-spacing, 0);
+    line-height: var(--HeaderBarNavigation-line-height, 1.58);
+    margin: var(--HeaderBarNavigation-margin, 0);
+    padding: var(--HeaderBarNavigation-padding, 0);
+    text-decoration: var(--HeaderBarNavigation-text-decoration, underline);
+    text-transform: var(--HeaderBarNavigation-text-transform, none);
+}
+
+.HeaderBarNav-link:focus-visible,
+.HeaderBarNav-link:hover,
+.HeaderBarNav-link.is-current {
+    color: var(--HeaderBarNavigation-hover-color, var(--HeaderBarNavigation-color));
+    font-style: var(--HeaderBarNavigation-hover-font-style, var(--HeaderBarNavigation-font-style));
+    text-decoration: var(--HeaderBarNavigation-hover-text-decoration, var(--HeaderBarNavigation-text-decoration));
+    text-transform: var(--HeaderBarNavigation-hover-text-transform, var(--HeaderBarNavigation-text-transform));
+}

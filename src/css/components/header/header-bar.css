@@ -5,17 +5,45 @@
 /* @define HeaderBar */
 
 .HeaderBar {
-    align-items: stretch;
-    background-color: var(--color-primary);
-    color: #fff;
-    display: flex;
-    font-size: 1.4rem;
-    justify-content: space-between;
-    line-height: 1;
-    padding: 0 45px 0 80px;
+    background: var(--HeaderBar-background, transparent);
 }
 
-/* postcss-bem-linter: ignore */
-.HeaderBar a {
-    color: inherit;
+.HeaderBar-inner {
+    align-items: center;
+    column-gap: var(--HeaderBar-column-gap, 30px);
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: var(--HeaderBar-justify);
+    line-height: 1;
+    padding: var(--HeaderBar-padding);
+}
+
+.HeaderBar-phone {
+    color: var(--HeaderBar-phone-color, #333);
+    font-family: var(--HeaderBar-phone-font-family);
+    font-size: var(--HeaderBar-phone-font-size, 1.8rem);
+    font-style: var(--HeaderBar-phone-font-style, normal);
+    font-weight: var(--HeaderBar-phone-font-weight, 400);
+    letter-spacing: var(--HeaderBar-phone-letter-spacing, 0);
+    line-height: var(--HeaderBar-phone-line-height, 1.58);
+    margin: var(--HeaderBar-phone-margin, 0);
+    padding: var(--HeaderBar-phone-padding, 0);
+    text-decoration: var(--HeaderBar-phone-text-decoration, none);
+    text-transform: var(--HeaderBar-phone-text-transform, none);
+}
+
+.HeaderBar-phone:focus-visible,
+.HeaderBar-phone:hover {
+    color: var(--HeaderBar-phone-hover-color, var(--HeaderBar-phone-color));
+    font-style: var(--HeaderBar-phone-hover-font-style, var(--HeaderBar-phone-font-style));
+    text-decoration: var(--HeaderBar-phone-hover-text-decoration, var(--HeaderBar-phone-text-decoration));
+    text-transform: var(--HeaderBar-phone-hover-text-transform, var(--HeaderBar-phone-text-transform));
+}
+
+.HeaderBar-phoneText {
+    font-size: var(--HeaderBar-phone-text-font-size, var(--HeaderBar-phone-font-size));
+    font-style: var(--HeaderBar-phone-text-font-style, var(--HeaderBar-phone-font-style));
+    font-weight: var(--HeaderBar-phone-text-font-weight, var(--HeaderBar-phone-font-weight));
+    text-decoration: var(--HeaderBar-phone-text-text-decoration, var(--HeaderBar-phone-text-decoration));
+    text-transform: var(--HeaderBar-phone-text-text-transform, var(--HeaderBar-phone-text-transform));
 }

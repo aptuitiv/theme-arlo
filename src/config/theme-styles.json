@@ -1367,7 +1367,147 @@
                 }
             ]
         },
-
+        {
+            "name": "Header bar",
+            "description": "Styles for the header bar of the website.",
+            "sections": [
+                {
+                    "name": "Header bar",
+                    "fields": [
+                        {
+                            "name": "headerBarBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-background"
+                            }
+                        },
+                        {
+                            "name": "headerBarJustify",
+                            "label": "Alignment",
+                            "type": "select",
+                            "options": {
+                                "flex-start": "Left",
+                                "center": "Center",
+                                "flex-end": "Right",
+                                "space-between": "Space between"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-justify"
+                            }
+                        },
+                        {
+                            "name": "headerBarColumnGap",
+                            "label": "Space between the navigation and phone number",
+                            "type": "size",
+                            "default": "20px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-column-gap"
+                            }
+                        },
+                        {
+                            "name": "headerBarPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "4px 0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-padding"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Header bar navigation",
+                    "fields": [
+                        {
+                            "name": "headerBarNavigationGap",
+                            "label": "Space between items",
+                            "type": "size",
+                            "default": "20px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBarNavigation-gap"
+                            }
+                        },
+                        {
+                            "name": "headerBarNavigationTypography",
+                            "label": "Navigation typography",
+                            "type": "typography",
+                            "useTextAlign": false,
+                            "useSpacing": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBarNavigation"
+                            }
+                        },
+                        {
+                            "name": "headerBarNavigationTypographyHover",
+                            "label": "Navigation typography (hover)",
+                            "type": "typography",
+                            "useFontFamily": false,
+                            "useFontWeight": false,
+                            "useFontSize": false,
+                            "useLetterSpacing": false,
+                            "useLineHeight": false,
+                            "useTextAlign": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBarNavigation-hover"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone number",
+                    "fields": [
+                        {
+                            "name": "headerBarPhoneTypography",
+                            "label": "Phone number typography",
+                            "type": "typography",
+                            "useTextAlign": false,
+                            "useSpacing": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-phone"
+                            }
+                        },
+                        {
+                            "name": "headerBarPhoneTypographyHover",
+                            "label": "Phone number typography (hover)",
+                            "type": "typography",
+                            "useFontFamily": false,
+                            "useFontWeight": false,
+                            "useFontSize": false,
+                            "useLetterSpacing": false,
+                            "useLineHeight": false,
+                            "useTextAlign": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-phone-hover"
+                            }
+                        },
+                        {
+                            "name": "headerBarPhonePrefixTypography",
+                            "label": "Text before the phone number",
+                            "type": "typography",
+                            "useColor": false,
+                            "useFontFamily": false,
+                            "useLetterSpacing": false,
+                            "useLineHeight": false,
+                            "useTextAlign": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--HeaderBar-phone-text"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "Main Navigation",
             "description": "Styles for the main website navigation.",

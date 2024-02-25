@@ -29,7 +29,7 @@
 
 .Banner-fg {
     align-items: center;
-    background-color: var(--Banner-overlay, 'transparent');
+    background-color: var(--Banner-overlay, transparent);
     display: flex;
     height: 100%;
     justify-content: var(--Banner-text-align);

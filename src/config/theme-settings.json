@@ -153,6 +153,18 @@
                         "cssVariable": "--Header-logo-width",
                         "template": "{{ value }}px"
                     }
+                },
+                {
+                    "name": "headerPhonePrefix",
+                    "label": "Text to show before the phone number",
+                    "type": "text"
+                },
+                {
+                    "name": "headerButton",
+                    "label": "Button to show next to the navigation",
+                    "type": "url",
+                    "showLinkTextField": true,
+                    "linkTextFieldLabel": "Button text"
                 }
             ]
         },

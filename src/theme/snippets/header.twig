@@ -36,50 +36,41 @@
     {{ _page.bodyStartCode() }}
     <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
     {{ _api.widgets.collection.get('notifications') }}
-    <div class="Container">
-        <header class="Header" id="top">
-            <div class="Header-bar">
-                <div class="Header-barLeft">
-                    {{ _api.navigation.get.key('header-bar') }}
-                </div>
-                <div class="Header-barRight">
-                    <a class="Header-phone" href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}" title="{{ _core.settings.companyPhone }}">
-                        <svg class="Header-phoneIcon Icon"><use xlink:href="#icon-phone" /></svg> {{ _core.settings.companyPhone }}
-                    </a>
-                    {% set _core.theme.settings.headerLoginLink.class = 'Header-login' %}
-                    {% set _core.theme.settings.headerLoginLink.contents = '<svg class="Header-loginIcon Icon"><use xlink:href="#icon-lock" /></svg> Login' %}
-                    {{ _core.theme.settings.headerLoginLink.tag }}
-                </div>
-            </div>
-            <div class="Header-main js-stickyHeader">
-                <div class="Header-left">
-                    <a href="/">
-                        {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
-                        {% set _core.theme.settings.headerLogo.class = "Header-logo" %}
-                        {{ _core.theme.settings.headerLogo.tag }}
-                    </a>
-                </div>
-                <div class="Header-right">
-                    <div class="Header-navWrapper">
-                        {{ _api.navigation.get.key('main') }}
-                    </div>
-                    <div class="Header-phone--lg">
-                        <a class="Header-phone" href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}" title="{{ _core.settings.companyPhone }}">
-                            <svg class="Header-phoneIcon Icon"><use xlink:href="#icon-phone" /></svg>
-                            <span>{{ _core.settings.companyPhone }}</span>
-                        </a>
-                    </div>
-                    <div class="Header-buttons">
-                        <a href="{{ _core.theme.settings.headerButtonLink }}" class="Button Header-button">{{ _core.theme.settings.headerButtonText }}</a>
-                    </div>
-                    <div class="Header-hamburger">
-                        <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
-                            <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
-                        </button>
+    <header id="top">
+        <div class="HeaderBar">
+            <div class="Container">
+                <div class="HeaderBar-inner">
+                    <div class="HeaderBar-navigation">{{ _api.navigation.get.key('header-bar') }}</div>
+                    <div class="HeaderBar-contact">
+                        {% set phoneText = '' %}
+                        {% if _core.theme.settings.headerPhonePrefix %}{% set phoneText = '<span class="HeaderBar-phoneText">' ~ _core.theme.settings.headerPhonePrefix ~ '</span> ' %}{% endif %}
+                        {% set phoneText = phoneText ~ _core.settings.companyPhone %}
+                        <a class="HeaderBar-phone" href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}" title="{{ _core.settings.companyPhone }}">{{ phoneText }}</a>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+        <div class="Header">
+            <div class="Container">
+                <div class="Header-logoWrapper">
+                    {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
+                    {% set _core.theme.settings.headerLogo.class = "Header-logo" %}
+                    <a href="/">{{ _core.theme.settings.headerLogo.tag }}</a>
+                </div>
+                <div class="Header-nav">
+                    {{ _api.navigation.get.key('main') }}
+                    {% if _core.theme.settings.headerButton %}
+                        {% set _core.theme.settings.headerButton.class = 'Button Header-button' %}
+                        {{_core.theme.settings.headerButton.tag}}
+                    {% endif %}
+                </div>
+                <div class="Header-hamburger">
+                    <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
+                        <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="Menu">
             <div class="Menu-top">
                 <div class="Menu-logoWrapper">
@@ -109,4 +100,4 @@
             </div>
         </div>
         <div class="js-stickyHeaderBoundary"></div>
-    </div>
+    </header>

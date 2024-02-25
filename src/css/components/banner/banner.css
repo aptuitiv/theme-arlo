@@ -2,39 +2,8 @@
     Banner
 \* =========================================================================== */
 
-/* :root {
-    --Banner-color: #fff;
-    --Banner-overlay: #1d26306e;
-    --Banner-background: #00263e;
-    
-    --Banner-paddingTop: 200px;
-    --Banner-paddingBottom: 80px;
-    --Banner-paddingHorizontal: 100px;
-    
-    --Banner-paddingTop--sm: 100px;
-    --Banner-paddingBottom--sm: 50px;
-    --Banner-paddingHorizontal--sm: 50px;
-    
-    --Banner-paddingTop--noImage: 100px;
-    --Banner-paddingBottom--noImage: 50px;
-    --Banner-paddingHorizontal--noImage: 50px;
-    
-    --Banner-paddingTop--noImageSm: 50px;
-    --Banner-paddingBottom--noImageSm: 50px;
-    --Banner-paddingHorizontal--noImageSm: 50px;
-    
-    --Banner-title-fontSize: 6.5rem;
-    --Banner-title-fontSize--sm: 3.5rem;
-    --Banner-title-fontWeight: 600;
-    --Banner-title-lineHeight: 1.2;
-    --Banner-title-letterSpacing: 0;
-    --Banner-title-textTransform: uppercase;
-    --Banner-title-textAlign: left;
-} */
-
 /* @define Banner */
 .Banner {
-    overflow: hidden;
     position: relative;
 }
 
@@ -59,8 +28,12 @@
 }
 
 .Banner-fg {
-    background-color: var(--Banner-overlay);
-    padding: var(--Banner-paddingTop--sm) var(--Banner-paddingHorizontal--sm) var(--Banner-paddingBottom--sm);
+    align-items: center;
+    background-color: var(--Banner-overlay, 'transparent');
+    display: flex;
+    height: 100%;
+    justify-content: var(--Banner-text-align);
+    padding: var(--Banner-padding-sm);
     position: relative;
     z-index: 20;
 }
@@ -71,43 +44,61 @@
 }
 
 .Banner-fg--noImage {
+    aspect-ratio: var(--Banner-content-aspect-ratio);
     background-color: var(--Banner-background);
-    padding: var(--Banner-paddingTop--noImageSm) var(--Banner-paddingHorizontal--noImageSm) var(--Banner-paddingBottom--noImageSm);
+    padding: var(--Banner-padding-no-image-sm);
 }
 
-.Banner-title {
-    font-size: var(--Banner-title-fontSize--sm);
-    font-weight: var(--Banner-title-fontWeight);
-    letter-spacing: var(--Banner-title-letterSpacing);
-    line-height: var(--Banner-title-lineHeight);
-    margin-bottom: 0;
-    text-align: center;
-    text-transform: var(--Banner-title-textTransform);
-}
-
-.Banner-title--left {
-    text-align: left !important;
-}
-
-.Banner-title--center {
-    text-align: center !important;
-}
-
-.Banner-title--right {
-    text-align: right !important;
+.Banner-content {
+    max-width: var(--Container-width);
 }
 
 @media (--c-bp-lg) {
     .Banner-fg {
-        padding: var(--Banner-paddingTop) var(--Banner-paddingHorizontal) var(--Banner-paddingBottom);
+        padding: var(--Banner-padding);
     }
-    
+
     .Banner-fg--noImage {
-        padding: var(--Banner-paddingTop--noImage) var(--Banner-paddingHorizontal--noImage) var(--Banner-paddingBottom--noImage);
+        padding: var(--Banner-padding-no-image);
     }
-    
-    .Banner-title {
-        font-size: var(--Banner-title-fontSize);
-        text-align: var(--Banner-title-textAlign);
+}
+
+/* ------------------------------------ *\
+    Splide
+\* ------------------------------------ */
+
+/* postcss-bem-linter: ignore */
+.Banner .splide__track {
+    height: 100%;
+}
+
+/* postcss-bem-linter: ignore */
+.Banner .splide__pagination {
+    bottom: 25px;
+    justify-content: flex-start;
+    padding: 0 var(--Banner-paddingHorizontal--sm) 0;
+}
+
+/* postcss-bem-linter: ignore */
+.Banner .splide__pagination__page {
+    background-color: var(--Banner-pagination-color);
+    height: 17px;
+    opacity: 1;
+    transition: 250ms;
+    width: 17px;
+}
+
+/* postcss-bem-linter: ignore */
+.Banner .splide__pagination__page.is-active,
+.Banner .splide__pagination__page:hover {
+    background-color: var(--Banner-pagination-color--active);
+    opacity: 1;
+    transform: none;
+}
+
+@media (--c-bp-lg) {
+    /* postcss-bem-linter: ignore */
+    .Banner .splide__pagination {
+        padding: 0 var(--Banner-paddingHorizontal) 0;
     }
 }

@@ -2,29 +2,62 @@
     "groups": [
         {
             "name": "Banner Images",
-            "description": "These settings change the behavior of banner images before a user loads them. This allows for faster page load times.",
+            "description": "These settings change the size of banner images before a user loads them. This allows for faster page load times.",
             "sidebarSize": "small",
             "fields": [
                 {
                     "name": "bannerImageSizes",
-                    "label": "Image Sizes",
+                    "label": "Image widths",
                     "type": "repeatingGrid",
-                    "description": "These sizes do not adjust the size of the banner itself, just the underlying image. To adjust the size of the banner itself, see the padding options under Styles &rarr; Banner &rarr; Padding.",
+                    "description": "The different screen widths to crop and create images for.",
                     "itemName": "Image size",
                     "children": [
                         {
-                            "name": "maxWidth",
-                            "label": "Max width",
-                            "type": "stepper",
-                            "after": "px"
-                        },
-                        {
-                            "name": "maxHeight",
-                            "label": "Max height",
-                            "type": "stepper",
+                            "name": "size",
+                            "label": "Size",
+                            "type": "ratio",
                             "after": "px"
                         }
                     ]
+                },
+                {
+                    "name": "bannerImageRatio",
+                    "label": "Aspect ratio when cropping",
+                    "type": "ratio",
+                    "after": "px",
+                    "default": "20/9",
+                    "description": "If the banner image needs to be cropped, this is the aspect ratio that will be used."
+                },
+                {
+                    "name": "bannerMinImageRatio",
+                    "label": "Minimum aspect ratio",
+                    "type": "ratio",
+                    "after": "px",
+                    "default": "20/9",
+                    "description": "If \"How to crop the banner image\" is set to \"Do not crop the banner image unless it is too tall\", this is the aspect ratio that will be used to determine if the image is too tall."
+                },
+                {
+                    "name": "bannerImageCropStrategy",
+                    "label": "How to crop the banner image",
+                    "type": "radio",
+                    "default": "conditional",
+                    "options": {
+                        "crop": "Always use the above image aspect ratios to crop the image",
+                        "conditional": "Do not crop the banner image unless it is too tall"
+                    },
+                    "description": "The banner image is considered too tall if its image ratio is less than the \"Minimum aspect ratio\" field value. (The lower the ratio the taller the image.)"
+                },
+                {
+                    "name": "bannerImageCropOrientation",
+                    "label": "Image crop orientation",
+                    "description": "The default crop orientation for banner images when the image is too tall.",
+                    "type": "radio",
+                    "default": "center",
+                    "options": {
+                        "top": "Top",
+                        "center": "Center",
+                        "bottom": "Bottom"
+                    }
                 }
             ]
         },

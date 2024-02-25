@@ -5,7 +5,7 @@
             "description": "Styles for the \"Banner\" content layout. To adjust the size of the underlying images, see Settings &rarr; Banner Images.",
             "sections": [
                 {
-                    "name": "General",
+                    "name": "Colors",
                     "fields": [
                         {
                             "name": "bannerColor",
@@ -21,6 +21,7 @@
                             "name": "bannerBackgroundOverlay",
                             "label": "Overlay color",
                             "type": "color",
+                            "description": "The background color of an overlay that sits on top of the banner image or video and below the text.",
                             "default": "#00263e6e",
                             "preview": {
                                 "type": "css-head",
@@ -41,262 +42,79 @@
                     ]
                 },
                 {
-                    "name": "Padding",
+                    "name": "Content",
                     "fields": [
                         {
-                            "name": "bannerPaddingTop",
-                            "label": "Top padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "200",
+                            "name": "bannerContentAlign",
+                            "label": "Text alignment",
+                            "type": "textalign",
+                            "default": "center",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-paddingTop",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "bannerPaddingBottom",
-                            "label": "Bottom padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "80",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-paddingBottom",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "bannerPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "100",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Banner-text-align"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Padding (Small Screens)",
+                    "name": "Padding around the content",
                     "fields": [
                         {
-                            "name": "bannerPaddingTopSm",
-                            "label": "Top padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "100",
+                            "name": "bannerPadding",
+                            "label": "Padding",
+                            "description": "This is used when there is a lot of content to make sure that the content does't touch the edges of the banner.",
+                            "type": "padding",
+                            "default": "200px 80px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-paddingTop--sm",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Banner-padding"
                             }
                         },
                         {
-                            "name": "bannerPaddingBottomSm",
-                            "label": "Bottom padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
+                            "name": "bannerPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "default": "100px 50px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-paddingBottom--sm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "bannerPaddingHorizontalSm",
-                            "label": "Horizontal padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-paddingHorizontal--sm",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Banner-padding-sm"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Padding (No Image)",
-                    "description": "Padding when no image is uploaded.",
+                    "name": "Text only content",
+                    "description": "Styles for when there is no image or video and only text",
                     "fields": [
+                        {
+                            "name": "bannerContentAspectRatio",
+                            "label": "Minimum aspect ratio for content",
+                            "type": "ratio",
+                            "after": "px",
+                            "default": "10/2",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-content-aspect-ratio"
+                            }
+                        },
                         {
                             "name": "bannerPaddingTopNoImage",
-                            "label": "Top padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "100",
+                            "label": "Padding when no image or video",
+                            "type": "padding",
+                            "default": "100px 50px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-paddingTop--noImage",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Banner-padding-no-image"
                             }
                         },
-                        {
-                            "name": "bannerPaddingBottomNoImage",
-                            "label": "Bottom padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-paddingBottom--noImage",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "bannerPaddingHorizontalNoImage",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-paddingHorizontal--noImage",
-                                "template": "{{ value }}px"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Padding (No Image, Small Screens)",
-                    "fields": [
                         {
                             "name": "bannerPaddingTopNoImageSm",
-                            "label": "Top padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
+                            "label": "Padding (small screens) when no image or video",
+                            "type": "padding",
+                            "default": "50px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-paddingTop--noImageSm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "bannerPaddingBottomNoImageSm",
-                            "label": "Bottom padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-paddingBottom--noImageSm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "bannerPaddingHorizontalNoImageSm",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-paddingHorizontal--noImageSm",
-                                "template": "{{ value }}px"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Title",
-                    "fields": [
-                        {
-                            "name": "bannerTitleFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "65",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-title-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "bannerTitleFontSizeSm",
-                            "label": "Font size (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "35",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-title-fontSize--sm",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "bannerTitleFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "600",
-                            "fontFamilyField": "themeTypographyHeadingFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-title-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "bannerTitleLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.58",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-title-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "bannerTitleTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-title-textTransform"
-                            }
-                        },
-                        {
-                            "name": "bannerTitleLetterSpacing",
-                            "label": "Letter spacing",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-title-letterSpacing",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "bannerTitleTextAlign",
-                            "label": "Default text alignment",
-                            "description": "This value can be override on a per-page basis in the \"Banner\" content layout.",
-                            "type": "select",
-                            "default": "left",
-                            "options": {
-                                "left": "Left",
-                                "center": "Center",
-                                "right": "Right"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Banner-title-textAlign"
+                                "cssVariable": "--Banner-padding-no-image-sm"
                             }
                         }
                     ]

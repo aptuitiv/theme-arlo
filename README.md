@@ -58,6 +58,7 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
 8. Search
    - Prime the **Search Templates** by visiting Site Manager -> Search -> Templates -> Templates.
    - Edit and save the **Search Form** under Site Manager -> Search -> Forms. This will generate the form fields.
+9. Add a **Content Snippet** for the footer content under Content -> Content Snippets. Call it "Footer Content". The snippet key should be `footer-content`. 
 
 ### Deploying the Theme
 

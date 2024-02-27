@@ -58,13 +58,25 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
 8. Search
    - Prime the **Search Templates** by visiting Site Manager -> Search -> Templates -> Templates.
    - Edit and save the **Search Form** under Site Manager -> Search -> Forms. This will generate the form fields.
-9. Add a **Content Snippet** for the footer content under Content -> Content Snippets. Call it "Footer Content". The snippet key should be `footer-content`. 
 
 ### Deploying the Theme
 
 1. Install packages with `npm i`.
 2. Build the theme with `gulp build`.
 3. Deploy the theme files using the `gulp deploy` command and wait until completed (~30 seconds).
+
+### Set up content snippets for special content
+
+#### Footer
+
+To enable custom content above the footer that will be on every page the `footer.twig` template create a content snippet called "Footer content". Make sure that it's key is `footer-content`.
+
+#### Blog
+
+The blog has a few content snippet that it expects to use.
+
+- Blog post header (snippet key: `blog-post-header`).
+- Blog post footer (snippet key: `blog-post-footer`).
 
 ### Configuring the Theme
 

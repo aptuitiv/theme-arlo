@@ -55,7 +55,7 @@
     color: var(--Banner-color);
 }
 
-.Banner-fg--noImage {
+.Banner--noMedia .Banner-fg {
     aspect-ratio: var(--Banner-content-aspect-ratio);
     padding: var(--Banner-padding-no-image-sm);
 }
@@ -65,12 +65,17 @@
     text-align: var(--Banner-text-align);
 }
 
+/* postcss-bem-linter: ignore */
+.Banner-content p {
+    font-size: var(--Banner-content-font-size, 2rem);
+}
+
 @media (--c-bp-lg) {
     .Banner-fg {
         padding: var(--Banner-padding);
     }
 
-    .Banner-fg--noImage {
+    .Banner--noMedia .Banner-fg {
         padding: var(--Banner-padding-no-image);
     }
 }

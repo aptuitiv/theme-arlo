@@ -9,6 +9,7 @@
 }
 
 .HeaderBar--contained {
+    margin: 0 auto;
     max-width: var(--Container-width);
 }
 
@@ -17,7 +18,7 @@
     column-gap: var(--HeaderBar-column-gap, 30px);
     display: flex;
     font-size: 1.4rem;
-    justify-content: var(--HeaderBar-justify);
+    justify-content: center;
     line-height: 1;
     padding: var(--HeaderBar-padding);
 }
@@ -52,4 +53,10 @@
     font-weight: var(--HeaderBar-phone-text-font-weight, var(--HeaderBar-phone-font-weight));
     text-decoration: var(--HeaderBar-phone-text-text-decoration, var(--HeaderBar-phone-text-decoration));
     text-transform: var(--HeaderBar-phone-text-text-transform, var(--HeaderBar-phone-text-transform));
+}
+
+@media (--c-bp-md) {
+    .HeaderBar-inner {
+        justify-content: var(--HeaderBar-justify);
+    }
 }

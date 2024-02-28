@@ -27,7 +27,7 @@
             {% endif %}
              {% if pagination is iterable || slide.content|length > 0 %}
                 <div class="Banner-fg">
-                    <div class="Banner-content last-child-sb-0">
+                    <div class="Banner-content first-child-st-0 last-child-sb-0">
                         {% if pagination is iterable %}
                             <ul class="BannerSlider-pagination">
                                 {% for text in pagination %}
@@ -74,9 +74,7 @@
                 <ul class="splide__list">
                     {% for slide in slides %}
                         <li class="splide__slide">
-                            <div class="Banner Banner--noMedia" role="group" aria-label="Banner">
-                                {{ _self.buildSlide(slide, loop.first, slidePagination, randomString) }}
-                            </div>
+                            {{ _self.buildSlide(slide, loop.first, slidePagination, randomString) }}
                         </li>
                     {% endfor %}
                 </ul>

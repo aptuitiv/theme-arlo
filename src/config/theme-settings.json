@@ -271,6 +271,45 @@
             ]
         },
         {
+            "name": "Popout menu",
+            "description": "These settings are for the popup menu that shows when the user clicks the hamburger icon.",
+            "fields": [
+                {
+                    "name": "menuLogo",
+                    "label": "Logo to show at the top of the menu",
+                    "type": "image",
+                    "path": "images",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".Menu-logo",
+                        "template": "<img src=\"{{ url }}\" height=\"{{ imageHeight }}\" width=\"{{ imageWidth }}\" alt=\"{{ alt }}\" class=\"Menu-logo\">"
+                    }
+                },
+                {
+                    "name": "menuLogoWidth",
+                    "label": "Logo width",
+                    "type": "size",
+                    "default": "425px",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Menu-logo-width"
+                    }
+                },
+                {
+                    "name": "menuButton",
+                    "label": "Button to show below the navigation",
+                    "type": "url",
+                    "showLinkTextField": true,
+                    "linkTextFieldLabel": "Button text"
+                },
+                {
+                    "name": "menuPhoneText",
+                    "label": "Text to show above the phone number",
+                    "type": "text"
+                }
+            ]
+        },
+        {
             "name": "Popup on Load",
             "description": "Options for the optional popup that shows on page load.",
             "fields": [
@@ -297,6 +336,30 @@
                     "name": "popupContent",
                     "label": "Content",
                     "type": "richTextEditor"
+                }
+            ]
+        },
+        {
+            "name": "Promotional Bar",
+            "description": "These settings are for the promotional bar that shows at the top of the page.",
+            "fields": [
+                {
+                    "name": "promoBarLeftContent",
+                    "label": "Left content",
+                    "type": "richTextEditor",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".PromoBar-left"
+                    }
+                },
+                {
+                    "name": "promoBarRightContent",
+                    "label": "Right content",
+                    "type": "richTextEditor",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".PromoBar-right"
+                    }
                 }
             ]
         }

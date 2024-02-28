@@ -1,5 +1,6 @@
 @import './accordion';
 @import './banner';
+@import './blog';
 @import './button';
 @import './container';
 @import './footer';
@@ -13,5 +14,6 @@
 @import './navigation';
 @import './notifications';
 @import './pagination';
+@import './promotional-bar';
 @import './slider';
 @import './wrapper';

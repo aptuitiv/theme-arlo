@@ -1,0 +1,11 @@
+{% if images|length > 0 %}
+    <div class="flex justify-center g-4">
+        {% for image in images %}
+            {% if image.url %}
+                <a href="{image.url}" target="_blank">{{ image.image.tag }}</a>
+            {% else %}
+                {{ image.image.tag }}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

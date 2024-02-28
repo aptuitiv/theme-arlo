@@ -72,12 +72,20 @@ const config = {
      */
     copy: [
         {
-            src: 'node_modules/@splidejs/splide/dist/**/*',
+            src: 'node_modules/@splidejs/splide/dist/css/splide.min.css',
             dest: 'splide'
         },
         {
-            src: 'node_modules/@splidejs/splide-extension-video/dist/**/*',
-            dest: 'splide-video'
+            src: 'node_modules/@splidejs/splide/dist/js/splide.min.js',
+            dest: 'splide'
+        },
+        {
+            src: 'node_modules/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js',
+            dest: 'splide'
+        },
+        {
+            src: 'node_modules/@splidejs/splide-extension-video/dist/css/splide-extension-video.min.css',
+            dest: 'splide'
         },
         {
             src: 'node_modules/just-validate/dist/just-validate.production.min.js',

@@ -1,0 +1,6 @@
+{% set posts = _api.blog.recentPosts.limit(3) %}
+
+{% if posts|length > 0 %}
+    <h2>Recent Blog Posts</h2>
+    {% include 'blog/post-grid' %}
+{% endif %}

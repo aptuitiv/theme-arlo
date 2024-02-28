@@ -1,0 +1,123 @@
+/* =========================================================================== *\
+    [Hamburger] Menu Styles
+\* =========================================================================== */
+
+/* @define Menu */
+.Menu {
+    background-color: var(--Menu-background-color, #fff);
+    box-shadow: var(--Menu-drop-shadow-offset-x, 0) var(--Menu-drop-shadow-offset-x, 0)
+        var(--Menu-drop-shadow-blur-radius, 0) var(--Menu-drop-shadow-color, #000);
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto;
+    padding: var(--Menu-padding-sm, 20px);
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+    width: 100%;
+    z-index: 999;
+}
+
+.Menu.is-closed {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.Menu-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--Menu-top-margin, 0 0 10px 0);
+}
+
+.Menu-top--noLogo {
+    justify-content: flex-end;
+}
+
+.Menu-logo {
+    max-width: min(var(--Menu-logo-width), 90%);
+}
+
+.Menu-closeWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Menu-close {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--Menu-close-button-color);
+    cursor: pointer;
+    font-size: var(--Menu-close-button-size, 4rem);
+    height: fit-content;
+    line-height: 1;
+    padding: 0;
+    transition: background-color 250ms;
+    width: fit-content;
+}
+
+.Menu-close:focus,
+.Menu-close:active,
+.Menu-close:hover {
+    color: var(--Menu-close-button-color-hover);
+    outline: none;
+}
+
+.Menu-icon {
+    margin: 0 !important;
+}
+
+.Menu-buttons {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: var(--Menu-button-margin, 0 0 45px 0);
+    row-gap: 20px;
+}
+
+.Menu-phoneText {
+    color: var(--Menu-phone-text-color, #333);
+    font-family: var(--Menu-phone-text-font-family);
+    font-size: var(--Menu-phone-text-font-size, 2rem);
+    font-style: var(--Menu-phone-text-font-style);
+    font-weight: var(--Menu-phone-text-font-weight, 700);
+    letter-spacing: var(--Menu-phone-text-letter-spacing);
+    line-height: var(--Menu-phone-text-line-height, 1.58);
+    text-align: var(--Menu-phone-text-text-align);
+    text-decoration: var(--Menu-phone-text-text-decoration);
+    text-transform: var(--Menu-phone-text-text-transform);
+}
+
+.Menu-phone {
+    color: var(--Menu-phone-color, #333);
+    font-family: var(--Menu-phone-font-family);
+    font-size: var(--Menu-phone-font-size, 2rem);
+    font-style: var(--Menu-phone-font-style);
+    font-weight: var(--Menu-phone-font-weight, 700);
+    letter-spacing: var(--Menu-phone-letter-spacing);
+    line-height: var(--Menu-phone-line-height, 1.58);
+    text-align: var(--Menu-phone-text-align);
+    text-decoration: var(--Menu-phone-text-decoration);
+    text-transform: var(--Menu-phone-text-transform);
+}
+
+.Menu-social {
+    display: flex;
+    gap: var(--Menu-social-icon-gap, 15px);
+    justify-content: var(--Menu-social-icon-text-align, center);
+    margin: var(--Menu-social-icon-margin, 10px 0 0 0);
+}
+
+/* postcss-bem-linter: ignore */
+a.Menu-socialLink {
+    color: var(--Menu-social-icon-color, #333);
+    font-size: var(--Menu-social-icon-font-size, 2rem);
+}
+
+@media (--c-bp-sm) {
+    .Menu {
+        max-width: var(--Menu-width, 500px);
+        padding: var(--Menu-padding, 20px);
+    }
+}

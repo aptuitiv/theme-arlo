@@ -2,21 +2,6 @@
     Header
 \* =========================================================================== */
 
-/*
-:root {
-    --Header-buttonBackground: var(--color-secondary);
-    --Header-buttonBorderColor: var(--Header-buttonBackground);
-    --Header-buttonColor: var(--color-primary);
-    --Header-buttonBackgroundHover: var(--color-primary);
-    --Header-buttonBorderColorHover: var(--Header-buttonBackgroundHover);
-    --Header-buttonColorHover: var(--color-secondary);
-    --Header-dropShadow-offsetX: 0;
-    --Header-dropShadow-offsetY: 3px;
-    --Header-dropShadow-blurRadius: 20px;
-    --Header-dropShadow-color: #00000029;
-}
-*/
-
 /* @define Header */
 .Header {
     background-color: var(--Header-background);
@@ -28,8 +13,6 @@
 
 .Header-inner {
     align-items: center;
-    box-shadow: var(--Header-dropShadow-offsetX) var(--Header-dropShadow-offsetY) var(--Header-dropShadow-blurRadius)
-        var(--Header-dropShadow-color);
     display: flex;
     justify-content: space-between;
     padding: 25px 35px 25px 75px;
@@ -55,6 +38,11 @@
 
 .Header-main.is-sticky .Header-logo {
     max-width: 200px;
+}
+
+.Header-nav {
+    display: flex;
+    gap: var(--Header-navigation-menu-gap, 20px);
 }
 
 /* ------------------------------------ *\

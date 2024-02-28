@@ -1,0 +1,25 @@
+{% extends "one-column" %}
+
+{% import 'macros/banner' as bannerMacros %}
+
+{% block banner %}
+    {% set content = '<h1>' ~ post.postTitle ~ '</h1><p>' ~ post.publishedOnDate ~ '</p>' %}
+    {% include 'content-builder/banner-bar' %}
+    {# Use a content snippet for any custom blocks in the header #}
+    {{ _api.contentSnippet.get('blog-post-header') }}
+{% endblock %}
+{% block main %}
+    <div class="Container Container--pad">
+        {{ post.content }}
+        <div class="flex my-4 {% if post.previousPost and post.nextPost %}justify-between{% elseif post.nextPost %}justify-end{% endif %}">
+            {% if post.previousPost %}
+                <a href="{{ post.previousPost.url }}" class="u-weightNormal">&lt; Previous Post</a>
+            {% endif %}
+            {% if post.nextPost %}
+                <a href="{{ post.nextPost.url }}" class="u-weightNormal">Next Post &gt;</a>
+            {% endif %}
+        </div>
+    </div>
+    {# Use a content snippet for any custom blocks in the footer #}
+    {{ _api.contentSnippet.get('blog-post-footer') }}
+{% endblock %}

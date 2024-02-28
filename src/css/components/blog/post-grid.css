@@ -1,0 +1,67 @@
+/* ===========================================================================
+    Blog post grid that displays multiple posts in a grid with an image
+=========================================================================== */
+
+/* @define BlogGrid */
+
+.BlogGrid {
+    --gap: var(--BlogGrid-gap, 50px); /* set the --gap variable that is used by the Cacao grid utility */
+}
+
+.BlogGrid-date {
+    color: var(--BlogGrid-date-color, var(--base-typography-color));
+    font-family: var(--BlogGrid-date-font-family, inherit);
+    font-size: var(--BlogGrid-date-font-size, inherit);
+    font-style: var(--BlogGrid-date-font-style, none);
+    font-weight: var(--BlogGrid-date-font-weight, 400);
+    letter-spacing: var(--BlogGrid-date-letter-spacing, inherit);
+    line-height: var(--BlogGrid-date-line-height, 1.58);
+    margin: var(--BlogGrid-date-margin, 4px 0);
+    text-align: var(--BlogGrid-date-text-align);
+    text-decoration: var(--BlogGrid-date-text-decoration, none);
+    text-transform: var(--BlogGrid-date-text-transform, none);
+}
+
+.BlogGrid-title {
+    color: var(--BlogGrid-title-color, var(--base-typography-color));
+    font-family: var(--BlogGrid-title-font-family, inherit);
+    font-size: var(--BlogGrid-title-font-size, 2rem);
+    font-style: var(--BlogGrid-title-font-style, none);
+    font-weight: var(--BlogGrid-title-font-weight, 700);
+    letter-spacing: var(--BlogGrid-title-letter-spacing, inherit);
+    line-height: var(--BlogGrid-title-line-height, 1.58);
+    margin: var(--BlogGrid-title-margin, 4px 0);
+    text-align: var(--BlogGrid-title-text-align);
+    text-decoration: var(--BlogGrid-title-text-decoration, none);
+    text-transform: var(--BlogGrid-title-text-transform, none);
+}
+
+.BlogGrid-abstract {
+    color: var(--BlogGrid-abstract-color, var(--base-typography-color));
+    font-family: var(--BlogGrid-abstract-font-family, inherit);
+    font-size: var(--BlogGrid-abstract-font-size, inherit);
+    font-style: var(--BlogGrid-abstract-font-style, none);
+    font-weight: var(--BlogGrid-abstract-font-weight, 400);
+    letter-spacing: var(--BlogGrid-abstract-letter-spacing, inherit);
+    line-height: var(--BlogGrid-abstract-line-height, 1.58);
+    margin: var(--BlogGrid-abstract-margin, 4px 0);
+    text-align: var(--BlogGrid-abstract-text-align);
+    text-decoration: var(--BlogGrid-abstract-text-decoration, none);
+    text-transform: var(--BlogGrid-abstract-text-transform, none);
+}
+
+.BlogGrid-readMore {
+    background: var(--BlogGrid-read-more-background, transparent);
+    border-radius: var(--BlogGrid-read-more-border-radius, 0);
+    color: var(--BlogGrid-read-more-color, var(--base-typography-link-color));
+    font-family: var(--BlogGrid-read-more-font-family, inherit);
+    font-size: var(--BlogGrid-read-more-font-size, inherit);
+    font-style: var(--BlogGrid-read-more-font-style, none);
+    font-weight: var(--BlogGrid-read-more-font-weight, 400);
+    letter-spacing: var(--BlogGrid-read-more-letter-spacing, inherit);
+    line-height: var(--BlogGrid-read-more-line-height, 1.58);
+    margin: var(--BlogGrid-read-more-margin, 4px 0);
+    text-align: var(--BlogGrid-read-more-text-align);
+    text-decoration: var(--BlogGrid-read-more-text-decoration, none);
+    text-transform: var(--BlogGrid-read-more-text-transform, none);
+}

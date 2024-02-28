@@ -9,8 +9,6 @@
  */
 
 /* :root {
-    --Dropdown-paddingVertical: 10px;
-    --Dropdown-minWidth: 220px;
     --Dropdown-maxWidth: 300px;
     --Dropdown-background: transparent;
     --Dropdown-left: 0;
@@ -65,24 +63,26 @@
 }
 
 .Dropdown-link {
-    background: var(--Dropdown-link-background--sm);
+    background: var(--Dropdown-link-background-sm);
     color: var(--Dropdown-link-color--sm) !important;
     display: block;
-    font-size: var(--Dropdown-link-fontSize);
-    font-weight: var(--Dropdown-link-fontWeight);
-    letter-spacing: var(--Dropdown-link-letterSpacing);
-    line-height: var(--Dropdown-link-lineHeight);
-    padding: var(--Dropdown-link-paddingVertical) var(--Dropdown-link-paddingHorizontal);
-    text-align: var(--Dropdown-link-textAlign);
-    text-decoration: none;
-    text-transform: var(--Dropdown-link-textTransform);
+    font-family: var(-Dropdown-link-font-family);
+    font-size: var(--Dropdown-link-font-size);
+    font-style: var(--Dropdown-link-font-font-style);
+    font-weight: var(--Dropdown-link-font-weight);
+    letter-spacing: var(--Dropdown-link-letter-spacing);
+    line-height: var(--Dropdown-link-line-height);
+    padding: var(--Dropdown-link-padding);
+    text-align: var(--Dropdown-link-text-align);
+    text-decoration: var(--Dropdown-link-text-decoration, none);
+    text-transform: var(--Dropdown-link-text-transform);
 }
 
 .Dropdown-link:hover,
 .Dropdown-link.is-current,
 .Dropdown-link.is-currentParent {
-    background-color: var(--Dropdown-link-background--hover);
-    color: var(--Dropdown-link-color--hover) !important;
+    background-color: var(--Dropdown-link-background-hover);
+    color: var(--Dropdown-link-color-hover) !important;
 }
 
 .Dropdown-link:hover {
@@ -136,9 +136,9 @@
     .Dropdown-menu {
         left: var(--Dropdown-left);
         margin-top: 0;
-        max-width: var(--Dropdown-maxWidth);
-        min-width: var(--Dropdown-minWidth);
-        padding: var(--Dropdown-paddingVertical) 0;
+        max-width: var(--Dropdown-max-width);
+        min-width: var(--Dropdown-min-width);
+        padding: var(--Dropdown-padding) 0;
         position: absolute;
         top: 100%;
         width: max-content;
@@ -174,7 +174,7 @@
         height: 1px;
         margin-top: -1px;
         position: absolute;
-        right: calc(var(--MainNav-item-paddingHorizontal) / 2);
+        right: calc(var(--MainNav-item-padding-right, 1) / 2);
         top: 50%;
         transform-origin: 7px 50%;
         width: 7px;

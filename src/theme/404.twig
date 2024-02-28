@@ -1,11 +1,11 @@
 {% include 'snippets/header' %}
 
-{% set title = "Page Not Found" %}
-{% include("content-layouts/banner") %}
+{% set content = "<h1>Oops!</h1>" %}
+{% include("content-builder/banner-bar") %}
 
-<div class="py-3">
+<div class="py-5">
     <main>
-        <div class="Container Container--pad">
+        <div class="Container Container--pad Container--narrow">
             {% block main _page.content() %}
         </div>
     </main>

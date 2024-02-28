@@ -1,13 +1,21 @@
-{% if images|first.image %}
-    {# Max width for the images #}
+{% if columns|first.image %}
+    {# Max width for the columns #}
     {% set width = 800 %}
 
-    {# Set the image classes based on the number of images #}
-    {% set count = numberOfImages == 'Auto' ? images|length : numberOfImages %}
-    {% if count == null %}
-        {% set count = images|length %}
+    {# Set the image aspect ratio #}
+    {% if imageAspectRatio == 'Site default' %}
+        {% set imageAspectRatio = _core.theme.settings.blockImageGridDefaultAspectRatio %}
     {% endif %}
-
+    {# Set the image classes based on the number of columns #}
+    {% set count = _core.theme.settings.blockImageGridDefaultNumColumns %}
+    {% if numColumns not in ['Auto', 'Site default'] %}
+        {% set count = numColumns %}
+    {% elseif numColumns == 'Auto' %}
+        {% set count = columns|length %}
+    {% endif %}
+    {% if count == null %}
+        {% set count = columns|length %}
+    {% endif %}
 
      {% set class = "col-1-1" %}
 
@@ -54,19 +62,47 @@
         {% endif %}
     {% endif %}
 
+    {% macro textAboveBelow(column, position) %}
+        {% if column.title && _core.theme.settings.blockImageGridTextPosition == position %}
+            <span class="ImageGrid-title">{{ column.title }}</span>
+        {% endif %}
+    {% endmacro %}
+
+    {% macro textOnImage(column) %}
+        {% if column.title && _core.theme.settings.blockImageGridTextPosition in ['bottom', 'center'] %}
+            <span class="ImageGrid-overlay ImageGrid-overlay--{{ _core.theme.settings.blockImageGridTextPosition }}">
+                <span class="ImageGrid-title">{{ column.title }}</span>
+                {% if column.hoverText %}
+                    <span class="ImageGrid-hoverText">{{ column.hoverText }}</span>
+                {% endif %}
+            </span>
+        {% endif %}
+    {% endmacro %}
+
     <div class="Container Container--pad">
         <div class="grid g-2">
-            {% for image in images %}
+            {% for column in columns %}
                 <div class="{{ class }}">
-                    {% if image.title %}
-                        <h2 class="text-center underline-center mb-1 px-3">{% if image.link %}<a href="{{ image.link }}">{% endif %}{{ image.title }}{% if image.link %}</a>{% endif %}</h2>
+                    {% if column.link %}<a href="{{ column.link }}" class="ImageGrid-container">{% else %}<div class="ImageGrid-container">{% endif %}
+                    {{ _self.textAboveBelow(column, 'above') }}
+                    {% if column.image %}
+                        {% set column.image.class = "w-100" %}
+                        {% do column.image.alt.default(column.title) %}
+                        {% do column.image.crop(imageAspectRatio) %}
+                        {% do column.image.lazy() %}
+
+                        <div class="ImageGrid-image">
+                            {{ column.image.tag }}
+                            {{ _self.textOnImage(column) }}
+                        </div>
+
+                        {# <span class="flex aspect-{{ imageAspectRatio|replace('x', '-') }}">{{ column.image.tag }}</span> #}
                     {% endif %}
-                    {% if image.image %}
-                        {% set image.image.class = "fit-cover w-100" %}
-                        {% do image.image.alt.default(image.title) %}
-                        {% do image.image.lazy() %}
-                        {% if image.link %}<a href="{{ image.link }}">{% endif %}<span class="flex aspect-{{ imageAspectRatio|replace('x', '-') }}">{{ image.image.tag }}</span>{% if image.link %}</a>{% endif %}
+                    {{ _self.textAboveBelow(column, 'below') }}
+                    {% if column.content %}
+                        <div class="ImageGrid-content">{{ column.content }}</div>
                     {% endif %}
+                    {% if column.link %}</a>{% else %}</div>{% endif %}
                 </div>
             {% endfor %}
         </div>

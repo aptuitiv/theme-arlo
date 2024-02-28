@@ -19,5 +19,5 @@
     margin: var(--FullWidthImage-caption-typography-margin);
     text-align: var(--FullWidthImage-caption-typography-text-align);
     text-decoration: var(--FullWidthImage-caption-typography-text-decoration);
-    text-transform: var(--FullWidthImage-caption-typography-textTransform);
+    text-transform: var(--FullWidthImage-caption-typography-text-transform);
 }

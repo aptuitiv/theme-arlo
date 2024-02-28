@@ -1,0 +1,35 @@
+{# Set variables based on theme settings, but with defaults #}
+{% set imageAspectRatio = _core.theme.settings.blogGridImagAspectRatio.ratioSlash ?? '4/3' %}
+{% set datePosition = _core.theme.settings.blogGridDatePosition ?? 'below' %}
+{% set showReadMore = _core.theme.settings.blogGridShowReadMore ?? true %}
+{% set readMoreText = _core.theme.settings.blogGridReadMoreText ?? 'Read more' %}
+
+{% if posts|length > 0 %}
+    <div class="Container Container--pad">
+        <div class="BlogGrid grid g-5">
+            {% for post in posts %}
+                <div class="col-1-1 col-md-1-2 col-lg-1-3">
+                    <a href="{{ post.url }}" class="BlogGrid-item">
+                        <div class="BlogGrid-image">
+                            {% do post.image.alt.default(post.postTitle) %}
+                            {% do post.image.crop(imageAspectRatio) %}
+                            {% do post.image.lazy() %}
+                            {{ post.image.tag }}
+                        </div>
+                        {% if datePosition == 'above' %}
+                            <div class="BlogGrid-date">{{ post.publishedOnDate }}</div>
+                        {% endif %}
+                        <div class="BlogGrid-title">{{ post.postTitle }}</div>
+                        {% if datePosition == 'below' %}
+                            <div class="BlogGrid-date">{{ post.publishedOnDate }}</div>
+                        {% endif %}
+                        <div class="BlogGrid-abstract">{{ post.abstract ? post.abstract|striptags|truncate(95) : post.content|striptags|truncate(95) }}</div>
+                        {% if showReadMore %}
+                            <div class="BlogGrid-readMore">{{ readMoreText }}</div>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

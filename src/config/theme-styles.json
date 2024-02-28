@@ -72,6 +72,16 @@
                                 "type": "css-head",
                                 "cssVariable": "--Banner-content-button-gap"
                             }
+                        },
+                        {
+                            "name": "bannerContentFontSize",
+                            "label": "Paragraph content font size",
+                            "type": "fontSize",
+                            "default": "20px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-content-font-size"
+                            }
                         }
                     ]
                 },
@@ -439,6 +449,144 @@
             ]
         },
         {
+            "name": "Blocks - Image Grid",
+            "description": "Styles for the \"Image Grid\" block.",
+            "groups": [
+                {
+                    "name": "General styles",
+                    "fields": [
+                        {
+                            "name": "blockImageGridTextPosition",
+                            "label": "Text position",
+                            "type": "select",
+                            "options": {
+                                "above": "Above image",
+                                "bottom": "Bottom of image",
+                                "center": "Center on image",
+                                "below": "Below image"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridDefaultNumColumns",
+                            "label": "Default number of columns",
+                            "type": "select",
+                            "default": "3",
+                            "options": {
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridDefaultAspectRatio",
+                            "label": "Default image aspect ratio",
+                            "type": "select",
+                            "default": "4x3",
+                            "options": {
+                                "1x1": "Square",
+                                "5x4": "5:4",
+                                "4x3": "4:3",
+                                "7x5": "7:5",
+                                "3x2": "3:2",
+                                "16x9": "16:9",
+                                "2x1": "2:1",
+                                "7x3": "7:3",
+                                "3x1": "3:1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Title text styles",
+                    "fields": [
+                        {
+                            "name": "blockImageGridTextypography",
+                            "label": "Text styles",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useSpacing": true,
+                            "useHover": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGrid-title"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Hover sub text styles",
+                    "description": "This is for the sub text that shows when the image is hovered. This is only used when the text is positioned on the image.",
+                    "fields": [
+                        {
+                            "name": "blockImageGridHoverSubTextTypography",
+                            "label": "Hover sub text styles",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useSpacing": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGrid-hover-text"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Content below the image",
+                    "description": "This is for the extra content that can show below the image.",
+                    "fields": [
+                        {
+                            "name": "blockImageGridHoverSubTextTypography",
+                            "label": "Hover sub text styles",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useSpacing": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGrid-hover-text"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Image overlay",
+                    "fields": [
+                        {
+                            "name": "blockImageGridOverlayBackground",
+                            "label": "Overlay background color",
+                            "type": "color",
+                            "default": "#FFFFFFB3",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGrid-overlay-background"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridOverlayHoverBackground",
+                            "label": "Overlay background color (hover)",
+                            "type": "color",
+                            "default": "#FFFFFFB3",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGrid-overlay-background-hover"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridOverlayTextHeight",
+                            "label": "Initial overlay height",
+                            "description": "This sets the initial height of the overlay bar.",
+                            "type": "size",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGrid-overlay-initial-height"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Blocks - Image Slider",
             "description": "Styles for the \"Image Slider\" block.",
             "sections": [
@@ -603,6 +751,108 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Slider-arrow-color--hover"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Promotional Bar",
+            "description": "Styles for the \"Promotional Bar\" block.",
+            "sections": [
+                {
+                    "name": "General",
+                    "fields": [
+                        {
+                            "name": "promoBarBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#f2f2f2",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-background"
+                            }
+                        },
+                        {
+                            "name": "promoBarPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "10px 0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-padding"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone links",
+                    "description": "If you have any phone links in the promotional bar, this will be the styles of the link text.",
+                    "fields": [
+                        {
+                            "name": "promoBarPhoneColor",
+                            "label": "Phone link color",
+                            "description": "If you have any phone links in the promotional bar, this will be the color of the link text.",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-phone-color"
+                            }
+                        },
+                        {
+                            "name": "promoBarPhoneColorHover",
+                            "label": "Phone link color (hover)",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-phone-color-hover"
+                            }
+                        },
+                        {
+                            "name": "promoBarPhoneTexTecoration",
+                            "label": "Phone link text decoration",
+                            "type": "textDecoration",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-phone-text-decoration"
+                            }
+                        },
+                        {
+                            "name": "promoBarPhoneTexTecorationHover",
+                            "label": "Phone link text decoration (hover)",
+                            "type": "textDecoration",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-phone-text-decoration-hover"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Widths",
+                    "description": "These are the widths of the columns in the promotional bar for large screens. On small screens they will be 100% width and stack.",
+                    "fields": [
+                        {
+                            "name": "promoBarCol1Width",
+                            "label": "Column 1 width",
+                            "type": "size",
+                            "default": "50%",
+                            "allowedUnits": ["%"],
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-col1-width"
+                            }
+                        },
+                        {
+                            "name": "promoBarCol2WidthLg",
+                            "label": "Column 2 width",
+                            "type": "size",
+                            "default": "50%",
+                            "allowedUnits": ["%"],
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--PromoBar-col2-width"
                             }
                         }
                     ]
@@ -876,6 +1126,106 @@
                     ]
                 },
                 {
+                    "name": "Alternate button 2",
+                    "fields": [
+                        {
+                            "name": "alt2ButtonBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#a21514",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-background"
+                            }
+                        },
+                        {
+                            "name": "alt2ButtonBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "default": "#7a0504",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-background-hover"
+                            }
+                        },
+                        {
+                            "name": "alt2ButtonTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "fontSizePreview": {
+                                "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                            },
+                            "color": {
+                                "default": "#333333"
+                            },
+                            "fontSize": {
+                                "default": "18px",
+                                "allowedUnits": ["px"]
+                            },
+                            "lineHeight": {
+                                "default": "1.4"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-typography"
+                            }
+                        },
+                        {
+                            "name": "alt2ButtonBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "default": "#333333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-border-color"
+                            }
+                        },
+                        {
+                            "name": "alt2ButtonBorderColorHover",
+                            "label": "Border color (hover)",
+                            "type": "color",
+                            "default": "#333333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-border-color-hover"
+                            }
+                        },
+                        {
+                            "name": "alt2ButtonBorderRadius",
+                            "label": "Border radius",
+                            "type": "borderRadius",
+                            "default": "4px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-border-radius"
+                            }
+                        },
+                        {
+                            "name": "alt2ButtonBorderWidth",
+                            "label": "Border width",
+                            "type": "size",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-border-width"
+                            }
+                        },
+                        {
+                            "name": "alt2ButtonPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "6px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Button-alt2-padding"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Size variants",
                     "fields": [
                         {
@@ -1084,7 +1434,7 @@
         {
             "name": "Forms",
             "description": "Styles for all forms on the website.",
-            "sections": [
+            "groups": [
                 {
                     "name": "Text Field",
                     "fields": [
@@ -1111,25 +1461,23 @@
                         {
                             "name": "textInputBorderRadius",
                             "label": "Border radius",
-                            "type": "stepper",
+                            "type": "borderRadius",
                             "after": "px",
                             "default": "1",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-borderRadius",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--TextInput-border-radius"
                             }
                         },
                         {
                             "name": "textInputBorderWidth",
                             "label": "Border width",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "1",
+                            "type": "size",
+                            "allowedUnits": ["px"],
+                            "default": "1px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-borderWidth",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--TextInput-border-width"
                             }
                         },
                         {
@@ -1139,31 +1487,17 @@
                             "default": "#777",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-borderColor"
+                                "cssVariable": "--TextInput-border-color"
                             }
                         },
                         {
-                            "name": "textInputPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "5",
+                            "name": "textInputPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "5px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--TextInput-paddingVertical",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "textInputPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "10",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--TextInput-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--TextInput-padding"
                             }
                         }
                     ]
@@ -1194,25 +1528,22 @@
                         {
                             "name": "selectInputBorderRadius",
                             "label": "Border radius",
-                            "type": "stepper",
-                            "after": "px",
+                            "type": "borderRadius",
                             "default": "1",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--SelectInput-borderRadius",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--SelectInput-border-radius"
                             }
                         },
                         {
                             "name": "selectInputBorderWidth",
                             "label": "Border width",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "1",
+                            "type": "size",
+                            "allowedUnits": ["px"],
+                            "default": "1px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--SelectInput-borderWidth",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--SelectInput-border-width"
                             }
                         },
                         {
@@ -1222,31 +1553,27 @@
                             "default": "#777",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--SelectInput-borderColor"
+                                "cssVariable": "--SelectInput-border-color"
                             }
                         },
                         {
-                            "name": "selectInputPaddingVertical",
+                            "name": "selectInputArrowColor",
+                            "label": "Arrow color",
+                            "type": "color",
+                            "default": "#777",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--SelectInput-arrow-color"
+                            }
+                        },
+                        {
+                            "name": "selectInputPadding",
                             "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "5",
+                            "type": "padding",
+                            "default": "5px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--SelectInput-paddingVertical",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "selectInputPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "10",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--SelectInput-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--SelectInput-padding"
                             }
                         }
                     ]
@@ -1255,73 +1582,32 @@
                     "name": "Field Labels",
                     "fields": [
                         {
-                            "name": "formLabelFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "18",
+                            "name": "formLabelTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useMargin": true,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--FormLabel-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "formLabelFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "400",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormLabel-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "formLabelLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.58",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormLabel-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "formLabelTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormLabel-textTransform"
-                            }
-                        },
-                        {
-                            "name": "formLabelMarginBottom",
-                            "label": "Bottom margin",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "5",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormLabel-marginBottom",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--FormLabel"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Required Asterisk",
+                    "name": "Required Fields",
                     "fields": [
+                        {
+                            "name": "formRequiredShowAsterisk",
+                            "label": "Show the \"*\" next to the field label for required fields",
+                            "type": "switch",
+                            "default": "yes",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormRequiredMessage-asterisk-display",
+                                "template": "{{ value == 'yes' ? 'inline' : 'none' }}"
+                            }
+                        },
                         {
                             "name": "formRequiredColor",
                             "label": "Color",
@@ -1331,6 +1617,35 @@
                                 "type": "css-head",
                                 "cssVariable": "--FormRequired-color"
                             }
+                        },
+                        {
+                            "name": "formRequiredShowMessage",
+                            "label": "Show the \"Required fields\" message below the form",
+                            "type": "switch",
+                            "default": "yes",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormRequiredMessage-display",
+                                "template": "{{ value == 'yes' ? 'block' : 'none' }}"
+                            }
+                        },
+                        {
+                            "name": "formRequiredMessageText",
+                            "label": "Required fields text",
+                            "description": "The text to show at the bottom of the form to explain what the asterix beside fields means.",
+                            "type": "text",
+                            "default": "* Required fields"
+                        },
+                        {
+                            "name": "formRequiredMessageTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useMargin": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--FormRequiredMessage"
+                            }
                         }
                     ]
                 },
@@ -1338,68 +1653,57 @@
                     "name": "Field Descriptions",
                     "fields": [
                         {
-                            "name": "formDescriptionFontSize",
+                            "name": "formDescriptionTypography",
                             "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "14",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useMargin": true,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--FormDescription-fontSize",
-                                "template": "{{ value / 10 }}rem"
+                                "cssVariable": "--FormDescription"
                             }
-                        },
+                        }
+                    ]
+                },
+                {
+                    "name": "Button",
+                    "fields": [
                         {
-                            "name": "formDescriptionFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "400",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormDescription-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "formDescriptionLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.58",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormDescription-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "formDescriptionTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
+                            "name": "formButtonSize",
+                            "label": "Button size",
+                            "type": "radio",
+                            "default": "default",
                             "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormDescription-textTransform"
+                                "default": "Default",
+                                "sm": "Small",
+                                "lg": "Large"
                             }
                         },
                         {
-                            "name": "formDescriptionFontStyle",
-                            "label": "Font style",
-                            "type": "select",
+                            "name": "formButtonStyle",
+                            "label": "Button style",
+                            "type": "radio",
+                            "default": "default",
                             "options": {
-                                "normal": "Normal",
-                                "italic": "Italic"
-                            },
+                                "default": "Default",
+                                "alt": "Alternate 1",
+                                "alt2": "Alternate 2"
+                            }
+                        },
+                        {
+                            "name": "formButtonAlign",
+                            "label": "Button alignment",
+                            "type": "textAlign",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--FormDescription-fontStyle"
+                                "cssVariable": "--FormButton-text-align"
                             }
+                        },
+                        {
+                            "name": "formButtonFullWidthSmallScreens",
+                            "label": "Have the button be full width on small screens",
+                            "type": "switch",
+                            "default": "yes"
                         }
                     ]
                 },
@@ -1407,57 +1711,6 @@
                     "name": "Form Overlay",
                     "description": "Styles for the overlay which pops up on a form submission.",
                     "fields": [
-                        {
-                            "name": "formOverlayFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "30",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormOverlay-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "formOverlayFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "700",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormOverlay-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "formOverlayLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "2",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormOverlay-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "formOverlayTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--FormOverlay-textTransform"
-                            }
-                        },
                         {
                             "name": "formOverlayBackground",
                             "label": "Background color",
@@ -1469,13 +1722,21 @@
                             }
                         },
                         {
-                            "name": "formOverlayColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#fff",
+                            "name": "formOverlayTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextShadow": true,
+                            "useTextAlign": false,
+                            "color": {
+                                "default": "#fff"
+                            },
+                            "textShadow": {
+                                "default": "0 1px 2px rgba(0, 0, 0, 0.5)"
+                            },
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--FormOverlay-color"
+                                "cssVariable": "--FormOverlay"
                             }
                         }
                     ]
@@ -1496,31 +1757,6 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Header-background"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Hamburger Menu",
-                    "fields": [
-                        {
-                            "name": "hamburgerMenuColor",
-                            "label": "Color",
-                            "type": "color",
-                            "default": "#464646",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--HamburgerMenu-color"
-                            }
-                        },
-                        {
-                            "name": "hamburgerMenuColorHover",
-                            "label": "Hover color",
-                            "type": "color",
-                            "default": "#000",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--HamburgerMenu-colorHover"
                             }
                         }
                     ]
@@ -1582,56 +1818,6 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Header-buttonBorderColorHover"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Drop shadows",
-                    "description": "The shadow below the header.",
-                    "fields": [
-                        {
-                            "name": "headerDropShadowOffsetX",
-                            "label": "Offset X",
-                            "type": "stepper",
-                            "allowNegative": true,
-                            "after": "px",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Header-dropShadow-offsetX",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "headerDropShadowOffsetY",
-                            "label": "Offset Y",
-                            "type": "stepper",
-                            "allowNegative": true,
-                            "after": "px",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Header-dropShadow-offsetY",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "headerDropShadowBlurRadius",
-                            "label": "Blur Radius",
-                            "type": "stepper",
-                            "after": "px",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Header-dropShadow-blurRadius",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "headerDropShadowColor",
-                            "label": "Color",
-                            "type": "color",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Header-dropShadow-color"
                             }
                         }
                     ]
@@ -1803,18 +1989,31 @@
             "description": "Styles for the main website navigation.",
             "sections": [
                 {
+                    "name": "Display",
+                    "fields": [
+                        {
+                            "name": "mainNavHideWidth",
+                            "label": "Hide the navigation on screens smaller than",
+                            "type": "size",
+                            "default": "700px",
+                            "preview": {
+                                "type": "css-head",
+                                "template": "{% if value.size %}@media (min-width: {{ value.size }}{{ value.unit }}) { .MainNav {display: flex; flex-direction: row;} }{% endif %}"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Items",
                     "fields": [
                         {
                             "name": "mainNavItemGap",
                             "label": "Gap between items",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "10",
+                            "type": "size",
+                            "default": "10px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-item-gap",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--MainNav-item-gap"
                             }
                         },
                         {
@@ -1829,84 +2028,26 @@
                             }
                         },
                         {
-                            "name": "mainNavItemPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
+                            "name": "mainNavItemPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "6px 25px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingVertical",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--MainNav-item-padding",
+                                "config": {
+                                    "combine": false
+                                }
                             }
                         },
                         {
-                            "name": "mainNavItemPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "25",
+                            "name": "mainNavItemPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "default": "6px 25px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingHorizontal",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemPaddingVerticalSm",
-                            "label": "Vertical padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "10",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingVertical--sm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemPaddingHorizontalSm",
-                            "label": "Horizontal padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "25",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-item-paddingHorizontal--sm",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "400",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-item-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "mainNavItemLetterSpacing",
-                            "label": "Letter spacing",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-item-letterSpacing",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "mainNavLinkBackgroundHover",
-                            "label": "Background color (hover)",
-                            "type": "color",
-                            "default": "#00000000",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--MainNav-link-background--hover"
+                                "cssVariable": "--MainNav-item-padding-sm"
                             }
                         },
                         {
@@ -1917,6 +2058,16 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--MainNav-link-background"
+                            }
+                        },
+                        {
+                            "name": "mainNavLinkBackgroundHover",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "default": "#00000000",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-link-background--hover"
                             }
                         }
                     ]
@@ -1931,39 +2082,33 @@
                     "name": "General",
                     "fields": [
                         {
-                            "name": "dropdownPaddingVertical",
+                            "name": "dropdownPadding",
                             "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
+                            "type": "padding",
                             "default": "0",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-paddingVertical",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-padding"
                             }
                         },
                         {
                             "name": "dropdownMinWidth",
                             "label": "Minimum width",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "220",
+                            "type": "size",
+                            "default": "220px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-minWidth",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-min-width"
                             }
                         },
                         {
                             "name": "dropdownMaxWidth",
                             "label": "Maximum width",
-                            "type": "stepper",
-                            "after": "px",
+                            "type": "size",
                             "default": "300",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-maxWidth",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-max-width"
                             }
                         },
                         {
@@ -1996,104 +2141,15 @@
                     "name": "Links",
                     "fields": [
                         {
-                            "name": "dropdownFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "17",
+                            "name": "driopdownTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "usePadding": true,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "dropdownFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "400",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "dropdownLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.58",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "dropdownTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-textTransform"
-                            }
-                        },
-                        {
-                            "name": "dropdownTextAlign",
-                            "label": "Text alignment",
-                            "type": "select",
-                            "default": "center",
-                            "options": {
-                                "left": "Left",
-                                "center": "Center"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-textAlign"
-                            }
-                        },
-                        {
-                            "name": "dropdownLinkLetterSpacing",
-                            "label": "Letter spacing",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "0",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-letterSpacing",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "dropdownLinkPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "12",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-paddingVertical",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "dropdownLinkPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "30",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Dropdown-link-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Dropdown-link"
                             }
                         },
                         {
@@ -2128,7 +2184,7 @@
                             "default": "#600303",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-background--hover"
+                                "cssVariable": "--Dropdown-link-background-hover"
                             }
                         },
                         {
@@ -2138,7 +2194,7 @@
                             "default": "#fff",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-color--hover"
+                                "cssVariable": "--Dropdown-link-color-hover"
                             }
                         }
                     ]
@@ -2153,7 +2209,7 @@
                             "default": "#6c9d41",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-background--sm"
+                                "cssVariable": "--Dropdown-link-background-sm"
                             }
                         },
                         {
@@ -2163,7 +2219,7 @@
                             "default": "#fff",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Dropdown-link-color--sm"
+                                "cssVariable": "--Dropdown-link-color-sm"
                             }
                         }
                     ]
@@ -2172,80 +2228,360 @@
         },
         {
             "name": "Main Navigation - Menu Button",
-            "description": "Styles for the hamburger menu button seen on small screens.",
+            "description": "Styles for the hamburger menu button.",
             "fields": [
                 {
-                    "name": "smScBtnBackground",
-                    "label": "Background color",
-                    "type": "color",
-                    "default": "#0000001a",
+                    "name": "hamburgerMenuNavigationGap",
+                    "label": "Space between the main navigation and the hamburger menu",
+                    "type": "size",
+                    "default": "20px",
                     "preview": {
                         "type": "css-head",
-                        "cssVariable": "--SmScBtn-background"
+                        "cssVariable": "--Header-navigation-menu-gap"
                     }
                 },
                 {
-                    "name": "smScBtnColor",
-                    "label": "Hamburger color",
+                    "name": "hamburgerMenuColor",
+                    "label": "Color",
                     "type": "color",
-                    "default": "#fff",
+                    "default": "#464646",
                     "preview": {
                         "type": "css-head",
-                        "cssVariable": "--SmScBtn-color"
+                        "cssVariable": "--HamburgerMenu-color"
+                    }
+                },
+                {
+                    "name": "hamburgerMenuColorHover",
+                    "label": "Hover color",
+                    "type": "color",
+                    "default": "#000",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--HamburgerMenu-colorHover"
                     }
                 }
             ]
         },
         {
-            "name": "Menu navigation",
-            "description": "Styles for the popout menu navitation.",
+            "name": "Pop out menu",
+            "description": "Styles for the popout menu.",
             "groups": [
                 {
-                    "name": "Drop shadows",
-                    "description": "The shadow on the hamburger menu.",
+                    "name": "General display",
                     "fields": [
+                        {
+                            "name": "menuBackgroundColor",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#fff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-background-color"
+                            }
+                        },
+                        {
+                            "name": "menuWidth",
+                            "label": "Width",
+                            "type": "size",
+                            "default": "500px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-width"
+                            }
+                        },
+                        {
+                            "name": "menuPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "default": "40px 35px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-padding"
+                            }
+                        },
+                        {
+                            "name": "menuPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "default": "20",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-padding-sm"
+                            }
+                        },
                         {
                             "name": "menuDropShadowOffsetX",
                             "label": "Offset X",
-                            "type": "stepper",
-                            "allowNegative": true,
-                            "after": "px",
+                            "type": "size",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Menu-dropShadow-offsetX",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Menu-drop-shadow-offset-x"
                             }
                         },
                         {
                             "name": "menuDropShadowOffsetY",
                             "label": "Offset Y",
-                            "type": "stepper",
+                            "type": "size",
                             "allowNegative": true,
-                            "after": "px",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Menu-dropShadow-offsetY",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Menu-drop-shadow-offset-x"
                             }
                         },
                         {
                             "name": "menuDropShadowBlurRadius",
                             "label": "Blur Radius",
-                            "type": "stepper",
-                            "after": "px",
+                            "type": "size",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Menu-dropShadow-blurRadius",
-                                "template": "{{ value }}px"
+                                "cssVariable": "--Menu-drop-shadow-blur-radius"
                             }
                         },
                         {
-                            "name": "menuDropShadowColor",
+                            "name": "menu-drop-shadow-color",
                             "label": "Color",
                             "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Menu-dropShadow-color"
+                                "cssVariable": "--Menu-drop-shadow-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Top section",
+                    "description": "These are for the top of the menu where the close button and logo is.",
+                    "fields": [
+                        {
+                            "name": "menuTopMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "default": "0 0 10px 0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-top-margin"
+                            }
+                        },
+                        {
+                            "name": "menuCloseButtonColor",
+                            "label": "Close button color",
+                            "type": "color",
+                            "default": "#333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-close-button-color"
+                            }
+                        },
+                        {
+                            "name": "menuCloseButtonColorHover",
+                            "label": "Close button color (hover)",
+                            "type": "color",
+                            "default": "#333",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-close-button-color-hover"
+                            }
+                        },
+                        {
+                            "name": "menuCloseButtonSize",
+                            "label": "Close button size",
+                            "type": "size",
+                            "default": "40px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-close-button-size"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Navigation menu",
+                    "fields": [
+                        {
+                            "name": "menuNavigationMargin",
+                            "label": "Margin around the menu",
+                            "type": "margin",
+                            "default": "0 0 20px 0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-navigation-margin"
+                            }
+                        },
+                        {
+                            "name": "menuNavigationListStyle",
+                            "label": "List style",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "None",
+                                "disc": "Disc",
+                                "circle": "Circle",
+                                "square": "Square"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-navigation-list-style"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Navigation links",
+                    "fields": [
+                        {
+                            "name": "menuNavigationTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useSpacing": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-navigation-item"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Sub navigation menu",
+                    "fields": [
+                        {
+                            "name": "menuSubNavigationMargin",
+                            "label": "Margin around the sub navigation menu",
+                            "type": "margin",
+                            "default": "0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-sub-navigation-margin"
+                            }
+                        },
+                        {
+                            "name": "menuSubNavigationListStyle",
+                            "label": "List style",
+                            "type": "select",
+                            "default": "none",
+                            "options": {
+                                "none": "None",
+                                "disc": "Disc",
+                                "circle": "Circle",
+                                "square": "Square"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-sub-navigation-list-style"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Sub Navigation links",
+                    "fields": [
+                        {
+                            "name": "menuSubNavigationTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useSpacing": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-sub-navigation-item"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Button below navigation",
+                    "fields": [
+                        {
+                            "name": "menuButtonMargin",
+                            "label": "Margin around the button",
+                            "type": "margin",
+                            "default": "0 0 45px 0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-button-margin"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Text above phone number",
+                    "fields": [
+                        {
+                            "name": "menuPhoneTextTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-phone-text"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone number",
+                    "fields": [
+                        {
+                            "name": "menuPhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-phone"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Social icons at the bottom of the menu",
+                    "fields": [
+                        {
+                            "name": "menuShowSocial",
+                            "label": "Show social icons",
+                            "type": "switch",
+                            "default": "yes"
+                        },
+                        {
+                            "name": "menuSocialIconGap",
+                            "label": "Space between icons",
+                            "type": "size",
+                            "default": "15px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-social-icon-gap"
+                            }
+                        },
+                        {
+                            "name": "menuSocialIconMargin",
+                            "label": "Margin around icons",
+                            "type": "margin",
+                            "default": "10px 0 0 0",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-social-icon-margin"
+                            }
+                        },
+                        {
+                            "name": "menuSocialIconTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useFontFamily": false,
+                            "useFontWeight": false,
+                            "useLetterSpacing": false,
+                            "useLineHeight": false,
+                            "useFontStyle": false,
+                            "useTextDecoration": false,
+                            "useTextTransform": false,
+                            "textAlign": {
+                                "default": "center"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-social-icon"
                             }
                         }
                     ]

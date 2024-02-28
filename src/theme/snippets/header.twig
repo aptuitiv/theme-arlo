@@ -38,7 +38,7 @@
     {{ _api.widgets.collection.get('notifications') }}
     <header id="top" class="HeaderWrap js-stickyHeader">
         <div class="HeaderBar{% if _core.theme.settings.headerBarWidth == 'contained' %} HeaderBar--contained{% endif %}">
-            <div class="Container">
+            <div class="Container Container--pad">
                 <div class="HeaderBar-inner">
                     <div class="HeaderBar-navigation">{{ _api.navigation.get.key('header-bar') }}</div>
                     <div class="HeaderBar-contact">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="Header{% if _core.theme.settings.headerWidth == 'contained' %} Header--contained{% endif %}">
-            <div class="Container">
+            <div class="Container Container--pad">
                 <div class="Header-inner">
                     <div class="Header-logoWrapper">
                         {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
@@ -65,42 +65,55 @@
                             {% set _core.theme.settings.headerButton.class = 'Button Header-button' %}
                             {{_core.theme.settings.headerButton.tag}}
                         {% endif %}
-                    </div>
-                    <div class="Header-hamburger">
-                        <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
-                            <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
-                        </button>
+                        <div class="Header-hamburger">
+                            <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
+                                <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="Menu">
-            <div class="Menu-top">
-                <div class="Menu-logoWrapper">
-                    <a href="/">
-                        {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
-                        {% set _core.theme.settings.headerLogo.class = "Header-logo" %}
-                        {{ _core.theme.settings.headerLogo.tag }}
-                    </a>
-                </div>
-                <div class="Menu-closeWrapper">
-                    <button class="Menu-close js-menuCloseBtn">
-                        <svg class="Menu-icon Icon"><use xlink:href="#icon-close" /></svg>
-                    </button>
-                </div>
+        <div class="Menu is-closed">
+            <div class="Menu-top{% if not _core.theme.settings.menuLogo %} Menu-top--noLogo{% endif %}">
+                {% if _core.theme.settings.menuLogo %}
+                    {% do _core.theme.settings.menuLogo.alt.default(_core.settings.companyName) %}
+                    {% set _core.theme.settings.menuLogo.class = "Menu-logo" %}
+                    {% do _core.theme.settings.menuLogo.resize(_core.theme.settings.menuLogoWidth.size + 100) %}
+                    <a href="/" aria-label="Go to home page">{{ _core.theme.settings.menuLogo.tag }}</a>
+                {% endif %}
+                <button class="Menu-close js-menuCloseBtn">
+                    <svg class="Menu-icon Icon"><use xlink:href="#icon-close" /></svg>
+                </button>
             </div>
             <div class="Menu-navWrapper">
-                {{ _api.navigation.get.key('menu') }}
+                {{ _api.navigation.get.key('pop-out-menu') }}
             </div>
-            <div class="Menu-buttons">
-                <a href="{{ _core.theme.settings.headerButtonLink }}" class="Button Header-button">{{ _core.theme.settings.headerButtonText }}</a>
-            </div>
+            {% if _core.theme.settings.menuButton %}
+                <div class="Menu-buttons">
+                    {% set _core.theme.settings.menuButton.class = 'Button Menu-button' %}
+                    {{_core.theme.settings.menuButton.tag}}
+                </div>
+            {% endif %}
             <div class="Menu-phone">
                 {% if _core.theme.settings.menuPhoneText %}
                     <div class="Menu-phoneText">{{ _core.theme.settings.menuPhoneText }}</div>
                 {% endif %}
                 <a class="Menu-phoneLink" href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}">{{ _core.settings.companyPhone }}</a>
             </div>
+            {% if _core.theme.settings.menuShowSocial %}
+                {% if _core.theme.settings.social|first.url %}
+                    <div class="Menu-social">
+                        {% import 'macros/macros' as macros %}
+                        {% set socialNames = {facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', pinterest: 'Pinterest', twitter: 'Twitter', youtube: 'YouTube'} %}
+                        {% for social in _core.theme.settings.social %}
+                            <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopenner noreferrer" class="Menu-socialLink">
+                                {{ macros.iconImg(social.icon, attribute(socialNames, social.icon)|default(social.icon), "Menu-socialIcon") }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
         </div>
         <div class="js-stickyHeaderBoundary"></div>
     </header>

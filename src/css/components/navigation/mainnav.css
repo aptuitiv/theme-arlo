@@ -2,33 +2,12 @@
     Main Navigation
 \* =========================================================================== */
 
-/* :root {
-    --MainNav-fontFamily: inherit;
-    --MainNav-fontSize: 1.6rem;
-    --MainNav-lineHeight: 1.2;
-    --MainNav-textTransform: uppercase;
-
-    --MainNav-item-gap: 10px;
-    --MainNav-item-paddingVertical: 0;
-    --MainNav-item-paddingHorizontal: 25px;
-    --MainNav-item-paddingVertical--sm: 10px;
-    --MainNav-item-paddingHorizontal--sm: 25px;
-    --MainNav-item-fontWeight: 400;
-    --MainNav-item-letterSpacing: 0;
-
-    --MainNav-link-background: transparent;
-    --MainNav-link-color: #00263E;
-
-    --MainNav-link-background--hover: transparent;
-    --MainNav-link-color--hover: #6AAC44;
-} */
-
 /* @define MainNav */
 .MainNav {
     align-items: center;
     box-sizing: border-box;
     display: none;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     gap: var(--MainNav-item-gap);
     justify-content: center;
     list-style: none;
@@ -51,7 +30,7 @@
     box-sizing: border-box;
     color: var(--MainNav-color, #333);
     display: block;
-    padding: var(--MainNav-item-paddingVertical--sm) var(--MainNav-item-paddingHorizontal--sm);
+    padding: var(--MainNav-item-padding-sm);
     position: relative;
     text-align: var(--MainNav-text-align);
     text-decoration: var(--MainNav-text-decoration, none);
@@ -71,18 +50,13 @@
 \* ------------------------------------ */
 
 @media (--c-bp-xl) {
-    .MainNav {
-        display: flex;
-        flex-direction: row;
-        margin: 0;
-    }
-
     .MainNav-item {
         width: unset;
     }
 
     .MainNav-link {
-        padding: var(--MainNav-item-paddingVertical) var(--MainNav-item-paddingHorizontal);
+        padding: var(--MainNav-item-padding-top, 0) var(--MainNav-item-padding-right, 0)
+            var(--MainNav-item-padding-bottom, 0) var(--MainNav-item-padding-left, 0);
     }
 
     .MainNav-item--small {

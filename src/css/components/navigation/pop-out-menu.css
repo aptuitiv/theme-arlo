@@ -1,0 +1,74 @@
+/* =========================================================================== *\
+    [Hamburger] Menu Styles
+\* =========================================================================== */
+
+/* @define MenuNav */
+
+.MenuNav {
+    list-style: var(--Menu-navigation-list-style, none);
+    margin: var(--Menu-navigation-margin, 0 0 20px 0);
+    padding: 0;
+}
+
+.MenuNav-item {
+    margin: var(--Menu-navigation-item-margin, 0);
+    padding: var(--Menu-navigation-item-padding, 0);
+}
+
+.MenuNav-link {
+    color: var(--Menu-navigation-item-color, #333);
+    display: block;
+    font-family: var(--Menu-navigation-item-font-family);
+    font-size: var(--Menu-navigation-item-font-size, 1.5rem);
+    font-style: var(--Menu-navigation-item-font-style);
+    font-weight: var(--Menu-navigation-item-font-weight, 700);
+    letter-spacing: var(--Menu-navigation-item-letter-spacing);
+    line-height: var(--Menu-navigation-item-line-height, 1.58);
+    margin: var(--Menu-navigation-item-margin, 2px 0);
+    padding: var(--Menu-navigation-item-padding, 0);
+    text-align: var(--Menu-navigation-item-text-align);
+    text-decoration: var(--Menu-navigation-item-text-decoration, none);
+    text-transform: var(--Menu-navigation-item-text-transform);
+}
+
+.MenuNav-link:hover {
+    color: var(--Menu-navigation-item-color-hover, var(--Menu-navigation-item-color));
+    font-style: var(--Menu-navigation-item-font-style-hover, var(--Menu-navigation-item-font-style));
+    text-decoration: var(--Menu-navigation-item-text-decoration-hover, var(--Menu-navigation-item-text-decoration));
+}
+
+.MenuNav-sub {
+    list-style: var(--Menu-sub-navigation-list-style, none);
+    margin: var(--Menu-sub-navigation-margin, 0);
+    padding: 0;
+}
+
+.MenuNav-sub .MenuNav-item {
+    margin: var(--Menu-sub-navigation-item-margin, 0);
+    padding: var(--Menu-sub-navigation-item-padding, 0);
+}
+
+.MenuNav-sub .MenuNav-link {
+    color: var(--Menu-sub-navigation-item-color, #333);
+    display: block;
+    font-family: var(--Menu-sub-navigation-item-font-family);
+    font-size: var(--Menu-sub-navigation-item-font-size, 1.5rem);
+    font-style: var(--Menu-sub-navigation-item-font-style);
+    font-weight: var(--Menu-sub-navigation-item-font-weight, 700);
+    letter-spacing: var(--Menu-sub-navigation-item-letter-spacing);
+    line-height: var(--Menu-sub-navigation-item-line-height, 1.58);
+    margin: var(--Menu-sub-navigation-item-margin, 2px 0);
+    padding: var(--Menu-sub-navigation-item-padding, 0);
+    text-align: var(--Menu-sub-navigation-item-text-align);
+    text-decoration: var(--Menu-sub-navigation-item-padding, none);
+    text-transform: var(--Menu-sub-navigation-item-text-transform);
+}
+
+.MenuNav-sub .MenuNav-link:hover {
+    color: var(--Menu-sub-navigation-item-color-hover, var(--Menu-sub-navigation-item-color));
+    font-style: var(--Menu-sub-navigation-item-font-style-hover, var(--Menu-sub-navigation-item-font-style));
+    text-decoration: var(
+        --Menu-sub-navigation-item-text-decoration-hover,
+        var(--Menu-sub-navigation-item-text-decoration)
+    );
+}

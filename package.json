@@ -30,6 +30,7 @@
         "build": "aptuitiv-build build",
         "copy": "aptuitiv-build copy",
         "css": "aptuitiv-build css",
+        "deploy": "aptuitiv-build upload -t",
         "download-theme": "aptuitiv-build download -t",
         "export": "aptuitiv-build export",
         "fonts": "aptuitiv-build push-fonts",

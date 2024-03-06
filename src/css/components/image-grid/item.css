@@ -152,6 +152,7 @@
     font-size: var(--ImageGridItem-hover-text-font-size, inherit);
     font-style: var(--ImageGridItem-hover-text-font-style);
     font-weight: var(--ImageGridItem-hover-text-font-weight, 700);
+    height: 0;
     letter-spacing: var(--ImageGridItem-hover-text-letter-spacing);
     line-height: var(--ImageGridItem-hover-text-line-height, inherit);
     margin: var(--ImageGridItem-hover-text-margin, 0);
@@ -164,6 +165,7 @@
 }
 
 .ImageGridItem:hover .ImageGridItem-hoverText {
+    height: auto;
     opacity: 1;
 }
 

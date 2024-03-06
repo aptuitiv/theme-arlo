@@ -61,13 +61,13 @@
                 {% set item.link.id = random_string(8) %}
             {% endif %}
             {% set item.link.role = 'menuitem' %}
-            
+
             {% if item.link.href == '#' %}
                 <span class="{{ item.link.class }}">{{ item.link.text }}</span>
             {% else %}
                 {{ item.link.tag }}
             {% endif %}
-            
+
             {% if item.subItems %}
                 {# Set the item as the first sub item's parent to be used to optionaly duplicate it as the first item in the dropdown #}
                 {% set item.subItems.0.parent = item %}
@@ -75,4 +75,12 @@
             {% endif %}
         </li>
     {% endfor %}
+    {# Output the header button as part of the navigation so that it displays correctly #}
+    {% if _core.theme.settings.headerButton %}
+        <li class="MainNav-item " role="presentation">
+            {% set _core.theme.settings.headerButton.class = 'Button Header-button js-navLink' %}
+            {% set _core.theme.settings.headerButton.role = 'menuitem' %}
+            {{_core.theme.settings.headerButton.tag}}
+        </li>
+    {% endif %}
 </ul>

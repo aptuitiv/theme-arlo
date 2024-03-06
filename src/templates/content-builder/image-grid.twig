@@ -62,45 +62,65 @@
         {% endif %}
     {% endif %}
 
-    {% macro textAboveBelow(column, position) %}
-        {% if column.title && _core.theme.settings.blockImageGridTextPosition == position %}
-            <span class="ImageGrid-title">{{ column.title }}</span>
+    {# Set the text position #}
+    {% set cbePositionValues = {'Above image': 'above', 'Bottom of image': 'bottom', 'Center of image': 'center', 'Below image': 'below'} %}
+    {% if titleTextPosition == 'Site default' %}
+        {% set titleTextPosition = _core.theme.settings.blockImageGridDefaultTitleTextPosition %}
+    {% else %}
+        {# Convert the CBE field to the short text. CBE fields don't currently support value->label, the values are the same as the label #}
+        {% set titleTextPosition = attribute(cbePositionValues, titleTextPosition) ?? titleTextPosition %}
+    {% endif %}
+
+    {#
+     # Get the text that is above or below the image
+     # column (array) The column data
+     # positionSetting (string) The position setting either from theme settings or the block settings
+     # position (string) The position to test against
+     #}
+    {% macro textAboveBelow(column, positionSetting, position) %}
+        {% if column.title && positionSetting == position %}
+            <div class="ImageGridItem-title{{ positionSetting|pascal }}">{{ column.title }}</div>
         {% endif %}
     {% endmacro %}
 
-    {% macro textOnImage(column) %}
-        {% if column.title && _core.theme.settings.blockImageGridTextPosition in ['bottom', 'center'] %}
-            <span class="ImageGrid-overlay ImageGrid-overlay--{{ _core.theme.settings.blockImageGridTextPosition }}">
-                <span class="ImageGrid-title">{{ column.title }}</span>
+    {#
+     # Get the text that is on the image
+     # column (array) The column data
+     # positionSetting (string) The position setting either from theme settings or the block settings
+     #}
+    {% macro textOnImage(column, positionSetting) %}
+        {% if column.title && positionSetting in ['bottom', 'center'] %}
+            <div class="ImageGridItem-overlay"></div>
+            <div class="ImageGridItem-overlayContent ImageGridItem-overlayContent--{{ positionSetting }}">
+                <div class="ImageGridItem-title{{ positionSetting|pascal }}">{{ column.title }}</div>
                 {% if column.hoverText %}
-                    <span class="ImageGrid-hoverText">{{ column.hoverText }}</span>
+                    <div class="ImageGridItem-hoverText">{{ column.hoverText }}</div>
                 {% endif %}
-            </span>
+            </div>
         {% endif %}
     {% endmacro %}
 
+    {# Build the image grid item #}
     <div class="Container Container--pad">
-        <div class="grid g-2">
+        <div class="ImageGrid grid">
             {% for column in columns %}
                 <div class="{{ class }}">
-                    {% if column.link %}<a href="{{ column.link }}" class="ImageGrid-container">{% else %}<div class="ImageGrid-container">{% endif %}
-                    {{ _self.textAboveBelow(column, 'above') }}
+                    {% if column.link %}<a href="{{ column.link }}" class="ImageGridItem">{% else %}<div class="ImageGridItem">{% endif %}
+                    {{ _self.textAboveBelow(column, titleTextPosition, 'above') }}
                     {% if column.image %}
                         {% set column.image.class = "w-100" %}
                         {% do column.image.alt.default(column.title) %}
                         {% do column.image.crop(imageAspectRatio) %}
                         {% do column.image.lazy() %}
 
-                        <div class="ImageGrid-image">
+                        <div class="ImageGridItem-image">
                             {{ column.image.tag }}
-                            {{ _self.textOnImage(column) }}
+                            {{ _self.textOnImage(column, titleTextPosition) }}
                         </div>
-
-                        {# <span class="flex aspect-{{ imageAspectRatio|replace('x', '-') }}">{{ column.image.tag }}</span> #}
                     {% endif %}
-                    {{ _self.textAboveBelow(column, 'below') }}
+                    {{ _self.textAboveBelow(column, titleTextPosition, 'below') }}
                     {% if column.content %}
-                        <div class="ImageGrid-content">{{ column.content }}</div>
+                        <div class="ImageGridItem-content">{{ column.content }}</div>
                     {% endif %}
                     {% if column.link %}</a>{% else %}</div>{% endif %}
                 </div>

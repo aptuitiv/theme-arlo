@@ -18,6 +18,15 @@
                             }
                         },
                         {
+                            "name": "bannerTextShadow",
+                            "label": "Text shadow",
+                            "type": "textShadow",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-text-shadow"
+                            }
+                        },
+                        {
                             "name": "bannerBackgroundOverlay",
                             "label": "Overlay color",
                             "type": "color",
@@ -449,6 +458,155 @@
             ]
         },
         {
+            "name": "Blocks - Google Ratings Bar",
+            "description": "Styles for the \"Google Ratings Bar\" block.",
+            "fields": [
+                {
+                    "name": "blockGoogleRatingsBarBackground",
+                    "label": "Background color",
+                    "type": "color",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--GoogleRatingBar-background"
+                    }
+                },
+                {
+                    "name": "blockGoogleRatingsBarPadding",
+                    "label": "Padding",
+                    "type": "padding",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--GoogleRatingBar-padding"
+                    }
+                },
+                {
+                    "name": "blockGoogleRatingsBarTypography",
+                    "label": "Overall typography",
+                    "type": "typography",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--GoogleRatingBar"
+                    }
+                },
+                {
+                    "name": "blockGoogleRatingsBarCompanyNameTypography",
+                    "label": "Company name typography",
+                    "type": "typography",
+                    "useTextAlign": false,
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--GoogleRatingBar-company"
+                    }
+                },
+                {
+                    "name": "blockGoogleRatingsBarRatingTypography",
+                    "label": "Rating typography",
+                    "description": "Styles for the average rating, total number of stars, and total number of reviews",
+                    "type": "typography",
+                    "useTextAlign": false,
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--GoogleRatingBar-rating"
+                    }
+                },
+                {
+                    "name": "blockGoogleRatingsBarStarsTypography",
+                    "label": "Stars typography",
+                    "description": "Styles for the stars and the average rating text before the stars",
+                    "type": "typography",
+                    "useTextAlign": false,
+                    "usePadding": true,
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--GoogleRatingBar-stars"
+                    }
+                },
+                {
+                    "name": "blockGoogleRatingsBarLinkTypography",
+                    "label": "Reviews link typography",
+                    "description": "Styles for the link text to view reviews",
+                    "type": "typography",
+                    "useTextAlign": false,
+                    "useHover": true,
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--GoogleRatingBar-link"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Image Bar",
+            "description": "Styles for the \"Image Grid\" block.",
+            "fields": [
+                {
+                    "name": "blockImageBarWidth",
+                    "label": "Width",
+                    "type": "select",
+                    "options": {
+                        "contained": "Same width as the content",
+                        "full": "Full width"
+                    }
+                },
+                {
+                    "name": "blockImageBarImageGrayscale",
+                    "label": "Display the images as grayscale until hover",
+                    "type": "switch"
+                },
+                {
+                    "name": "blockImageBarGap",
+                    "label": "Gap between images",
+                    "type": "size",
+                    "default": "30px",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageBar-gap"
+                    }
+                },
+                {
+                    "name": "blockImageBarGapSm",
+                    "label": "Gap between images (small screens)",
+                    "type": "size",
+                    "default": "10px",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageBar-gap-sm"
+                    }
+                },
+                {
+                    "name": "blockImageBarImageMaxHeight",
+                    "label": "Maximum height of images",
+                    "type": "size",
+                    "allowAuto": true,
+                    "default": "auto",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageBar-image-max-height"
+                    }
+                },
+                {
+                    "name": "blockImageBarMargin",
+                    "label": "Margin",
+                    "type": "margin",
+                    "default": "0 20px",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageBar-margin"
+                    }
+                },
+                {
+                    "name": "blockImageBarPadding",
+                    "label": "Padding",
+                    "type": "padding",
+                    "default": "0 20px",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--ImageBar-padding"
+                    }
+                }
+            ]
+        },
+        {
             "name": "Blocks - Image Grid",
             "description": "Styles for the \"Image Grid\" block.",
             "groups": [
@@ -456,13 +614,13 @@
                     "name": "General styles",
                     "fields": [
                         {
-                            "name": "blockImageGridTextPosition",
-                            "label": "Text position",
+                            "name": "blockImageGridDefaultTitleTextPosition",
+                            "label": "Default title text position",
                             "type": "select",
                             "options": {
                                 "above": "Above image",
-                                "bottom": "Bottom of image",
                                 "center": "Center on image",
+                                "bottom": "Bottom of image",
                                 "below": "Below image"
                             }
                         },
@@ -495,14 +653,26 @@
                                 "7x3": "7:3",
                                 "3x1": "3:1"
                             }
+                        },
+                        {
+                            "name": "blockImageGridGap",
+                            "label": "Gap between columns",
+                            "type": "size",
+                            "default": "20px",
+                            "preview": {
+                                "type": "css-head",
+                                "selector": ".ImageGrid",
+                                "cssVariable": "--ImageGrid-gap"
+                            }
                         }
                     ]
                 },
                 {
-                    "name": "Title text styles",
+                    "name": "Title text above image styles",
+                    "description": "Styles for when the title is displayed above the image",
                     "fields": [
                         {
-                            "name": "blockImageGridTextypography",
+                            "name": "blockImageGridTextAboveTypography",
                             "label": "Text styles",
                             "type": "typography",
                             "collapsable": false,
@@ -510,7 +680,106 @@
                             "useHover": true,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageGrid-title"
+                                "cssVariable": "--ImageGridItem-title-above"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Title text below image styles",
+                    "description": "Styles for when the title is displayed below the image",
+                    "fields": [
+                        {
+                            "name": "blockImageGridTextBelowTypography",
+                            "label": "Text styles",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useSpacing": true,
+                            "useHover": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGridItem-title-below"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Title text centered on image styles",
+                    "description": "Styles for when the title is displayed centered on top of the image",
+                    "fields": [
+                        {
+                            "name": "blockImageGridTextCenterTypography",
+                            "label": "Text styles",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useSpacing": true,
+                            "useHover": true,
+                            "useTextShadow": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGridItem-title-center"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Title text bottom of image styles",
+                    "description": "Styles for when the title is displayed on the bottom of the image",
+                    "fields": [
+                        {
+                            "name": "blockImageGridTextBottomBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGridItem-title-bottom-background"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridTextBottomHoverBackground",
+                            "label": "Background color (hover)",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGridItem-title-bottom-background-hover"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridTextBottomHoverStyle",
+                            "label": "Height of the text overlay on hover",
+                            "description": "This sets the initial height of the overlay bar.",
+                            "type": "select",
+                            "options": {
+                                "auto": "Auto",
+                                "100%": "Full height"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGridItem-title-bottom-height-hover"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridTextBottomInitialHeight",
+                            "label": "Initial overlay height",
+                            "description": "This sets the initial height of the overlay bar if it should grow to full height on hover. This is necessary so that the height is animated.",
+                            "type": "size",
+                            "useAuto": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGridItem-overlay-title-bottom-height"
+                            }
+                        },
+                        {
+                            "name": "blockImageGridTextBottomTypography",
+                            "label": "Text styles",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "useHover": true,
+                            "useTextShadow": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGridItem-title-bottom"
                             }
                         }
                     ]
@@ -527,24 +796,25 @@
                             "useSpacing": true,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageGrid-hover-text"
+                                "cssVariable": "--ImageGridItem-hover-text"
                             }
                         }
                     ]
                 },
                 {
                     "name": "Content below the image",
-                    "description": "This is for the extra content that can show below the image.",
+                    "description": "This is for the content that can show below the image.",
                     "fields": [
                         {
-                            "name": "blockImageGridHoverSubTextTypography",
-                            "label": "Hover sub text styles",
+                            "name": "blockImageGridContentTypography",
+                            "label": "Content text styles",
                             "type": "typography",
                             "collapsable": false,
                             "useSpacing": true,
+                            "useHover": true,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageGrid-hover-text"
+                                "cssVariable": "--ImageGridItem-content"
                             }
                         }
                     ]
@@ -559,7 +829,7 @@
                             "default": "#FFFFFFB3",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageGrid-overlay-background"
+                                "cssVariable": "--ImageGridItem-overlay-background"
                             }
                         },
                         {
@@ -569,17 +839,7 @@
                             "default": "#FFFFFFB3",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--ImageGrid-overlay-background-hover"
-                            }
-                        },
-                        {
-                            "name": "blockImageGridOverlayTextHeight",
-                            "label": "Initial overlay height",
-                            "description": "This sets the initial height of the overlay bar.",
-                            "type": "size",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--ImageGrid-overlay-initial-height"
+                                "cssVariable": "--ImageGridItem-overlay-background-hover"
                             }
                         }
                     ]
@@ -860,6 +1120,117 @@
             ]
         },
         {
+            "name": "Blocks - Testimonials",
+            "description": "Styles for the \"Testimonials\" block. The content comes from the \"Testimonials\" Collection Widget",
+            "groups": [
+                {
+                    "name": "Content",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsDefaultImage",
+                            "label": "Default image",
+                            "description": "This image is used if the testimonial does not have an image.",
+                            "type": "image"
+                        },
+                        {
+                            "name": "blockTestimonialsHeading",
+                            "label": "Heading",
+                            "type": "richTextEditor"
+                        },
+                        {
+                            "name": "blockTestimonialsReviewsLink",
+                            "label": "URL to view reviews",
+                            "type": "url",
+                            "showLinkTextField": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Divider",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsDividerColor",
+                            "label": "Divider color",
+                            "type": "color",
+                            "default": "#d4d4d4",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Testimonial-divider-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial text",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsTextTypography",
+                            "label": "Testimonial typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "useTextAlign": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-text"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial name",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsNameTypography",
+                            "label": "Name typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "useTextAlign": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-name"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial reviews link",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsReviewsLinkTypography",
+                            "label": "Name typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useTextAlign": false,
+                            "useHover": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-reviewLink"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial star rating",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsReviewsRatingTypography",
+                            "label": "Ratings typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "useTextAlign": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-rating"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Blocks - Wrapper",
             "description": "Styles for the \"Wrapper\" block.",
             "fields": [
@@ -871,6 +1242,27 @@
                     "preview": {
                         "type": "css-head",
                         "cssVariable": "--Wrapper-background-grey"
+                    }
+                },
+                {
+                    "name": "blockWrapperBackgroundDark",
+                    "label": "Dark background color",
+                    "type": "color",
+                    "description": "The text color will automatically be set to white.",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-background-dark"
+                    }
+                },
+                {
+                    "name": "blockWrapperBackgroundDarkColor",
+                    "label": "Dark background text color",
+                    "type": "color",
+                    "default": "#fff",
+                    "description": "The text color for when the dark background is used.",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-background-dark-color"
                     }
                 },
                 {
@@ -902,6 +1294,108 @@
                         "type": "css-head",
                         "cssVariable": "--Wrapper-padding"
                     }
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Wrapper with background image",
+            "description": "Styles for the \"Wrapper with background image\" block.",
+            "sidebarSize": "small",
+            "fields": [
+                {
+                    "name": "blockWrapperWBgImageDisplay",
+                    "label": "How to display the background image",
+                    "type": "radio",
+                    "default": "below",
+                    "description": "If \"Below the color backgrond\" is selected, then the background colors should have transparency so that the image can be seen.<br>If \"Above the color background\" is selected, then the image should have transparency so that the background color can be seen.",
+                    "options": {
+                        "below": "Below the color background",
+                        "above": "Above the color background"
+                    }
+                },
+                {
+                    "name": "blockWrapperWBgImageBackgroundGray",
+                    "label": "Gray background color",
+                    "type": "color",
+                    "description": "It should have some opacity so that the background image can be seen",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-wbgimage-background-grey"
+                    }
+                },
+                {
+                    "name": "blockWrapperWBgImageBackgroundDark",
+                    "label": "Dark background color",
+                    "type": "color",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-wbgimage-background-dark"
+                    }
+                },
+                {
+                    "name": "blockWrapperWBgImageBackgroundDarkColor",
+                    "label": "Dark background text color",
+                    "type": "color",
+                    "default": "#fff",
+                    "description": "The text color for when the dark background is used.",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-wbgimage-background-dark-color"
+                    }
+                },
+                {
+                    "name": "blockWrapperWBgImageBackgroundDarkTextShadow",
+                    "label": "Dark background text shadow",
+                    "type": "textShadow",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-wbgimage-background-dark-text-shadow"
+                    }
+                },
+                {
+                    "name": "blockWrapperWBgImageMargin",
+                    "label": "Margin",
+                    "type": "margin",
+                    "default": {
+                        "top": "25px",
+                        "right": "0",
+                        "bottom": "25px",
+                        "left": "0"
+                    },
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-wbgimage-margin"
+                    }
+                },
+                {
+                    "name": "blockWrapperWBgImagePadding",
+                    "label": "Padding",
+                    "type": "padding",
+                    "default": {
+                        "top": "50px",
+                        "right": "0",
+                        "bottom": "50px",
+                        "left": "0"
+                    },
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--Wrapper-wbgimage-padding"
+                    }
+                },
+                {
+                    "name": "blockWrapperWBgImageWidths",
+                    "label": "Image widths",
+                    "type": "repeatingGrid",
+                    "description": "The different widths to crop and create images for.",
+                    "itemName": "width",
+                    "children": [
+                        {
+                            "name": "size",
+                            "label": "Size",
+                            "type": "size",
+                            "allowedUnits": ["px"]
+                        }
+                    ]
                 }
             ]
         },
@@ -1319,7 +1813,7 @@
         {
             "name": "Footer",
             "description": "Styles for the footer of the website.",
-            "sections": [
+            "groups": [
                 {
                     "name": "General",
                     "fields": [
@@ -1334,76 +1828,176 @@
                             }
                         },
                         {
-                            "name": "footerColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#fff",
+                            "name": "footerSpacing",
+                            "label": "Spacing",
+                            "type": "spacing",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-color"
+                                "cssVariable": "--Footer"
                             }
                         },
                         {
-                            "name": "footerColorHover",
-                            "label": "Text color (hover)",
-                            "type": "color",
-                            "default": "#fff",
+                            "name": "footerSpacingSm",
+                            "label": "Spacing (small screens)",
+                            "type": "spacing",
+                            "margin": {
+                                "label": "Margin (small screens)"
+                            },
+                            "padding": {
+                                "label": "Padding (small screens)"
+                            },
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-color--hover"
+                                "cssVariable": "--Footer-sm"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Padding",
+                    "name": "Company name above address",
                     "fields": [
                         {
-                            "name": "footerPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "80",
+                            "name": "footerAddressCompanyNameTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-paddingVertical",
-                                "template": "{{ value }}px"
+                                "cssSelector": ".Footer-companyName"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Address and phone",
+                    "fields": [
+                        {
+                            "name": "footerAddressTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-address"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Text above phone number",
+                    "description": "Styles for the text above the phone numer on the right",
+                    "fields": [
+                        {
+                            "name": "footerAbovePhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-phoneContent"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone number on right",
+                    "description": "Styles for the phone numer on the right",
+                    "fields": [
+                        {
+                            "name": "footerPhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-phone[href^='tel']"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Social icons",
+                    "fields": [
+                        {
+                            "name": "footerSocialColor",
+                            "label": "Color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-socialLink",
+                                "cssProperty": "color"
                             }
                         },
                         {
-                            "name": "footerPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "160",
+                            "name": "footerSocialColorHover",
+                            "label": "Color (hover)",
+                            "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-paddingHorizontal",
-                                "template": "{{ value }}px"
+                                "cssSelector": ".Footer-socialLink",
+                                "cssProperty": "color",
+                                "state": "hover"
                             }
                         },
                         {
-                            "name": "footerPaddingVerticalSm",
-                            "label": "Vertical padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
+                            "name": "footerSocialBackground",
+                            "label": "Background",
+                            "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-paddingVertical--sm",
-                                "template": "{{ value }}px"
+                                "cssSelector": ".Footer-socialLink",
+                                "cssProperty": "background-color"
                             }
                         },
                         {
-                            "name": "footerPaddingHorizontalSm",
-                            "label": "Horizontal padding (small screens)",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "50",
+                            "name": "footerSocialBackgroundHover",
+                            "label": "Background (hover)",
+                            "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-paddingHorizontal--sm",
-                                "template": "{{ value }}px"
+                                "cssSelector": ".Footer-socialLink",
+                                "cssProperty": "background-color",
+                                "state": "hover"
+                            }
+                        },
+                        {
+                            "name": "footerSocialSize",
+                            "label": "Size",
+                            "type": "size",
+                            "default": "30px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-socialLink",
+                                "cssProperty": "height"
+                            }
+                        },
+                        {
+                            "name": "footerSocialPadding",
+                            "label": "Padding around all the icons",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-socialIcons"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Bottom bar typography",
+                    "fields": [
+                        {
+                            "name": "footerBottomTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterBottom"
+                            },
+                            "textAlignPreview": {
+                                "cssProperty": "justify-content"
                             }
                         }
                     ]
@@ -1412,19 +2006,39 @@
                     "name": "Navigation",
                     "fields": [
                         {
-                            "name": "footerNavTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
+                            "name": "footerNavigationTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "useHover": true,
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--FooterNav-textTransform"
+                                "cssSelector": ".FooterNav-link"
+                            }
+                        },
+                        {
+                            "name": "footerNavigationSeparator",
+                            "label": "Text separator between each link",
+                            "type": "text",
+                            "size": "tiny"
+                        },
+                        {
+                            "name": "footerNavigationSeparatorPadding",
+                            "label": "Padding around the text separator",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterNav-separator"
+                            }
+                        },
+                        {
+                            "name": "footerNavigationPadding",
+                            "label": "Padding between links",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterNav-item"
                             }
                         }
                     ]
@@ -1748,21 +2362,39 @@
             "description": "Styles for the header of the website.",
             "groups": [
                 {
-                    "name": "Background and text",
+                    "name": "General",
                     "fields": [
                         {
                             "name": "headerBackground",
-                            "label": "Color",
+                            "label": "Background color",
                             "type": "color",
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Header-background"
                             }
+                        },
+                        {
+                            "name": "headerPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-padding"
+                            }
+                        },
+                        {
+                            "name": "headerPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-sm-padding"
+                            }
                         }
                     ]
                 },
                 {
-                    "name": "Header buttons",
+                    "name": "Header button",
                     "fields": [
                         {
                             "name": "headerButtonBackground",
@@ -1770,16 +2402,7 @@
                             "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-buttonBackground"
-                            }
-                        },
-                        {
-                            "name": "headerButtonColor",
-                            "label": "Header button text color",
-                            "type": "color",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Header-buttonColor"
+                                "cssVariable": "--Header-button-background"
                             }
                         },
                         {
@@ -1788,16 +2411,7 @@
                             "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-buttonBackgroundHover"
-                            }
-                        },
-                        {
-                            "name": "headerbuttonColorHover",
-                            "label": "Header button text hover color",
-                            "type": "color",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Header-buttonColorHover"
+                                "cssVariable": "--Header-button-background-hover"
                             }
                         },
                         {
@@ -1807,7 +2421,7 @@
                             "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-buttonBorderColor"
+                                "cssVariable": "--Header-button-border-color"
                             }
                         },
                         {
@@ -1817,7 +2431,62 @@
                             "type": "color",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Header-buttonBorderColorHover"
+                                "cssVariable": "--Header-button-border-color-hover"
+                            }
+                        },
+                        {
+                            "name": "headerButtonTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "usePadding": true,
+                            "fontSizePreview": {
+                                "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                            },
+                            "color": {
+                                "default": "#333333"
+                            },
+                            "fontSize": {
+                                "default": "18px",
+                                "allowedUnits": ["px"]
+                            },
+                            "lineHeight": {
+                                "default": "1.4"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-button"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Sticky header",
+                    "fields": [
+                        {
+                            "name": "headerStickyEnabled",
+                            "label": "Enable sticky header",
+                            "type": "switch",
+                            "default": "yes"
+                        },
+                        {
+                            "name": "headerStickyHeaderBackground",
+                            "label": "Header background when sticky",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-sticky-background"
+                            }
+                        },
+                        {
+                            "name": "headerStickyHeaderLogoWidth",
+                            "label": "Logo width when sticky",
+                            "type": "size",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-sticky-logo-width"
                             }
                         }
                     ]
@@ -2014,6 +2683,16 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--MainNav-item-gap"
+                            }
+                        },
+                        {
+                            "name": "mainNavItemGapSm",
+                            "label": "Gap between items (small screens)",
+                            "type": "size",
+                            "default": "10px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--MainNav-item-sm-gap"
                             }
                         },
                         {
@@ -2227,7 +2906,7 @@
             ]
         },
         {
-            "name": "Main Navigation - Menu Button",
+            "name": "Main Navigation - Hamburger Menu Button",
             "description": "Styles for the hamburger menu button.",
             "fields": [
                 {
@@ -2257,7 +2936,27 @@
                     "default": "#000",
                     "preview": {
                         "type": "css-head",
-                        "cssVariable": "--HamburgerMenu-colorHover"
+                        "cssVariable": "--HamburgerMenu-color-hover"
+                    }
+                },
+                {
+                    "name": "hamburgerMenuPadding",
+                    "label": "Padding",
+                    "type": "padding",
+                    "default": "10px",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--HamburgerMenu-padding"
+                    }
+                },
+                {
+                    "name": "hamburgerMenuFontSize",
+                    "label": "Size",
+                    "type": "size",
+                    "default": "3.5rem",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--HamburgerMenu-font-size"
                     }
                 }
             ]

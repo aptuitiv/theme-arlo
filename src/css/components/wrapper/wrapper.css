@@ -16,3 +16,12 @@
 .Wrapper--bgGray {
     background-color: var(--Wrapper-background-grey);
 }
+
+.Wrapper--bgDark {
+    background-color: var(--Wrapper-background-dark);
+}
+
+/* postcss-bem-linter: ignore */
+.Wrapper--bgDark *:not(.Button):not(input):not(select):not(textarea) {
+    color: var(--Wrapper-background-dark-color, #fff);
+}

@@ -8,14 +8,15 @@
     box-sizing: border-box;
     display: none;
     flex-flow: column nowrap;
-    gap: var(--MainNav-item-gap);
-    justify-content: center;
+    gap: var(--MainNav-item-sm-gap);
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .MainNav-item {
+    display: flex;
+    justify-content: flex-end;
     font-family: var(--MainNav-font-family);
     font-size: var(--MainNav-font-size, 2rem);
     font-style: var(--MainNav-font-style, normal);
@@ -30,6 +31,7 @@
     box-sizing: border-box;
     color: var(--MainNav-color, #333);
     display: block;
+    font-weight: var(--MainNav-font-weight, 700);
     padding: var(--MainNav-item-padding-sm);
     position: relative;
     text-align: var(--MainNav-text-align);
@@ -49,17 +51,48 @@
     Responsive
 \* ------------------------------------ */
 
-@media (--c-bp-xl) {
+/* Class to hide links on medium size screens and smaller */
+.MainNav-item--hideMd {
+    display: none;
+}
+
+@media (--c-bp-md) {
+    .MainNav {
+        gap: var(--MainNav-item-gap);
+    }
+
     .MainNav-item {
         width: unset;
     }
 
+    .MainNav-item--hideMd {
+        display: block;
+    }
+}
+
+/* Class to hide links on large size screens and smaller */
+.MainNav-item--hideLg {
+    display: none;
+}
+
+@media (--c-bp-lg) {
     .MainNav-link {
         padding: var(--MainNav-item-padding-top, 0) var(--MainNav-item-padding-right, 0)
             var(--MainNav-item-padding-bottom, 0) var(--MainNav-item-padding-left, 0);
     }
 
-    .MainNav-item--small {
-        display: none;
+    .MainNav-item--hideLg {
+        display: block;
+    }
+}
+
+/* Class to hide links on X-large size screens and smaller */
+.MainNav-item--hideXlg {
+    display: none;
+}
+
+@media (--c-bp-xl) {
+    .MainNav-item--hideXlg {
+        display: block;
     }
 }

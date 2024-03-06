@@ -43,6 +43,7 @@
     text-align: center;
     text-decoration: var(--Button-typography-text-decoration);
     text-transform: var(--Button-typography-text-transform);
+    text-shadow: none; /* Done in case this is within another element that has text-shadow applied to it */
     user-select: none; /* 2 */
 }
 
@@ -82,6 +83,7 @@
     line-height: var(--Button-alt-typography-line-height, var(--Button-typography-line-height));
     padding: var(--Button-alt-padding, var(--Button-padding));
     text-decoration: var(--Button-alt-typography-text-decoration, var(--Button-typography-text-decoration));
+    text-shadow: none; /* Done in case this is within another element that has text-shadow applied to it */
     text-transform: var(--Button-alt-typography-text-transform, var(--Button-typography-text-transform));
 }
 
@@ -113,6 +115,7 @@
     line-height: var(--Button-alt2-typography-line-height, var(--Button-typography-line-height));
     padding: var(--Button-alt2-padding, var(--Button-padding));
     text-decoration: var(--Button-alt2-typography-text-decoration, var(--Button-typography-text-decoration));
+    text-shadow: none; /* Done in case this is within another element that has text-shadow applied to it */
     text-transform: var(--Button-alt2-typography-text-transform, var(--Button-typography-text-transform));
 }
 

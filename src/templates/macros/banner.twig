@@ -160,9 +160,8 @@
  # - content: The content to display
  #}
 {% macro largeBannerContent(content) %}
-    <div class="Banner-fg">
-        <div class="Banner-content first-child-st-0 last-child-sb-0">
-            {{ content }}
-        </div>
+    <div class="Banner-fg"></div>
+    <div class="Banner-content first-child-st-0 last-child-sb-0">
+        <div class="Banner-contentInner">{{ content }}</div>
     </div>
 {% endmacro %}

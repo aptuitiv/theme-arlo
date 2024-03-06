@@ -2,54 +2,41 @@
     Footer
 \* =========================================================================== */
 
-/* :root {
-    --Footer-background: #00263e;
-    --Footer-color: #fff;
-    --Footer-color--hover: #fff;
-    --Footer-paddingVertical: 80px;
-    --Footer-paddingHorizontal: 160px;
-    --Footer-paddingVertical--sm: 50px;
-    --Footer-paddingHorizontal--sm: 50px;
-} */
-
 /* @define Footer */
 .Footer {
     background-color: var(--Footer-background);
-    color: var(--Footer-color);
-    padding: var(--Footer-paddingVertical--sm) var(--Footer-paddingHorizontal--sm);
+    margin: var(--Footer-sm-margin, 0);
+    padding: var(--Footer-sm-padding, 0);
 }
 
-/* postcss-bem-linter: ignore */
-.Footer * {
-    color: var(--Footer-color);
-    text-decoration: none;
+.Footer-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-/* postcss-bem-linter: ignore */
-.Footer a:focus-visible {
-    color: var(--Footer-color--hover);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    /* postcss-bem-linter: ignore */
-    .Footer a:hover {
-        color: var(--Footer-color--hover);
-    }
+.Footer-company {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .Footer-logo {
-    margin-top: 70px;
     max-width: var(--Footer-logo-width);
     width: 100%;
+}
+
+.Footer-phoneContent {
+    white-space: nowrap;
 }
 
 .Footer-socialLink {
     align-items: center;
     aspect-ratio: 1/1;
-    border: 2px solid var(--Footer-color);
     border-radius: 50%;
     display: inline-flex;
-    height: 30px;
     justify-content: center;
 }
 
@@ -59,10 +46,26 @@
 
 @media (--c-bp-lg) {
     .Footer {
-        padding: var(--Footer-paddingVertical) var(--Footer-paddingHorizontal);
+        margin: var(--Footer-margin, 0);
+        padding: var(--Footer-padding, 0);
     }
-    
-    .Footer-logo {
-        margin-top: 0;
+}
+
+@media (--c-bp-md) {
+    .Footer-inner {
+        flex-direction: row;
+    }
+
+    .Footer-company {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        width: 100%;
+    }
+}
+
+@media (max-width: 48em) {
+    .Footer-address {
+        padding-left: 0 !important;
+        text-align: center !important;
     }
 }

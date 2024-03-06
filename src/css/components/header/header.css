@@ -4,7 +4,7 @@
 
 /* @define Header */
 .Header {
-    background-color: var(--Header-background);
+    padding: var(--Header-sm-padding, 0);
 }
 
 /* ------------------------------------ *\
@@ -14,8 +14,8 @@
 .Header-inner {
     align-items: center;
     display: flex;
+    gap: 20px;
     justify-content: space-between;
-    padding: 25px 35px 25px 75px;
     position: sticky;
     top: 0;
     transition: padding 250ms, top 250ms;
@@ -41,6 +41,7 @@
 }
 
 .Header-nav {
+    align-items: center;
     display: flex;
     gap: var(--Header-navigation-menu-gap, 20px);
 }
@@ -50,23 +51,42 @@
 \* ------------------------------------ */
 
 .Header-button {
-    background: var(--Header-buttonBackground);
-    border-color: var(--Header-buttonBorderColor);
-    color: var(--Header-buttonColor);
+    background: var(--Header-button-background);
+    border-color: var(--Header-button-border-color);
+    color: var(--Header-button-color);
+    font-family: var(--Header-button-font-family);
+    font-size: var(--Header-button-font-size);
+    font-style: var(--Header-button-font-style);
+    font-weight: var(--Header-button-font-weight);
+    letter-spacing: var(--Header-button-letter-spacing);
+    line-height: var(--Header-button-line-height);
+    padding: var(--Header-button-padding);
+    text-decoration: var(--Header-button-text-decoration);
+    text-transform: var(--Header-button-text-transform);
 }
 
 @media (hover: hover) and (pointer: fine) {
     .Header-button:hover {
-        background: var(--Header-buttonBackgroundHover);
-        border-color: var(--Header-buttonBorderColorHover);
-        color: var(--Header-buttonColorHover);
+        background: var(--Header-button-background-hover);
+        border-color: var(--Header-button-border-color-hover);
+        color: var(--Header-button-color-hover);
+        font-style: var(--Header-button-font-style-hover);
+        text-decoration: var(--Header-button-text-decoration-hover);
     }
 }
 
 .Header-button:focus-visible {
-    background: var(--Header-buttonBackgroundHover);
-    border-color: var(--Header-buttonBorderColorHover);
+    background: var(--Header-button-background-hover);
+    border-color: var(--Header-button-border-color-hover);
     color: var(--Header-buttonColorHover);
+}
+
+/* ------------------------------------ *\
+    Hamburger menu button
+\* ------------------------------------ */
+
+.Header-hamburger {
+    flex-shrink: 0;
 }
 
 /* ------------------------------------ *\
@@ -88,6 +108,10 @@
 }
 
 @media (--c-bp-md) {
+    .Header {
+        padding: var(--Header-padding, 0);
+    }
+
     .Header-main {
         padding: 20px 10px 20px 20px !important;
     }

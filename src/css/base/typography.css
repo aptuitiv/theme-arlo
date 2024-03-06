@@ -169,7 +169,8 @@ hr {
    ========================================================================== */
 
 h1,
-.h1 {
+.h1,
+.h1 * {
     color: var(--base-typography-h1-color, #333);
     font-family: var(--base-typography-h1-font-family);
     font-size: var(--base-typography-h1-font-size, 3.2rem);
@@ -185,7 +186,8 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+.h2 * {
     color: var(--base-typography-h2-color, #333);
     font-family: var(--base-typography-h2-font-family);
     font-size: var(--base-typography-h2-font-size, 2.8rem);
@@ -200,7 +202,8 @@ h2,
 }
 
 h3,
-.h3 {
+.h3,
+.h3 * {
     color: var(--base-typography-h3-color, #333);
     font-family: var(--base-typography-h3-font-family);
     font-size: var(--base-typography-h3-font-size, 2.4rem);
@@ -215,7 +218,8 @@ h3,
 }
 
 h4,
-.h4 {
+.h4,
+.h4 * {
     color: var(--base-typography-h4-color, #333);
     font-family: var(--base-typography-h4-font-family);
     font-size: var(--base-typography-h4-font-size, 2rem);
@@ -230,7 +234,8 @@ h4,
 }
 
 h5,
-.h5 {
+.h5,
+.h5 * {
     color: var(--base-typography-h5-color, #333);
     font-family: var(--base-typography-h5-font-family);
     font-size: var(--base-typography-h5-font-size, 1.8rem);
@@ -245,7 +250,8 @@ h5,
 }
 
 h6,
-.h6 {
+.h6,
+.h6 * {
     color: var(--base-typography-h6-color, #333);
     font-family: var(--base-typography-h6-font-family);
     font-size: var(--base-typography-h6-font-size, 1.8rem);

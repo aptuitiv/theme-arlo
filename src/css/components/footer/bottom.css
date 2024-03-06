@@ -1,0 +1,17 @@
+/* ===========================================================================
+    Footer bottom
+=========================================================================== */
+
+/* @define FooterBottom */
+
+.FooterBottom {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (--c-bp-md) {
+    .FooterBottom {
+        flex-direction: row;
+    }
+}

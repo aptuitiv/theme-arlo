@@ -11,9 +11,9 @@
                     "fields": [
                         {
                             "name": "bannerImageSizes",
-                            "label": "Image widths",
+                            "label": "Image sizes",
                             "type": "repeatingGrid",
-                            "description": "The different screen widths to crop and create images for.",
+                            "description": "The different images sizes to crop and create images for.",
                             "itemName": "Image size",
                             "children": [
                                 {
@@ -71,9 +71,9 @@
                     "fields": [
                         {
                             "name": "bannerBarImageSizes",
-                            "label": "Image widths",
+                            "label": "Image sizes",
                             "type": "repeatingGrid",
-                            "description": "The different screen widths to crop and create images for.",
+                            "description": "The different image sizes to crop and create images for.",
                             "itemName": "Image size",
                             "children": [
                                 {
@@ -145,6 +145,42 @@
                             "after": "px"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Google Ratings Bar",
+            "description": "Settings for the Google Ratings Bar",
+            "fields": [
+                {
+                    "name": "googleRatingsBarReviewsLink",
+                    "label": "URL to view reviews on Google",
+                    "type": "url",
+                    "showLinkTextField": true
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Promotional Bar",
+            "description": "These settings are for the promotional bar that shows at the top of the page.",
+            "fields": [
+                {
+                    "name": "promoBarLeftContent",
+                    "label": "Left content",
+                    "type": "richTextEditor",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".PromoBar-left"
+                    }
+                },
+                {
+                    "name": "promoBarRightContent",
+                    "label": "Right content",
+                    "type": "richTextEditor",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".PromoBar-right"
+                    }
                 }
             ]
         },
@@ -336,30 +372,6 @@
                     "name": "popupContent",
                     "label": "Content",
                     "type": "richTextEditor"
-                }
-            ]
-        },
-        {
-            "name": "Promotional Bar",
-            "description": "These settings are for the promotional bar that shows at the top of the page.",
-            "fields": [
-                {
-                    "name": "promoBarLeftContent",
-                    "label": "Left content",
-                    "type": "richTextEditor",
-                    "preview": {
-                        "type": "replace",
-                        "contentSelector": ".PromoBar-left"
-                    }
-                },
-                {
-                    "name": "promoBarRightContent",
-                    "label": "Right content",
-                    "type": "richTextEditor",
-                    "preview": {
-                        "type": "replace",
-                        "contentSelector": ".PromoBar-right"
-                    }
                 }
             ]
         }

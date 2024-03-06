@@ -1,0 +1,73 @@
+{% if items|length > 0 %}
+    {% import 'macros/macros' as macros %}
+
+    {% set item = items|first %}
+    <div class="Testimonial">
+        <div class="Container Container--pad">
+            <div class="Testimonial-inner">
+                {% if item.image %}
+                    {% set image = item.image %}
+                {% elseif _core.theme.settings.blockTestimonialsDefaultImage %}
+                    {% set image = _core.theme.settings.blockTestimonialsDefaultImage %}
+                {% endif %}
+                {% if image %}
+                    {% set image.class = "Testimonial-image" %}
+                    {% do image.alt|default(item.itemName) %}
+                    {% do image.resize(600, 600) %}
+                    {{ image.tag() }}
+                {% endif %}
+                <div class="Testimonial-content">
+                    {{ _core.theme.settings.blockTestimonialsHeading }}
+                    <div class="Testimonial-divider">
+                        <img class="Testimonial-dividerImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAfCAMAAABXofT6AAAAJFBMVEVHcEyRkZGRkZGQkJCRkZGRkZGSkpKSkpKRkZGSkpKRkZGSkpIrXHD2AAAAC3RSTlMAFO0oiHHEQJ/WXOFBdG4AAADiSURBVHjahZRbDsMwCAQB4wfh/vdtXKslC5XK52hYA1FLUI1KcWbTXLOk4hc0Lfds8XAHq9kNpGG43Mw4gcEgdb9rPSWvz+lmnZLU/0hNqnSVRtvvg3MaNWcbYY29DLTt7PnjPTjLwrbfM7DHfWFniO8RDvFS5nRGS8o+HlmwjxTii8uGroxkl8jQ+R01WPuQqHGYPtnibLnwWRFai+Was843v5DImSKHMYBzk5nYjQaS956CjPeT1dJikRVCDGFGeYoVt44d82GF6ZTCiqhZIwINfqRtyQ7SDZBZT/8toRT2AhAuFHokZWIZAAAAAElFTkSuQmCC" width="37" height="31" alt="quote">
+                    </div>
+                    <div class="Testimonial-text">
+                        {{ item.testimonial }}
+                    </div>
+                    <div class="Testimonial-name">
+                        {{ item.itemName }}
+                        {% if item.location %}
+                            | {{ item.location }}
+                        {% endif %}
+                    </div>
+                    {% if _core.theme.settings.blockTestimonialsReviewsLink %}
+                        {% set _core.theme.settings.blockTestimonialsReviewsLink.class = 'Testimonial-reviewLink' %}
+                        {{ _core.theme.settings.blockTestimonialsReviewsLink.tag }}
+                    {% endif %}
+                    <div class="Testimonial-rating">
+                        {# Display the number of review stars #}
+                        {# Get just the decimal part of the rating #}
+                        {% set decimal = _core.settings.companyAggregateRatingValue - _core.settings.companyAggregateRatingValue|floor %}
+                        {# Set up the number of whole, half, and empty stars to show #}
+                        {% set numWholeStars = _core.settings.companyAggregateRatingValue|floor %}
+                        {% set numHalfStars = 0 %}
+                        {% if decimal > 0.3 && decimal < 0.9 %}
+                            {% set numHalfStars = 1 %}
+                        {% elseif decimal >= 0.9 %}
+                            {% set numWholeStars = numWholeStars + 1 %}
+                        {% endif %}
+
+                        {% set numEmptyStars = 5 - numWholeStars - numHalfStars %}
+
+                        {# Output the stars #}
+                        {% if numWholeStars > 0 %}
+                            {% for num in 1..numWholeStars %}
+                                {{ macros.iconImg('star', 'Star rating', "Testimonial-star") }}
+                            {% endfor %}
+                        {% endif %}
+                        {% if numHalfStars > 0 %}
+                            {% for num in 1..numHalfStars %}
+                                {{ macros.iconImg('star-half', 'Half star rating', "Testimonial-star") }}
+                            {% endfor %}
+                        {% endif %}
+                        {% if numEmptyStars > 0 %}
+                            {% for num in 1..numEmptyStars %}
+                                {{ macros.iconImg('star-empty', 'Empty star rating', "Testimonial-star") }}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

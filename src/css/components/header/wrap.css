@@ -1,0 +1,25 @@
+/* ===========================================================================
+    Element wrapping the entire header
+=========================================================================== */
+
+/* @define HeaderWrap */
+
+.HeaderWrap {
+    background-color: var(--Header-background);
+}
+
+.HeaderWrap--sticky {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+
+.HeaderWrap--sticky.is-sticky {
+    background: var(--Header-sticky-background, var(--Header-background));
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.16);
+}
+
+/* postcss-bem-linter: ignore */
+.HeaderWrap--sticky.is-sticky .Header-logo {
+    max-width: var(--Header-sticky-logo-width, var(--Header-logo-width));
+}

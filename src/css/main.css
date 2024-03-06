@@ -9,8 +9,6 @@
     modules that your project needs. This keeps the CSS lean and mean.
 \* =========================================================================== */
 
-/* stylelint-disable */
-
 /* Config */
 @import '../../node_modules/cacao-css/src/config.css';
 
@@ -281,8 +279,6 @@
 /* @import '../../node_modules/cacao-css/src/padding/xl/start.css'; */
 /* @import '../../node_modules/cacao-css/src/padding/xl/top.css'; */
 /* @import '../../node_modules/cacao-css/src/padding/xl/vertical.css'; */
-
-/* stylelint-enable */
 
 /**
  * Styles for this website

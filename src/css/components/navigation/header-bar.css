@@ -5,7 +5,7 @@
 /* @define HeaderBarNav */
 .HeaderBarNav {
     column-gap: var(--HeaderBarNavigation-gap);
-    display: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -37,8 +37,24 @@
     text-transform: var(--HeaderBarNavigation-hover-text-transform, var(--HeaderBarNavigation-text-transform));
 }
 
+/* Class to hide links on medium size screens and smaller */
+.HeaderBarNav-item--hideMd {
+    display: none;
+}
+
 @media (--c-bp-md) {
-    .HeaderBarNav {
-        display: flex;
+    .HeaderBarNav-item--hideMd {
+        display: block;
+    }
+}
+
+/* Class to hide links on medium size screens and smaller */
+.HeaderBarNav-item--hideLg {
+    display: none;
+}
+
+@media (--c-bp-lg) {
+    .HeaderBarNav-item--hideLg {
+        display: block;
     }
 }

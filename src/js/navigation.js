@@ -56,7 +56,9 @@ const smallScreenNav = {
 
         openButton.addEventListener('click', showMenu);
         closeButton.addEventListener('click', hideMenu);
-        menuButtons.addEventListener('click', hideMenu);
+        if (menuButtons) {
+            menuButtons.addEventListener('click', hideMenu);
+        }
 
         // Setup dropdowns
         const menuItems = document.querySelectorAll('.MenuNav-item');

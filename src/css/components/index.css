@@ -5,9 +5,11 @@
 @import './container';
 @import './footer';
 @import './form';
+@import './google-rating-bar';
 @import './header';
 @import './image';
 @import './icon';
+@import './image-grid';
 @import './list';
 @import './message';
 @import './modal';
@@ -16,4 +18,5 @@
 @import './pagination';
 @import './promotional-bar';
 @import './slider';
+@import './testimonial';
 @import './wrapper';

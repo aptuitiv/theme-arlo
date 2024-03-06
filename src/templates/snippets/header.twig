@@ -36,7 +36,7 @@
     {{ _page.bodyStartCode() }}
     <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
     {{ _api.widgets.collection.get('notifications') }}
-    <header id="top" class="HeaderWrap js-stickyHeader">
+    <header id="top" class="HeaderWrap{% if _core.theme.settings.headerStickyEnabled == 'yes' %} HeaderWrap--sticky js-stickyHeader{% endif %}">
         <div class="HeaderBar{% if _core.theme.settings.headerBarWidth == 'contained' %} HeaderBar--contained{% endif %}">
             <div class="Container Container--pad">
                 <div class="HeaderBar-inner">
@@ -61,10 +61,6 @@
                     </div>
                     <div class="Header-nav">
                         {{ _api.navigation.get.key('main') }}
-                        {% if _core.theme.settings.headerButton %}
-                            {% set _core.theme.settings.headerButton.class = 'Button Header-button' %}
-                            {{_core.theme.settings.headerButton.tag}}
-                        {% endif %}
                         <div class="Header-hamburger">
                             <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
                                 <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
@@ -101,7 +97,7 @@
                 {% endif %}
                 <a class="Menu-phoneLink" href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}">{{ _core.settings.companyPhone }}</a>
             </div>
-            {% if _core.theme.settings.menuShowSocial %}
+            {% if _core.theme.settings.menuShowSocial == 'yes' %}
                 {% if _core.theme.settings.social|first.url %}
                     <div class="Menu-social">
                         {% import 'macros/macros' as macros %}
@@ -115,5 +111,6 @@
                 {% endif %}
             {% endif %}
         </div>
-        <div class="js-stickyHeaderBoundary"></div>
+
     </header>
+<div class="js-stickyHeaderBoundary"></div>

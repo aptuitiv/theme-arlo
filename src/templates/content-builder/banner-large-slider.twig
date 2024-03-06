@@ -26,8 +26,9 @@
                 {{ bannerMacros.bannerVideo(slide.video, core.theme.settings.bannerImageSizes, true) }}
             {% endif %}
              {% if pagination is iterable || slide.content|length > 0 %}
-                <div class="Banner-fg">
-                    <div class="Banner-content first-child-st-0 last-child-sb-0">
+                <div class="Banner-fg"></div>
+                <div class="Banner-content first-child-st-0 last-child-sb-0">
+                    <div class="Banner-contentInner">
                         {% if pagination is iterable %}
                             <ul class="BannerSlider-pagination">
                                 {% for text in pagination %}
@@ -38,7 +39,6 @@
                         {{ slide.content }}
                     </div>
                 </div>
-
             {% endif %}
 
         </div>

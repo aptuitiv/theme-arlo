@@ -19,9 +19,11 @@
     bannerImageRatio,
     bannerImageCropStrategy,
     bannerImageCropOrientation,
+    hasContent,
     doCss
 ) %}
-    <div class="Banner-bg">
+    {% set uniqueClass = 'Banner-bg' ~random_string() %}
+    <div class="Banner-bg {{ uniqueClass }}">
         {% set css = [] %}
         {# The minimum aspect ratio for the banner image. This prevents the image from being too tall. #}
         {% set minimumRatio = bannerMinImageRatio.number ?? (4/9) %}
@@ -55,12 +57,6 @@
             {% set cropOrientation = imageCrop %}
         {% endif %}
 
-        {# Set the cropping for the image #}
-        {% do image.crop({
-            ar: imageCropAspectRatio,
-            crop: cropOrientation|lower
-        }) %}
-
         {# Extract the image sizes from the settings and sort them by width #}
         {% set sizes = [] %}
         {% for imageSize in bannerImageSizes %}
@@ -81,7 +77,8 @@
                 {% endif %}
                 {% set css = css|merge([{
                     minWidth: cssMinWidth,
-                    cssAspectRatio: cssAspectRatio
+                    cssAspectRatio: cssAspectRatio,
+                    image: image.crop({width: size.width, ar: cropAspectRatio, crop: cropOrientation|lower}).src
                 }]) %}
 
                 {# Add the image sources and preload media queries #}
@@ -117,11 +114,29 @@
             {% endinlinecss %}
         {% endif %}
 
-        {# Output the banner image #}
-        {% set image.picture.class = "Banner-picture" %}
-        {% set image.class = "Banner-image Banner-image--" ~ cropOrientation|lower %}
-        {% do image.prioritize({ media: "(min-width: " ~ (maxWidth + 1) ~ "px)" }) %}
-        {{ image.tag }}
+        {% if !hasContent %}
+            {# Output the image #}
+            {# Set the cropping for the image #}
+            {% do image.crop({
+                ar: imageCropAspectRatio,
+                crop: cropOrientation|lower
+            }) %}
+
+            {# Output the banner image #}
+            {% set image.picture.class = "Banner-picture" %}
+            {% set image.class = "Banner-image Banner-image--" ~ cropOrientation|lower %}
+            {% do image.prioritize({ media: "(min-width: " ~ (maxWidth + 1) ~ "px)" }) %}
+            {{ image.tag }}
+        {% else %}
+            {# Set the image as a background image. This is done so that the banner will properly grow with the content if the content is tall #}
+            {% inlinecss %}
+                {% for cssOption in css %}
+                @media (min-width: {{ cssOption.minWidth }}px) {
+                    .{{ uniqueClass}} {background-image: url({{ cssOption.image }}); }
+                }
+                {% endfor %}
+            {% endinlinecss %}
+        {% endif %}
     </div>
 {% endmacro %}
 
@@ -161,7 +176,7 @@
  #}
 {% macro largeBannerContent(content) %}
     <div class="Banner-fg"></div>
-    <div class="Banner-content first-child-st-0 last-child-sb-0">
-        <div class="Banner-contentInner">{{ content }}</div>
+    <div class="Banner-content">
+        <div class="Banner-contentInner first-child-st-0 last-child-sb-0">{{ content }}</div>
     </div>
 {% endmacro %}

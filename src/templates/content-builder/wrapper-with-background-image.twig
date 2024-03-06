@@ -17,7 +17,7 @@
         {% for width in _core.theme.settings.blockWrapperWBgImageWidths %}
             {% set css = css|merge([{
                 width: loop.first ? 1 : width.size.size,
-                image: backgroundImage.src
+                image: backgroundImage.resize(width.size.size).src
             }]) %}
         {% endfor %}
     {% else %}

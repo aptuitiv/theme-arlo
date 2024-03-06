@@ -4,6 +4,12 @@
 
 /* @define BannerSlider */
 
+/* postcss-bem-linter: ignore */
+.BannerSlider .Banner {
+    padding-bottom: 30px; /* Do this to allow space for the dot pagination */
+    position: static; /* Do this to allow the background image to fill the slide when the slides are not all the same height */
+}
+
 /* ------------------------------------ *\
     Splide
 \* ------------------------------------ */
@@ -41,7 +47,7 @@
 \* ------------------------------------ */
 
 .BannerSlider-pagination {
-    display: flex;
+    display: none;
     flex-direction: row;
     gap: var(--Banner-slider-text-pagination-gap, 10px);
     justify-content: center;
@@ -85,4 +91,15 @@
         --Banner-slider-text-pagination-text-decoration-hover,
         var(--Banner-slider-text-pagination-text-decoration)
     );
+}
+
+@media (--c-bp-md) {
+    /* postcss-bem-linter: ignore */
+    .BannerSlider .Banner {
+        padding-bottom: 0;
+    }
+
+    .BannerSlider-pagination {
+        display: flex;
+    }
 }

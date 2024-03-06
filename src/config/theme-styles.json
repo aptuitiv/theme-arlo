@@ -3,7 +3,7 @@
         {
             "name": "Banner",
             "description": "Styles for the \"Banner\" content layout. To adjust the size of the underlying images, see Settings &rarr; Banner Images.",
-            "sections": [
+            "groups": [
                 {
                     "name": "Colors",
                     "fields": [
@@ -54,13 +54,33 @@
                     "name": "Content",
                     "fields": [
                         {
-                            "name": "bannerContentAlign",
-                            "label": "Text alignment",
-                            "type": "textalign",
+                            "name": "bannerContentAlignHorizontal",
+                            "label": "Horizontal alignment",
+                            "type": "select",
                             "default": "center",
+                            "options": {
+                                "start": "Left",
+                                "center": "Center",
+                                "end": "Right"
+                            },
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Banner-text-align"
+                                "cssVariable": "--Banner-align-horizontal"
+                            }
+                        },
+                        {
+                            "name": "bannerContentAlignVertical",
+                            "label": "Vertical alignment",
+                            "type": "select",
+                            "default": "center",
+                            "options": {
+                                "start": "Left",
+                                "center": "Center",
+                                "end": "Right"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Banner-align-vertical"
                             }
                         },
                         {

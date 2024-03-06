@@ -20,6 +20,7 @@
                     _core.theme.settings.bannerImageRatio,
                     _core.theme.settings.bannerImageCropStrategy,
                     _core.theme.settings.bannerImageCropOrientation,
+                    slide.content|length > 0,
                     doCss
                 ) }}
             {% elseif slide.video %}
@@ -27,8 +28,8 @@
             {% endif %}
              {% if pagination is iterable || slide.content|length > 0 %}
                 <div class="Banner-fg"></div>
-                <div class="Banner-content first-child-st-0 last-child-sb-0">
-                    <div class="Banner-contentInner">
+                <div class="Banner-content">
+                    <div class="Banner-contentInner first-child-st-0 last-child-sb-0">
                         {% if pagination is iterable %}
                             <ul class="BannerSlider-pagination">
                                 {% for text in pagination %}
@@ -85,7 +86,16 @@
             loadjs.ready('splide', {
                 success: function() {
                     const splide{{ randomString }} = new Splide('.{{ class }}', {
-                        pagination: {{ slidePagination|length > 0 ? 'false' : 'true' }},
+                        {% if slidePagination|length > 0 %}
+                            pagination: false,
+                            breakpoints: {
+                                    768: {
+                                        pagination: true,
+                                    },
+                            },
+                        {% else %}
+                            pagination: true,
+                        {% endif %}
                         arrows: false,
                         rewind: true,
                         type: 'fade',

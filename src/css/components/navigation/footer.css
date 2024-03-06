@@ -6,11 +6,11 @@
 .FooterNav {
     align-items: center;
     display: flex;
-    list-style: none;
     flex-direction: column;
-    padding-left: 0;
+    list-style: none;
     margin: 0;
     padding: 0;
+    padding-left: 0;
 }
 
 .FooterNav-separator {

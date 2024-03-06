@@ -44,9 +44,9 @@
 }
 
 .GoogleRatingsBar-stars {
+    align-items: center;
     color: var(--GoogleRatingBar-stars-color);
     display: inline-flex;
-    align-items: center;
     font-family: var(--GoogleRatingBar-stars-font-family);
     font-size: var(--GoogleRatingBar-stars-font-size, inherit);
     font-style: var(--GoogleRatingBar-stars-font-style);

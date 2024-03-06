@@ -62,7 +62,6 @@
     letter-spacing: var(--ImageGridItem-title-bottom-letter-spacing);
     line-height: var(--ImageGridItem-title-bottom-line-height, inherit);
     margin: var(--ImageGridItem-title-bottom-margin, 0);
-
     text-align: var(--ImageGridItem-title-bottom-text-align);
     text-decoration: var(--ImageGridItem-title-bottom-text-decoration);
     text-shadow: var(--ImageGridItem-title-bottom-text-shadow);
@@ -120,7 +119,6 @@
     bottom: 0;
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     left: 0;
     position: absolute;

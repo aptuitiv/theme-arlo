@@ -42,8 +42,8 @@
     padding: var(--Button-padding);
     text-align: center;
     text-decoration: var(--Button-typography-text-decoration);
-    text-transform: var(--Button-typography-text-transform);
     text-shadow: none; /* Done in case this is within another element that has text-shadow applied to it */
+    text-transform: var(--Button-typography-text-transform);
     user-select: none; /* 2 */
 }
 

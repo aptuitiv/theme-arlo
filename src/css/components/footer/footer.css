@@ -10,11 +10,11 @@
 }
 
 .Footer-inner {
-    display: flex;
     align-items: center;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 30px;
+    justify-content: space-between;
 }
 
 .Footer-company {
@@ -64,7 +64,7 @@
     }
 }
 
-@media (max-width: 48em) {
+@media (width <= 48em) {
     .Footer-address {
         padding-left: 0 !important;
         text-align: center !important;

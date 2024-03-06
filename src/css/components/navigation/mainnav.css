@@ -16,11 +16,11 @@
 
 .MainNav-item {
     display: flex;
-    justify-content: flex-end;
     font-family: var(--MainNav-font-family);
     font-size: var(--MainNav-font-size, 2rem);
     font-style: var(--MainNav-font-style, normal);
     font-weight: var(--MainNav-font-weight, 700);
+    justify-content: flex-end;
     letter-spacing: var(--MainNav-letter-spacing);
     line-height: var(--MainNav-line-height, 1.58);
     width: 100%;

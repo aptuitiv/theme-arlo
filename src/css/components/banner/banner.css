@@ -43,8 +43,8 @@
     background-color: var(--Banner-overlay, transparent);
     height: 100%;
     left: 0;
-    top: 0;
     position: absolute;
+    top: 0;
     width: 100%;
     z-index: 2;
 }
@@ -53,10 +53,9 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-
+    justify-content: var(--Banner-text-align);
     padding: var(--Banner-padding-sm);
     position: relative;
-    justify-content: var(--Banner-text-align);
     text-align: var(--Banner-text-align);
     z-index: 3;
 }
@@ -81,7 +80,7 @@
     font-size: var(--Banner-content-font-size, 2rem);
 }
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
     /* postcss-bem-linter: ignore */
     .Banner-content h1 {
         font-size: 2em;

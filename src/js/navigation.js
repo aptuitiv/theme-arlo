@@ -54,8 +54,12 @@ const smallScreenNav = {
             document.addEventListener('mousedown', handleMenuMouseDown);
         }
 
-        openButton.addEventListener('click', showMenu);
-        closeButton.addEventListener('click', hideMenu);
+        if (openButton) {
+            openButton.addEventListener('click', showMenu);
+        }
+        if (closeButton) {
+            closeButton.addEventListener('click', hideMenu);
+        }
         if (menuButtons) {
             menuButtons.addEventListener('click', hideMenu);
         }

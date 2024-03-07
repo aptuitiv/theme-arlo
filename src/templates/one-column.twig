@@ -1,3 +1,4 @@
+{% include 'snippets/head' %}
 {% include 'snippets/header' %}
 
 {% block banner %}
@@ -10,4 +11,5 @@
     </main>
 </div>
 
+{{ _api.contentSnippet.get('footer-content') }}
 {% include 'snippets/footer' %}

@@ -1,3 +1,4 @@
+{% include 'snippets/head' %}
 {% include 'snippets/header' %}
 
 {% set content = "<h1>Oops!</h1>" %}
@@ -11,4 +12,5 @@
     </main>
 </div>
 
+{{ _api.contentSnippet.get('footer-content') }}
 {% include 'snippets/footer' %}

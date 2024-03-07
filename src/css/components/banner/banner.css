@@ -12,6 +12,7 @@
 }
 
 .Banner--noMedia {
+    aspect-ratio: var(--Banner-content-aspect-ratio);
     background-color: var(--Banner-background);
 }
 
@@ -69,7 +70,6 @@
 }
 
 .Banner--noMedia .Banner-content {
-    aspect-ratio: var(--Banner-content-aspect-ratio);
     padding: var(--Banner-padding-no-image-sm);
 }
 

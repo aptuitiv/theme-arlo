@@ -452,6 +452,168 @@
             ]
         },
         {
+            "name": "Blocks - Banner With Form",
+            "description": "Styles for the \"Banner With Form\" block.",
+            "groups": [
+                {
+                    "name": "General",
+                    "fields": [
+                        {
+                            "name": "bannerWithFormBackground",
+                            "label": "Background color for the whole bar",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-background"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-padding"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Content",
+                    "fields": [
+                        {
+                            "name": "bannerWithFormContentBackground",
+                            "label": "Background color for the content area",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-content-background"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormContentVerticalAlignment",
+                            "label": "Vertical alignment",
+                            "type": "select",
+                            "options": {
+                                "start": "Top",
+                                "center": "Center",
+                                "end": "Bottom"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-content-vertical-alignment"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormContentHorizontalAlignment",
+                            "label": "Horizontal alignment",
+                            "type": "textAlign",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-content-horizontal-alignment"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormContentPadding",
+                            "label": "Padding around the content",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-content-padding"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormContentH1Color",
+                            "label": "H1 color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-content-h1-color"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormContentH2Color",
+                            "label": "H2 color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-content-h2-color"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormContentColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-content-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Form",
+                    "fields": [
+                        {
+                            "name": "bannerWithFormFormBackground",
+                            "label": "Background color for the form area",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-form-background"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormFormVerticalAlignment",
+                            "label": "Vertical alignment",
+                            "type": "select",
+                            "options": {
+                                "start": "Top",
+                                "center": "Center",
+                                "end": "Bottom"
+                            },
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-form-vertical-alignment"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormFormPadding",
+                            "label": "Padding around the content",
+                            "type": "padding",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-form-padding"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormFormH2Color",
+                            "label": "H2 color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-form-h2-color"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormFormColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--BannerWithForm-form-color"
+                            }
+                        },
+                        {
+                            "name": "bannerWithFormFormContent",
+                            "label": "Content above the form",
+                            "type": "richTextEditor"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Blocks - Full Width Image",
             "description": "Styles for the \"Full Width Image\" block.",
             "fields": [
@@ -1318,7 +1480,7 @@
             ]
         },
         {
-            "name": "Blocks - Wrapper with background image",
+            "name": "Blocks - Wrapper With Background Image",
             "description": "Styles for the \"Wrapper with background image\" block.",
             "sidebarSize": "small",
             "fields": [
@@ -2508,13 +2670,41 @@
                                 "type": "css-head",
                                 "cssVariable": "--Header-sticky-logo-width"
                             }
+                        },
+                        {
+                            "name": "headerStickyHeaderHeight",
+                            "label": "Approximate sticky header height",
+                            "description": "This is used to offset any anchor links so that they don't end up under the sticky header.",
+                            "type": "size",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-sticky-height"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Landing page header phone number",
+                    "fields": [
+                        {
+                            "name": "headerLandingPhoneTypography",
+                            "label": "Phone typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "usePadding": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".LandingPageHeader-phone[href^='tel']"
+                            }
                         }
                     ]
                 }
             ]
         },
         {
-            "name": "Header bar",
+            "name": "Header Bar",
             "description": "Styles for the header bar of the website.",
             "sections": [
                 {
@@ -2982,7 +3172,7 @@
             ]
         },
         {
-            "name": "Pop out menu",
+            "name": "Pop Out Menu",
             "description": "Styles for the popout menu.",
             "groups": [
                 {

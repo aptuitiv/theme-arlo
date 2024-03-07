@@ -43,7 +43,7 @@
                     {% do _core.theme.settings.menuLogo.resize(_core.theme.settings.menuLogoWidth.size + 100) %}
                     <a href="/" aria-label="Go to home page">{{ _core.theme.settings.menuLogo.tag }}</a>
                 {% endif %}
-                <button class="Menu-close js-menuCloseBtn">
+                <button class="Menu-close js-menuCloseBtn" aria-label="Close menu">
                     <svg class="Menu-icon Icon"><use xlink:href="#icon-close" /></svg>
                 </button>
             </div>

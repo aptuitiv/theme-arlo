@@ -5,6 +5,7 @@
         <div class="ImageBar{% if _core.theme.settings.blockImageBarImageGrayscale == 'yes' %} ImageBar--grayscale{% endif %}">
             {% for image in images %}
                 {% set image.image.class = 'ImageBar-image' %}
+                {% do image.image.lazy() %}
                 {% if image.url %}
                     <a href="{image.url}" target="_blank" class="ImageBar-link">{{ image.image.tag }}</a>
                 {% else %}

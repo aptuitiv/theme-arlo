@@ -14,7 +14,8 @@
                     {% set image.class = "Testimonial-image" %}
                     {% do image.alt|default(item.itemName) %}
                     {% do image.resize(600, 600) %}
-                    {{ image.tag() }}
+                    {% do image.lazy() %}
+                    {{ image.tag }}
                 {% endif %}
                 <div class="Testimonial-content">
                     {{ _core.theme.settings.blockTestimonialsHeading }}

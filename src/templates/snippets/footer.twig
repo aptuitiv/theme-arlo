@@ -7,10 +7,12 @@
                                 {% if _core.theme.settings.footerLogo %}
                                     {% do _core.theme.settings.footerLogo.alt.default(_core.settings.companyName) %}
                                     {% set _core.theme.settings.footerLogo.class = "Footer-logo" %}
+                                    {% do _core.theme.settings.footerLogo.lazy() %}
                                     <a href="/">{{ _core.theme.settings.footerLogo.tag }}</a>
                                 {% elseif _core.theme.settings.headerLogo %}
                                     {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
                                     {% set _core.theme.settings.headerLogo.class = "Footer-logo" %}
+                                    {% do _core.theme.settings.headerLogo.lazy() %}
                                     <a href="/">{{ _core.theme.settings.headerLogo.tag }}</a>
                                 {% endif %}
                             </div>

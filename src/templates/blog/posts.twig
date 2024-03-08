@@ -1,10 +1,11 @@
 {% extends "one-column" %}
 
 {% block banner %}
-
+    {{ _api.contentSnippet.get('blog-banner') }}
 {% endblock %}
 
 {% block main %}
+    {{ header }}
     {% include 'blog/post-grid' %}
     {% include 'snippets/pagination' %}
 {% endblock %}

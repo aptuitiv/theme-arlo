@@ -26,6 +26,7 @@
         "fonts": "aptuitiv-build push-fonts",
         "icons": "aptuitiv-build icons",
         "images": "aptuitiv-build images",
+        "init": "aptuitiv-build init",
         "js": "aptuitiv-build js",
         "jslint": "aptuitiv-build jslint",
         "start": "aptuitiv-build start",

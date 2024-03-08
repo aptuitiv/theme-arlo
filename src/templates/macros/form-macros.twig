@@ -248,7 +248,15 @@
         <p>{{ errorMessage }}</p>
         <ul class="mb-0">
             {% for error in form.errors %}
-                <li>{{ error.message }}</li>
+                {% if error.message %}
+                    <li>{{ error.message }}</li>
+                {% elseif error.fieldName == 'ap-form-captcha' %}
+                    {% if form.captcha.error %}
+                        <li>Google reCAPTCHA error: {{ form.captcha.error }}</li>
+                    {% elseif form.captcha.errorCode %}
+                        <li>Google reCAPTCHA error: {{ form.captcha.errorCode }}</li>
+                    {% endif %}
+                {% endif %}
             {% endfor %}
             {% for error in form.paymentErrors %}
                 <li>{{ error.message }}</li>
@@ -355,6 +363,10 @@
                             {% else %}
                                 document.querySelector('.{{ form.class }}').submit();
                             {% endif %}
+                        }).catch(function(e) {
+                            console.error(e);
+                            document.querySelector('.{{ formOverlayClass }}').style.display = 'none';
+                            document.querySelector('.{{ form.class }} [type="submit"]').disabled = false;
                         });
                     {% else %}
                         {% if submitHandler %}

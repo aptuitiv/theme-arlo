@@ -19,8 +19,8 @@
             {{ bannerMacros.bannerVideo(video, core.theme.settings.bannerImageSizes, true) }}
         {% endif %}
 
-        {% if content %}
-            {{ bannerMacros.largeBannerContent(content) }}
+        {% if content || overlayImage %}
+            {{ bannerMacros.largeBannerContent(content, overlayImage) }}
         {% endif %}
     </div>
 {% endif %}

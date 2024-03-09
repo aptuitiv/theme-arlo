@@ -19,13 +19,13 @@ export default {
         }
     ],
     eslint: {
-        'ignorePatterns': ['fslightbox.js']
+        ignorePatterns: ['fslightbox.js']
     },
     javascript: {
         bundles: [
             {
-                'build': 'main.js',
-                'nodeModules': ['micromodal/dist/micromodal.min.js'],
+                build: 'main.js',
+                nodeModules: ['micromodal/dist/micromodal.min.js'],
                 src: [
                     'script-loader.js',
                     'iframe-loader.js',

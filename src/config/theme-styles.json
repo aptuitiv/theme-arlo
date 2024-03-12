@@ -2249,7 +2249,19 @@
                             "default": "#00263e",
                             "preview": {
                                 "type": "css-head",
-                                "cssVariable": "--Footer-background"
+                                "cssSelector": ".Footer",
+                                "cssProperty": "background-color"
+                            }
+                        },
+                        {
+                            "name": "footerColor",
+                            "label": "Text color",
+                            "description": "You can override this color in some sections below",
+                            "type": "color",
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer",
+                                "cssProperty": "color"
                             }
                         },
                         {
@@ -2409,6 +2421,32 @@
                     ]
                 },
                 {
+                    "name": "Bottom bar",
+                    "fields": [
+                        {
+                            "name": "footerBottomBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "default": "#fff",
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterBottom",
+                                "cssProperty": "background-color"
+                            }
+                        },
+                        {
+                            "name": "footerBottomGap",
+                            "label": "Gap between the text and navigation in the bottom bar",
+                            "type": "size",
+                            "default": "20px",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-bottom-gap"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Bottom bar typography",
                     "fields": [
                         {
@@ -2437,6 +2475,9 @@
                             "collapsable": false,
                             "usePadding": true,
                             "useHover": true,
+                            "padding": {
+                                "label": "Padding on each link"
+                            },
                             "preview": {
                                 "type": "css-head",
                                 "cssSelector": ".FooterNav-link"
@@ -2464,6 +2505,27 @@
                             "preview": {
                                 "type": "css-head",
                                 "cssSelector": ".FooterNav-item"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Credit typography",
+                    "description": "Styles for the Aptuitiv credit text at the bottom of the footer",
+                    "fields": [
+                        {
+                            "name": "footerCreditTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "usePadding": true,
+                            "preview": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterCredit-link"
+                            },
+                            "textAlignPreview": {
+                                "cssProperty": "justify-content",
+                                "cssSelector": ".FooterCredit"
                             }
                         }
                     ]

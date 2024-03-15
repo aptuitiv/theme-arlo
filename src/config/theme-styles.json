@@ -857,6 +857,35 @@
             ]
         },
         {
+            "name": "Blocks - Columned Content",
+            "description": "Styles for the \"Columned Content\" block.",
+            "fields": [
+                {
+                    "name": "blockColumnContentDefaultNumColumns",
+                    "label": "Default number of columns",
+                    "type": "select",
+                    "default": "3",
+                    "options": {
+                        "2": "2",
+                        "3": "3",
+                        "4": "4",
+                        "5": "5",
+                        "6": "6"
+                    }
+                },
+                {
+                    "name": "blockColumnContentGap",
+                    "label": "Gap between columns",
+                    "type": "size",
+                    "default": "20px",
+                    "preview": {
+                        "type": "css-head",
+                        "cssVariable": "--ColumnContent-gap"
+                    }
+                }
+            ]
+        },
+        {
             "name": "Blocks - Full Width Image",
             "description": "Styles for the \"Full Width Image\" block.",
             "fields": [

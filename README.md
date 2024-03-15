@@ -12,13 +12,19 @@ The goal of this theme is to be copied to another repository for the site you're
 
 You'll want to create a new git repository for the site that this is being installed to. Copy the contents of this repo to that repo. That will allow you to make modifications that only affect that website.
 
-From that folder, you'll need to install the dependencies, run an initial build, and set up FTP. You can set up FTP using [create-ftp-env](https://github.com/aptuitiv/create-ftp-env) or by following the [FTP section below](#ftp). When prompted for credentials, you can find them in the CMS under Settings -> Domain / FTP / DNS.
+In the command line run `npm i` to install the packages.
+
+Log into the CMS and go to Settings -> Domain / FTP / DNS.
+
+In the project command line run
 
 ```bash
-npm install
-gulp build
-create-ftp-env
+npm run init
 ```
+
+That will initialize the development environment. Follow the prompts to set up the FTP connection.
+
+(If you have the [Aptuitiv website-build-tools](https://github.com/aptuitiv/website-build-tools) installed globally you can do the above things in one step with the `aptuitiv-build init` command.)
 
 ### Preparing the CMS
 
@@ -61,9 +67,9 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
 
 ### Deploying the Theme
 
-1. Install packages with `npm i`.
-2. Build the theme with `gulp build`.
-3. Deploy the theme files using the `gulp deploy` command and wait until completed (~30 seconds).
+If you ran `npm run init` as described above then the site files are already built. If not, then run `npm run build` to build the files.
+
+Deploy all of the theme files with `npm run deploy`. That will upload the files via FTP to the server.
 
 ### Set up content snippets for special content
 
@@ -91,15 +97,15 @@ To finish the installation, you'll need to configure some basic options of the t
     1. Go through all of the **Theme Styles** from the Theme Styles tab and update all color references to use the *Color Palette* if matching one.
     1. Update **Typography** under Styles -> Typography to use "Open Sans" for the base font family and "Montserrat" for the heading font family.
 
-You've now got an instance of Skeleton installed and configured on your new site. From here you can customize the styles in the *Theme Editor* or make template changes.
+You've now got an instance of the theme installed and configured on your new site. From here you can customize the styles in the *Theme Editor* or make template changes.
 
 ## Making Changes
 
-If you want to make changes, all you have to do is run `gulp watch` while making all file changes. They will be deployed automatically.
+If you want to make changes, all you have to do is run `npm run watch` while making all file changes. They will be deployed automatically.
 
 ## FTP
 
-We recommend using [create-ftp-env](https://github.com/aptuitiv/create-ftp-env) for generating the `.env` file automatically.
+We recommend using the [Aptuitiv website-build-tools](https://github.com/aptuitiv/website-build-tools) and the `init` command for generating the `.env` file automatically.
 
 You can alternatively create a manual `.env` file with the following data instead:
 

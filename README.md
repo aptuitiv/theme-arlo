@@ -42,8 +42,6 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
 4. Pages
    - Edit the "Home" page to use the "One Column" *Page Template* from Content -> Pages.
    - Delete the "Default" *Page Template* from Design -> Templates.
-   - Set the "Banner" *Content Layout's* available *Content Areas* to be only the "Banner" *Content Area* under Content -> Content Layouts -> Banner -> Edit this Content Layout.
-   - Set up **Template Content Layout Assignments** to map the "Banner" *Content Layout* to the "Banner" *Content Area* for the "One Column" and "Two Column" *Page Templates* under Content -> Page Settings -> Template Content Layout Assignments.
 
 5. Navigation. Go to Design -> Navigation -> Navigation Menus
     - Create a navigation menu called `Footer`.

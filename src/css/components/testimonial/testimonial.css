@@ -68,7 +68,7 @@
     font-size: 0.8em;
 }
 
-@media (--c-bp-lg) {
+@media (--m-lg) {
     .Testimonial-image {
         left: auto;
         max-height: none;

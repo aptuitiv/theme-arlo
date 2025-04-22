@@ -17,7 +17,7 @@
     display: none;
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .FooterNav {
         flex-direction: row;
     }

@@ -55,7 +55,7 @@
     text-transform: var(--HeaderBar-phone-text-text-transform, var(--HeaderBar-phone-text-transform));
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .HeaderBar-inner {
         justify-content: var(--HeaderBar-justify);
     }

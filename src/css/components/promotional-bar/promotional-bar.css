@@ -39,7 +39,7 @@
     justify-content: center;
 }
 
-@media (--c-bp-lg) {
+@media (--m-lg) {
     .PromoBar--grid .PromoBar-content {
         display: grid;
         grid-template-columns: var(--PromoBar-col1-width, 50%) var(--PromoBar-col2-width, 50%);

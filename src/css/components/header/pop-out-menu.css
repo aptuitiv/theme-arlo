@@ -115,7 +115,7 @@ a.Menu-socialLink {
     font-size: var(--Menu-social-icon-font-size, 2rem);
 }
 
-@media (--c-bp-sm) {
+@media (--m-sm) {
     .Menu {
         max-width: var(--Menu-width, 500px);
         padding: var(--Menu-padding, 20px);

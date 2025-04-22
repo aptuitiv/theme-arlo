@@ -107,7 +107,7 @@
     }
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .Header {
         padding: var(--Header-padding, 0);
     }

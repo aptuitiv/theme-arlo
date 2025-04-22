@@ -155,7 +155,7 @@
     width: 100%;
 }
 
-@media (--c-bp-sm) {
+@media (--m-sm) {
     .Button--smFull {
         width: auto;
     }

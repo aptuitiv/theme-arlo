@@ -72,7 +72,7 @@
     width: var(--Notification-close-fontSize);
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .Notification-title {
         font-size: var(--Notification-title-fontSize);
     }

@@ -11,7 +11,7 @@
     gap: var(--Footer-bottom-gap, 20px);
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .FooterBottom {
         flex-direction: row;
     }

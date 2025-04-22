@@ -42,7 +42,7 @@
     display: none;
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .HeaderBarNav-item--hideMd {
         display: block;
     }
@@ -53,7 +53,7 @@
     display: none;
 }
 
-@media (--c-bp-lg) {
+@media (--m-lg) {
     .HeaderBarNav-item--hideLg {
         display: block;
     }

@@ -112,7 +112,7 @@
     padding: 0 var(--Modal-content-paddingHorizontal) var(--Modal-content-paddingVertical) var(--Modal-content-paddingHorizontal);
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .Modal-header {
         align-items: center;
         flex-direction: row;

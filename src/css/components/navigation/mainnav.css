@@ -56,7 +56,7 @@
     display: none;
 }
 
-@media (--c-bp-md) {
+@media (--m-md) {
     .MainNav {
         gap: var(--MainNav-item-gap);
     }
@@ -75,7 +75,7 @@
     display: none;
 }
 
-@media (--c-bp-lg) {
+@media (--m-lg) {
     .MainNav-link {
         padding: var(--MainNav-item-padding-top, 0) var(--MainNav-item-padding-right, 0)
             var(--MainNav-item-padding-bottom, 0) var(--MainNav-item-padding-left, 0);
@@ -91,7 +91,7 @@
     display: none;
 }
 
-@media (--c-bp-xl) {
+@media (--m-xl) {
     .MainNav-item--hideXlg {
         display: block;
     }

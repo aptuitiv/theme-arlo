@@ -3,7 +3,8 @@
 \* =========================================================================== */
 
 /* @define NavBar */
-.NavBar {
+
+/* .NavBar {
     --navbar-offset: 100px;
 
     background-color: var(--NavBar-background);
@@ -32,4 +33,4 @@
         display: block;
         padding: var(--NavBar-padding, 0);
     }
-}
+} */

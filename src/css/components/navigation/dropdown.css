@@ -64,7 +64,7 @@
 
 .Dropdown-link {
     background: var(--Dropdown-link-background-sm);
-    color: var(--Dropdown-link-color-sm) !important;
+    color: var(--Dropdown-link-color-sm);
     display: block;
     font-family: var(-Dropdown-link-font-family);
     font-size: var(--Dropdown-link-font-size);
@@ -159,7 +159,7 @@
 
     .Dropdown-link {
         background: var(--Dropdown-link-background);
-        color: var(--Dropdown-link-color) !important;
+        color: var(--Dropdown-link-color);
     }
 
     .Dropdown:hover > .Dropdown-menu,

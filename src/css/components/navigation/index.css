@@ -1,8 +1,6 @@
-@import './bar.css';
 @import './dropdown';
 @import './footer';
 @import './hamburger';
 @import './header-bar.css';
 @import './mainnav';
 @import './pop-out-menu.css';
-@import './small-screen-button';

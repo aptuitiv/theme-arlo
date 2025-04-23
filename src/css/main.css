@@ -76,7 +76,6 @@
 
 /* Display (md) */
 @import 'cacao-css/dist/display/md/align.css';
-
 @import 'cacao-css/dist/display/md/justify.css';
 
 /* Display (lg) */
@@ -89,14 +88,12 @@
 /* Display (xl) */
 @import 'cacao-css/dist/display/xl/align.css';
 @import 'cacao-css/dist/display/xl/display.css';
-
 @import 'cacao-css/dist/display/xl/justify.css';
 
 /* Grid */
 @import 'cacao-css/dist/grid/grid.css';
 @import 'cacao-css/dist/grid-column/col-1.css';
 @import 'cacao-css/dist/grid-column/col-2.css';
-
 @import 'cacao-css/dist/grid-column/col-4.css';
 
 /* Grid (sm) */

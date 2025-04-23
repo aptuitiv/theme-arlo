@@ -1,11 +1,27 @@
-{% extends "one-column" %}
+{% extends 'two-column-right-sidebar' %}
 
 {% block banner %}
-    {{ _api.contentSnippet.get('blog-banner') }}
+    {% set heading = _core.theme.settings.blogMainPageBannerHeading|default('Blog') %}
+    {% set content = '<h1>' ~ heading ~ '</h1>' %}
+    {% if pagination.current > 1 %}
+        {% set content = '<h1 class="flex flex-col align-center g-1">' ~ heading ~ '<span class="h3 m-0">Page ' ~ pagination.current ~ '</span></h1>' %}
+    {% endif %}
+    {% if _core.theme.settings.blogMainPageBannerImage %}
+        {% set image = _core.theme.settings.blogMainPageBannerImage %}
+    {% endif %}
+    {% include('content-builder/banner-bar') %}
 {% endblock %}
 
 {% block main %}
-    {{ header }}
-    {% include 'blog/post-grid' %}
-    {% include 'snippets/pagination' %}
+    {% if posts %}
+        {% for post in posts %}
+            {% include 'blog/post-list-item-simple' %}
+        {% endfor %}
+        {% include 'snippets/pagination' %}
+    {% endif %}
+
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'blog/sidebar' %}
 {% endblock %}

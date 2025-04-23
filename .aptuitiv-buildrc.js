@@ -18,6 +18,9 @@ export default {
             dest: 'just-validate'
         }
     ],
+    css: {
+        buildFiles: '*.css'
+    },
     eslint: {
         ignorePatterns: ['fslightbox.js']
     },
@@ -25,7 +28,9 @@ export default {
         bundles: [
             {
                 build: 'main.js',
-                nodeModules: ['micromodal/dist/micromodal.min.js'],
+                nodeModules: [
+                    'micromodal/dist/micromodal.min.js'
+                ],
                 src: [
                     'script-loader.js',
                     'iframe-loader.js',
@@ -35,10 +40,14 @@ export default {
                     'header.js',
                     'main.js'
                 ]
+            },
+            {
+                build: 'lightbox.js',
+                src: [
+                    'fslightbox.js'
+                ]
             }
         ],
-        files: [
-            'fslightbox.js'
-        ]
+        files: []
     }
 }

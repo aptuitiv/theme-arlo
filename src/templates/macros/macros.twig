@@ -41,9 +41,9 @@
     {% inlinejs %}
         loadjs.ready('main', {
             success: function() {
-                loadjs(['{{ '/js/fslightbox.js'|theme_url }}'], 'lightbox');
+                loadjs(['{{ '/js/lightbox.js'|theme_url }}'], 'lightbox');
             }
         });
     {% endinlinejs %}
-    {% do _page.registerJs('/js/fslightbox.js'|theme_url) %}
+    {% do _page.registerJs('/js/lightbox.js'|theme_url) %}
 {% endmacro %}

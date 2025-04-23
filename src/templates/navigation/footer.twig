@@ -3,22 +3,23 @@
     {% apply spaceless %}
 
     {% for item in items %}
-        {# ASSIGN MENU ITEM CLASS #}
-        {% set class = "FooterNav-item " ~ item.link.class %}
-        <li class="{{ class|trim }}">
+        {% if item.link.href != '#' %}
+            {% set class = "FooterNav-item " ~ item.link.class %}
+            <li class="{{ class|trim }}">
             {% if _core.theme.settings.footerNavigationSeparator %}
                 <span class="FooterNav-separator">{{ _core.theme.settings.footerNavigationSeparator }}</span>
             {% endif %}
-            {# ASSIGN MENU LINK CLASS #}
-            {% set item.link.class = item.link.class ~ ' FooterNav-link' %}
-            {{ item.link.tag }}
-            {% if item.subItems %}
-                <ul>
-                    {% import _self as macros %}
-                    {{ macros.menu_items( item.subItems ) }}
-                </ul>
-            {% endif %}
-        </li>
+                {# ASSIGN MENU LINK CLASS #}
+                {% set item.link.class = item.link.class ~ ' FooterNav-link' %}
+                {{ item.link.tag }}
+                {% if item.subItems %}
+                    <ul>
+                        {% import _self as macros %}
+                        {{ macros.menu_items( item.subItems ) }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endif %}
     {% endfor %}
     {% endapply %}
 {% endmacro %}
@@ -28,5 +29,5 @@
 
 {# Build the navigation menu #}
 <ul class="FooterNav">
-    {{ macros.menu_items( items ) }}
+    {{ macros.menu_items(items) }}
 </ul>

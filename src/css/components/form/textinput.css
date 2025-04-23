@@ -9,7 +9,7 @@
     border-radius: var(--TextInput-border-radius, 0);
     box-sizing: border-box;
     color: var(--TextInput-color, #333);
-    outline: none;
+    outline: var(--TextInput-border-width, 1px) dotted var(--TextInput-border-color, #777);
     padding: var(--TextInput-padding, 5px 10px);
     width: 100%;
 }

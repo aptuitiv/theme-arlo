@@ -7,6 +7,8 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -20,9 +22,26 @@
 @media (--m-md) {
     .FooterNav {
         flex-direction: row;
+        gap: 20px;
     }
 
     .FooterNav-separator {
         display: inline-block;
+        position: relative;
+    }
+
+    .FooterNav-link::after {
+        background: var(--FooterNav-color);
+        content: '';
+        height: 25%;
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+    }
+
+    .FooterNav-item:last-child .FooterNav-link::after {
+        display: none;
     }
 }

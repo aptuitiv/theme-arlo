@@ -50,6 +50,12 @@
     text-transform: var(--Notification-title-textTransform);
 }
 
+.Notification-titleContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
 .Notification-alert {
     font-size: calc(var(--Notification-title-fontSize) * 1.5);
     margin-right: 20px;
@@ -73,6 +79,14 @@
 }
 
 @media (--m-md) {
+    .Notification {
+        text-align: center;
+    }
+
+    .Notification-placeholder {
+        display: block;
+    }
+
     .Notification-title {
         font-size: var(--Notification-title-fontSize);
     }

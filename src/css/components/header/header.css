@@ -4,7 +4,7 @@
 
 /* @define Header */
 .Header {
-    padding: var(--Header-sm-padding, 0);
+    padding: var(--Header-padding-sm, 20px 0);
 }
 
 /* ------------------------------------ *\
@@ -89,9 +89,9 @@
     flex-shrink: 0;
 }
 
-/* ------------------------------------ *\
-    Responsive
-\* ------------------------------------ */
+.Header-textLogo {
+    font-size: var(--Header-text-logo-font-size-sm);
+}
 
 @media (width <= 1300px) {
     .Header-bar {

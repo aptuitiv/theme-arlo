@@ -273,3 +273,35 @@ h5:first-child,
 h6:first-child {
     margin-top: 0;
 }
+
+@media (--m-sm) {
+    h1,
+    .h1 {
+        font-size: var(--base-typography-h1-font-size, 3.6rem);
+    }
+
+    h2,
+    .h2 {
+        font-size: var(--base-typography-h2-font-size, 3.2rem);
+    }
+
+    h3,
+    .h3 {
+        font-size: var(--base-typography-h3-font-size, 2.8rem);
+    }
+
+    h4,
+    .h4 {
+        font-size: var(--base-typography-h4-font-size, 2.4rem);
+    }
+
+    h5,
+    .h5 {
+        font-size: var(--base-typography-h5-font-size, 2rem);
+    }
+
+    h6,
+    .h6 {
+        font-size: var(--base-typography-h6-font-size, 1.8rem);
+    }
+}

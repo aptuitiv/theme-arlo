@@ -8,7 +8,9 @@
     box-sizing: border-box;
     display: none;
     flex-flow: column nowrap;
+    font-family: var(--MainNav-font-family);
     gap: var(--MainNav-item-sm-gap);
+    justify-content: var(--MainNav-horizontal-alignment);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -23,6 +25,7 @@
     justify-content: flex-end;
     letter-spacing: var(--MainNav-letter-spacing);
     line-height: var(--MainNav-line-height, 1.58);
+    text-transform: var(--MainNav-text-transform);
     width: 100%;
 }
 

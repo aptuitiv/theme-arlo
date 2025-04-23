@@ -78,12 +78,12 @@
     align-items: center;
     color: var(--Modal-title-color);
     display: flex;
-    font-family: var(--Modal-title-fontFamily);
-    font-size: var(--Modal-title-fontSize--sm);
-    font-weight: var(--Modal-title-fontWeight);
-    letter-spacing: var(--Modal-title-letterSpacing);
-    line-height: var(--Modal-title-lineHeight);
-    text-transform: var(--Modal-title-textTransform);
+    font-family: var(--Modal-title-font-family);
+    font-size: var(--Modal-title-font-size-sm, 20px);
+    font-weight: var(--Modal-title-font-weight);
+    letter-spacing: var(--Modal-title-letter-spacing);
+    line-height: var(--Modal-title-line-height);
+    text-transform: var(--Modal-title-text-transform);
 }
 
 .Modal-close {
@@ -99,17 +99,17 @@
 }
 
 .Modal-close:focus-visible::before {
-    color: var(--Modal-close-color--hover);
+    color: var(--Modal-close-color-hover);
 }
 
 @media (hover: hover) and (pointer: fine) {
     .Modal-close:hover::before {
-        color: var(--Modal-close-color--hover);
+        color: var(--Modal-close-color-hover);
     }
 }
 
 .Modal-content {
-    padding: 0 var(--Modal-content-paddingHorizontal) var(--Modal-content-paddingVertical) var(--Modal-content-paddingHorizontal);
+    padding: var(--Modal-content-padding, 20px);
 }
 
 @media (--m-md) {

@@ -4,6 +4,7 @@
 
 /* @define Footer */
 .Footer {
+    color: var(--Footer-color);
     margin: var(--Footer-sm-margin, 0);
     padding: var(--Footer-sm-padding, 0);
 }

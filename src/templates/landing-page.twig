@@ -1,3 +1,4 @@
+{# Landing page template. This is intended for landing pages for ads on Google or social networks. #}
 {% include 'snippets/head' %}
 <div class="js-stickyHeaderBoundary"></div>
 <header id="top" class="HeaderWrap{% if _core.theme.settings.headerStickyEnabled == 'yes' %} HeaderWrap--sticky js-stickyHeader{% endif %}">
@@ -25,10 +26,10 @@
     {{ _page.content('banner') }}
 {% endblock %}
 
-<div class="py-5">
-    <main>
-        {% block main _page.content() %}
-    </main>
+<div class="Container Container--pad ContentBg">
+    <div class="Content clearfix">
+        <main id="main">{% block main _page.content() %}</main>
+    </div>
 </div>
 
 {{ _api.contentSnippet.get('landing-page-footer') }}

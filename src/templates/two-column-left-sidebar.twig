@@ -1,8 +1,11 @@
 {# Two-column template with content on the left. The combined two columns are as wide as the default container. #}
-{%  include 'snippets/header' %}
+{% include 'snippets/head' %}
+{% include 'snippets/header' %}
+
 {% block banner %}
     {{ _page.content('banner') }}
 {% endblock %}
+
 <div class="Container Container--pad ContentBg">
     <div class="Content clearfix">
         {% if _core.theme.settings.showBreadcrumb == "yes" and _page.isHome == false %}
@@ -19,4 +22,6 @@
         </div>
     </div>
 </div>
+
+{{ _api.contentSnippet.get('footer-content') }}
 {% include 'snippets/footer' %}

@@ -1,5 +1,6 @@
 {# One-column template for narrow content. The content is as wide as the narrow container #}
-{%  include 'snippets/header' %}
+{% include 'snippets/head' %}
+{% include 'snippets/header' %}
 
 {% block banner %}
     {{ _page.content('banner') }}
@@ -14,4 +15,5 @@
     </div>
 </div>
 
+{{ _api.contentSnippet.get('footer-content') }}
 {%  include 'snippets/footer' %}

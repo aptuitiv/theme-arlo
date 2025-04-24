@@ -44,11 +44,14 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
     - Create a navigation menu called `Footer`.
       - Template: `Footer`
       - Show sub navigation: `Never`.
-    - Create a navigation menu called `Main`.
-      - Template: `Main`
+    - Create a navigation menu called `Header bar`.
+      - Template: `Header bar`
+      - Show sub navigation: `Never`.
+    - Create a navigation menu called `Pop out menu`.
+      - Template: `Pop out menu`
       - Show sub navigation: `Show all sub navigation all the time`
 
-5. Prime the **Content Builder Elements** by visiting Design -> Content Builder -> Elements.
+5. Prime the **Content Builder Elements** by visiting Design -> Blocks -> Blocks.
 6. Prime the **Collection Widgets** by visiting Widgets -> Collections -> Notifications.
 7. Search
    - Prime the **Search Templates** by visiting Site Manager -> Search -> Templates -> Templates.
@@ -59,6 +62,19 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
 If you ran `npm run init` as described above then the site files are already built. If not, then run `npm run build` to build the files.
 
 Deploy all of the theme files with `npm run deploy`. That will upload the files via FTP to the server.
+
+### Set up content snippets for special content
+
+#### Footer
+
+To enable custom content above the footer that will be on every page the `footer.twig` template create a content snippet called "Footer content". Make sure that it's key is `footer-content`.
+
+#### Blog
+
+The blog has a few content snippet that it expects to use.
+
+- Blog post header (snippet key: `blog-post-header`).
+- Blog post footer (snippet key: `blog-post-footer`).
 
 ### Configuring the Theme
 

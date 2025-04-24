@@ -41,13 +41,16 @@ Before deploying, you'll want to log into the CMS for the new site and do the fo
    - Edit the "Home" page to use the "One Column" *Page Template* from Content -> Pages.
 
 4. Navigation. Go to Design -> Navigation -> Navigation Menus
-    - Create a navigation menu called `Footer`.
+    - Create a navigation menu called `Footer`. This is the navigation menu for the footer of the website.
       - Template: `Footer`
       - Show sub navigation: `Never`.
-    - Create a navigation menu called `Header bar`.
+    - Create a navigation menu called `Header bar`. This is the navigation menu for the top bar in the header.
       - Template: `Header bar`
       - Show sub navigation: `Never`.
-    - Create a navigation menu called `Pop out menu`.
+    - Create a navigation menu called `Main`. This is the main navigation that shows next to the logo.
+      - Template: `Main`
+      - Show sub navigation: `Show all sub navigation all the time`
+    - Create a navigation menu called `Pop out menu`. This is the navigation that shows in the hamburger menu on large screens.
       - Template: `Pop out menu`
       - Show sub navigation: `Show all sub navigation all the time`
 

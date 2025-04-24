@@ -1,16 +1,8 @@
-        <footer class="Footer">
-            <div class="Container">
-                <div class="flex flex-col g-2 text-center">
-                    {% if _core.theme.settings.footerShowNavigation == 'yes' %}
-                        {% if _core.theme.settings.footerNavigationMenu == 'footer' %}
-                            {{ _api.navigation.get.key('footer') }}
-                        {% else %}
-                            {{ _api.navigation.get.key('main').template('footer').showSubNav('no') }}
-                        {% endif %}
-                    {% endif %}
-
-                    <div class="Footer-contact">
-                        {% if _core.theme.settings.footerShowAddress == 'yes' %}
+        <footer>
+            <div class="Footer">
+                <div class="Container Container--pad">
+                    <div class="Footer-inner">
+                        <div class="Footer-company">
                             <div>
                                 {% if _core.theme.settings.footerLogo %}
                                     {% do _core.theme.settings.footerLogo.alt.default(_core.settings.companyName) %}

@@ -55,6 +55,10 @@
     text-transform: var(--HeaderBar-phone-text-text-transform, var(--HeaderBar-phone-text-transform));
 }
 
+.js-stickyHeaderBoundary {
+    height: 1px;
+}
+
 @media (--m-md) {
     .HeaderBar-inner {
         justify-content: var(--HeaderBar-justify);

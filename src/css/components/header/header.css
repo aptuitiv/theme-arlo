@@ -124,3 +124,9 @@
         display: none;
     }
 }
+
+@media (width <= 930px) {
+    .Header-inner {
+        flex-direction: column;
+    }
+}

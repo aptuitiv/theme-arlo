@@ -21,7 +21,10 @@ const stickyHeader = { // eslint-disable-line no-unused-vars
             }
         };
 
-        const headerObserver = new IntersectionObserver(handler);
+        const headerObserver = new IntersectionObserver(handler, {
+            rootMargin: '0px 0px -100% 0px' // or experiment with -1px if that’s enough
+        });
+
         headerObserver.observe(boundaryEl);
     },
 };

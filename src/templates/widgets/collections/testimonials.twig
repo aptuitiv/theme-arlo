@@ -1,7 +1,12 @@
+{# {% import 'macros/macros' as macros %} #}
 {% if items|length > 0 %}
     {% import 'macros/macros' as macros %}
+    {# {% for item in items %}
+        {{ item|debug }}
+    {% endfor %} #}
 
     {% set item = items|first %}
+    {# {{ items|debug }} #}
     <div class="Testimonial">
         <div class="Container Container--pad">
             <div class="Testimonial-inner">
@@ -22,14 +27,26 @@
                     <div class="Testimonial-divider">
                         <img class="Testimonial-dividerImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAfCAMAAABXofT6AAAAJFBMVEVHcEyRkZGRkZGQkJCRkZGRkZGSkpKSkpKRkZGSkpKRkZGSkpIrXHD2AAAAC3RSTlMAFO0oiHHEQJ/WXOFBdG4AAADiSURBVHjahZRbDsMwCAQB4wfh/vdtXKslC5XK52hYA1FLUI1KcWbTXLOk4hc0Lfds8XAHq9kNpGG43Mw4gcEgdb9rPSWvz+lmnZLU/0hNqnSVRtvvg3MaNWcbYY29DLTt7PnjPTjLwrbfM7DHfWFniO8RDvFS5nRGS8o+HlmwjxTii8uGroxkl8jQ+R01WPuQqHGYPtnibLnwWRFai+Was843v5DImSKHMYBzk5nYjQaS956CjPeT1dJikRVCDGFGeYoVt44d82GF6ZTCiqhZIwINfqRtyQ7SDZBZT/8toRT2AhAuFHokZWIZAAAAAElFTkSuQmCC" width="37" height="31" alt="quote">
                     </div>
-                    <div class="Testimonial-text">
-                        {{ item.testimonial }}
-                    </div>
-                    <div class="Testimonial-name">
-                        {{ item.itemName }}
-                        {% if item.location %}
-                            | {{ item.location }}
-                        {% endif %}
+                    {% set class = 'js-imageSlider--' ~ random_string() %}
+                    <div class="Slider splide {{ class }}" role="group" aria-label="Image Slider">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for test in items %}
+                                    <li class="splide__slide">
+                                        <div class="Testimonial-text text-center">
+                                            {# {{ test.testimonial|debug }} #}
+                                            {{ test.testimonial }}
+                                        </div>
+                                        <div class="Testimonial-name text-center">
+                                            {{ test.itemName }}
+                                            {% if test.location %}
+                                                | {{ test.location }}
+                                            {% endif %}
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                     {% if _core.theme.settings.blockTestimonialsReviewsLink %}
                         {% set _core.theme.settings.blockTestimonialsReviewsLink.class = 'Testimonial-reviewLink' %}
@@ -38,9 +55,9 @@
                     <div class="Testimonial-rating">
                         {# Display the number of review stars #}
                         {# Get just the decimal part of the rating #}
-                        {% set decimal = _core.settings.companyAggregateRatingValue - _core.settings.companyAggregateRatingValue|floor %}
+                        {% set decimal = _core.theme.settings.customerRatingsBarAverageRating - _core.theme.settings.customerRatingsBarAverageRating|floor %}
                         {# Set up the number of whole, half, and empty stars to show #}
-                        {% set numWholeStars = _core.settings.companyAggregateRatingValue|floor %}
+                        {% set numWholeStars = _core.settings.theme.customerRatingsBarAverageRating|floor %}
                         {% set numHalfStars = 0 %}
                         {% if decimal > 0.3 && decimal < 0.9 %}
                             {% set numHalfStars = 1 %}
@@ -71,4 +88,32 @@
             </div>
         </div>
     </div>
+    {# {% inlinecss %}
+    .splide__slide {
+        min-width: 300px;
+    }
+    {% endinlinecss %} #}
+
+    {{ macros.loadSplide() }}
+    {{ macros.loadLightbox()}}
+    {% inlinejs %}
+        loadjs.ready('splide', {
+            success: function() {
+                new Splide('.{{ class }}', {
+                    pagination  : false,
+                    rewind      : true,
+                    perMove     : 1,
+                    gap         : '10px',
+                    autoplay    : {{ autoPlaySlides ? 'true' : 'false' }},
+                    interval    : {{ sliderSpeed ? sliderSpeed * 1000 : 4000 }},
+                    breakpoints : {
+                        600: {
+                            arrows: false,
+                            rewind: true,
+                        }
+                    }
+                }).mount();
+            }
+        });
+    {% endinlinejs %}
 {% endif %}

@@ -25,6 +25,12 @@
     padding: 0 50px;
 }
 
+@media (width <= 768px) {
+    .Slider {
+        padding: 0;
+    }
+}
+
 .Slider-wrapper,
 .Slider-wrapper:focus-visible {
     text-decoration: none;

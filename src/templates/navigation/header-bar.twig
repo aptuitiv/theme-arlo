@@ -1,6 +1,9 @@
 <ul class="HeaderBarNav">
     {% for item in items %}
         {% set class = "HeaderBarNav-item " ~ item.link.class %}
+        {% if loop.first %}
+            {% set class = class ~ " HeaderBarNav-firstItem" %}
+        {% endif %}
         <li class="{{ class|trim }}">
             {% set item.link.class = item.link.class ~ ' HeaderBarNav-link' %}
             {# {% set item.link.class = "HeaderBarNav-link" ~ (item.isCurrent ? " is-current") %} #}

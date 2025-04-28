@@ -10,6 +10,18 @@
 /* ------------------------------------ *\
     Main
 \* ------------------------------------ */
+.HeaderWrap {
+    background: white; /* or your header background */
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%); /* optional, looks nice */
+    position: sticky;
+    top: 0;
+    transition: transform 0.3s ease;
+    z-index: 900;
+}
+
+.HeaderWrap.is-hidden {
+    transform: translateY(-100%);
+}
 
 .Header-inner {
     align-items: center;
@@ -122,11 +134,5 @@
 
     .Header-buttons {
         display: none;
-    }
-}
-
-@media (width <= 930px) {
-    .Header-inner {
-        flex-direction: column;
     }
 }

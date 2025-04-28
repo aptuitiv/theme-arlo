@@ -59,8 +59,16 @@
     height: 1px;
 }
 
+.HeaderBarNav-firstItem {
+    display: none;
+}
+
 @media (--m-md) {
     .HeaderBar-inner {
         justify-content: var(--HeaderBar-justify);
+    }
+
+    .HeaderBarNav-firstItem {
+        display: block;
     }
 }

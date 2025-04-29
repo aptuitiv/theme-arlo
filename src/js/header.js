@@ -56,16 +56,24 @@ const stickyHeader = { // eslint-disable-line no-unused-vars
             return;
         }
 
+        // If user hasn't scrolled down at least 50px, don't hide
+        if (currentScrollY < 50) {
+            this.header.classList.remove("is-hidden");
+            this.lastScrollY = currentScrollY;
+            return;
+        }
+
         if (currentScrollY > this.lastScrollY) {
             // Scroll down
             this.header.classList.add("is-hidden");
-        } else {
+        } else if (currentScrollY < this.lastScrollY) {
             // Scroll up
             this.header.classList.remove("is-hidden");
         }
 
         this.lastScrollY = currentScrollY;
     },
+
 
     handleResize() {
         if (window.innerWidth > 800) {

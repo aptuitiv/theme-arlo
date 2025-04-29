@@ -10,33 +10,31 @@ const stickyHeader = { // eslint-disable-line no-unused-vars
             return;
         }
 
-        // this.setupIntersectionObserver();
+        this.setupIntersectionObserver();
         this.setupScrollListener();
     },
 
-    // setupIntersectionObserver() {
-    //     const headerEl = document.querySelector('.js-stickyHeader');
-    //     const boundaryEl = document.querySelector('.js-stickyHeaderBoundary');
+    setupIntersectionObserver() {
+        const headerEl = document.querySelector('.js-stickyHeader');
+        const boundaryEl = document.querySelector('.js-stickyHeaderBoundary');
 
-    //     if (!headerEl || !boundaryEl) {
-    //         console.error('StickyHeader or Boundary not found!');
-    //         return;
-    //     }
+        if (!headerEl || !boundaryEl) {
+            console.error('StickyHeader or Boundary not found!');
+            return;
+        }
 
-    //     const handler = (entries) => {
-    //         if (!entries[0].isIntersecting) {
-    //             headerEl.classList.add('is-sticky');
-    //         } else {
-    //             headerEl.classList.remove('is-sticky');
-    //         }
-    //     };
+        const handler = (entries) => {
+            if (!entries[0].isIntersecting) {
+                headerEl.classList.add('is-sticky');
+            } else {
+                headerEl.classList.remove('is-sticky');
+            }
+        };
 
-    //     const observer = new IntersectionObserver(handler, {
-    //         rootMargin: '0px 0px -100% 0px'
-    //     });
+        const observer = new IntersectionObserver(handler);
 
-    //     observer.observe(boundaryEl);
-    // },
+        observer.observe(boundaryEl);
+    },
 
     setupScrollListener() {
         window.addEventListener("scroll", () => {
@@ -53,25 +51,29 @@ const stickyHeader = { // eslint-disable-line no-unused-vars
 
         if (window.innerWidth > 800) {
             this.header.classList.remove("is-hidden");
-            return;
         }
 
-        // If user hasn't scrolled down at least 50px, don't hide
-        if (currentScrollY < 50) {
-            this.header.classList.remove("is-hidden");
-            this.lastScrollY = currentScrollY;
-            return;
+        // Hide header on scroll (for mobile)
+        if (window.innerWidth <= 800) {
+            if (currentScrollY < 50) {
+                this.header.classList.remove("is-hidden");
+                this.lastScrollY = currentScrollY;
+            } else {
+                if (currentScrollY > this.lastScrollY) {
+                    this.header.classList.add("is-hidden");
+                } else if (currentScrollY < this.lastScrollY) {
+                    this.header.classList.remove("is-hidden");
+                }
+                this.lastScrollY = currentScrollY;
+            }
         }
 
-        if (currentScrollY > this.lastScrollY) {
-            // Scroll down
-            this.header.classList.add("is-hidden");
-        } else if (currentScrollY < this.lastScrollY) {
-            // Scroll up
-            this.header.classList.remove("is-hidden");
+        // 🆕 New part: Grow logo at top of page
+        if (currentScrollY <= 10) {
+            this.header.classList.add("is-at-top");
+        } else {
+            this.header.classList.remove("is-at-top");
         }
-
-        this.lastScrollY = currentScrollY;
     },
 
 

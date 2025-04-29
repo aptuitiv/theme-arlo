@@ -4,26 +4,27 @@
 
 /* @define HeaderWrap */
 
-/* .js-stickyHeaderBoundary {
+.js-stickyHeaderBoundary {
     height: 0;
-}  */
+}
 
-.HeaderWrap { 
+.HeaderWrap {
     background-color: var(--Header-background);
-} 
- 
+}
+
 .HeaderWrap--sticky {
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
-.HeaderWrap--sticky.is-sticky {
+/* .HeaderWrap--sticky.is-sticky {
     background: var(--Header-sticky-background, var(--Header-background));
     box-shadow: 0 3px 20px 0 rgb(0 0 0 / 16%);
-}
+} */
 
 /* postcss-bem-linter: ignore */
-.HeaderWrap--sticky.is-sticky .Header-logo {
+
+/* .HeaderWrap--sticky.is-sticky .Header-logo {
     max-width: var(--Header-sticky-logo-width, var(--Header-logo-width));
-}
+} */

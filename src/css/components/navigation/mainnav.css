@@ -23,7 +23,8 @@
     justify-content: flex-end;
     letter-spacing: var(--MainNav-letter-spacing);
     line-height: var(--MainNav-line-height, 1.58);
-    width: 100%;
+
+    /* width: 100%; */
 }
 
 .MainNav-link {

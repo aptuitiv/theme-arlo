@@ -63,10 +63,10 @@
             <div class="FooterBottom">
                 <div>&copy; {{ _core.date.year }} {{ _core.settings.companyName }} {{ _core.theme.settings.footerAfterCopyrightContent }}</div>
                 {{ _api.navigation.get.key('footer') }}
-            </div>
             {% if _core.theme.settings.footerShowCredit == 'yes' %}
                 <div class="FooterCredit"><a href="https://www.aptuitiv.com" target="_blank" class="FooterCredit-link">Website by Aptuitiv</a></div>
             {% endif %}
+            </div>
         </footer>
 
         {# Do this before you output any inline Javascript in the footer #}

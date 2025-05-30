@@ -22,16 +22,26 @@
       "sidebarSize" : "small"
     },
     {
-      "description" : "Settings for the Google Ratings Bar",
+      "name" : "Customer Reviews & Ratings",
+      "description" : "Settings for the ratings",
       "fields" : [
         {
-          "label" : "URL to view reviews on Google",
-          "name" : "googleRatingsBarReviewsLink",
+          "label" : "URL to view reviews",
+          "name" : "customerRatingsBarReviewsLink",
           "showLinkTextField" : true,
           "type" : "url"
+        },
+        {
+          "label" : "Total number of reviews",
+          "name" : "customerRatingsBarTotalReviews",
+          "type" : "text"
+        },
+        {
+          "label" : "Average rating",
+          "name" : "customerRatingsBarAverageRating",
+          "type" : "text"
         }
-      ],
-      "name" : "Blocks - Google Ratings Bar"
+      ]
     },
     {
       "description" : "These settings are for the promotional bar that shows at the top of the page.",

@@ -3,18 +3,18 @@
     <div class="Container Container--pad">
         <span class="GoogleRatingsBar-company">{{ _core.settings.companyName }}</span>
         received an average rating of
-        <span class="GoogleRatingsBar-rating">{{ _core.settings.companyAggregateRatingValue }}</span>
+        <span class="GoogleRatingsBar-rating">{{ _core.theme.settings.customerRatingsBarAverageRating }}</span>
         out of
         <span class="GoogleRatingsBar-rating">5 stars</span>
         from
-        <span class="GoogleRatingsBar-rating">{{ _core.settings.companyAggregateRatingReviewCount }} reviews</span>.
+        <span class="GoogleRatingsBar-rating">{{ _core.theme.settings.customerRatingsBarTotalReviews }} reviews</span>.
         <span class="block inline-lg">
             <span class="GoogleRatingsBar-stars">
-                <span class="GoogleRatingsBar-starsNumber">{{ _core.settings.companyAggregateRatingValue }}</span>
+                <span class="GoogleRatingsBar-starsNumber">{{ _core.theme.settings.customerRatingsBarAverageRating }}</span>
                 {# Get just the decimal part of the rating #}
-                {% set decimal = _core.settings.companyAggregateRatingValue - _core.settings.companyAggregateRatingValue|floor %}
+                {% set decimal = _core.theme.settings.customerRatingsBarAverageRating - _core.theme.settings.customerRatingsBarAverageRating|floor %}
                 {# Set up the number of whole, half, and empty stars to show #}
-                {% set numWholeStars = _core.settings.companyAggregateRatingValue|floor %}
+                {% set numWholeStars = _core.theme.settings.customerRatingsBarAverageRating|floor %}
                 {% set numHalfStars = 0 %}
                 {% if decimal > 0.3 && decimal < 0.9 %}
                     {% set numHalfStars = 1 %}

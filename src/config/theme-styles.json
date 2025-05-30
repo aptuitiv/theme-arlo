@@ -1504,82 +1504,82 @@
         ]
     },
     {
-      "description" : "Styles for the \"Google Ratings Bar\" block.",
-      "fields" : [
-        {
-          "label" : "Background color",
-          "name" : "blockGoogleRatingsBarBackground",
-          "render" : {
-            "cssVariable" : "--GoogleRatingBar-background",
-            "type" : "css-head"
-          },
-          "type" : "color"
-        },
-        {
-          "label" : "Padding",
-          "name" : "blockGoogleRatingsBarPadding",
-          "render" : {
-            "cssVariable" : "--GoogleRatingBar-padding",
-            "type" : "css-head"
-          },
-          "type" : "padding"
-        },
-        {
-          "label" : "Overall typography",
-          "name" : "blockGoogleRatingsBarTypography",
-          "render" : {
-            "cssVariable" : "--GoogleRatingBar",
-            "type" : "css-head"
-          },
-          "type" : "typography"
-        },
-        {
-          "label" : "Company name typography",
-          "name" : "blockGoogleRatingsBarCompanyNameTypography",
-          "render" : {
-            "cssVariable" : "--GoogleRatingBar-company",
-            "type" : "css-head"
-          },
-          "type" : "typography",
-          "useTextAlign" : false
-        },
-        {
-          "description" : "Styles for the average rating, total number of stars, and total number of reviews",
-          "label" : "Rating typography",
-          "name" : "blockGoogleRatingsBarRatingTypography",
-          "render" : {
-            "cssVariable" : "--GoogleRatingBar-rating",
-            "type" : "css-head"
-          },
-          "type" : "typography",
-          "useTextAlign" : false
-        },
-        {
-          "description" : "Styles for the stars and the average rating text before the stars",
-          "label" : "Stars typography",
-          "name" : "blockGoogleRatingsBarStarsTypography",
-          "render" : {
-            "cssVariable" : "--GoogleRatingBar-stars",
-            "type" : "css-head"
-          },
-          "type" : "typography",
-          "usePadding" : true,
-          "useTextAlign" : false
-        },
-        {
-          "description" : "Styles for the link text to view reviews",
-          "label" : "Reviews link typography",
-          "name" : "blockGoogleRatingsBarLinkTypography",
-          "render" : {
-            "cssVariable" : "--GoogleRatingBar-link",
-            "type" : "css-head"
-          },
-          "type" : "typography",
-          "useHover" : true,
-          "useTextAlign" : false
-        }
-      ],
-      "name" : "Blocks - Google Ratings Bar"
+        "name": "Blocks - Google Ratings Bar",
+        "description": "Styles for the \"Google Ratings Bar\" block.",
+        "fields": [
+            {
+                "name": "blockGoogleRatingsBarBackground",
+                "label": "Background color",
+                "type": "color",
+                "preview": {
+                    "type": "css-head",
+                    "cssVariable": "--GoogleRatingBar-background"
+                }
+            },
+            {
+                "name": "blockGoogleRatingsBarPadding",
+                "label": "Padding",
+                "type": "padding",
+                "preview": {
+                    "type": "css-head",
+                    "cssVariable": "--GoogleRatingBar-padding"
+                }
+            },
+            {
+                "name": "blockGoogleRatingsBarTypography",
+                "label": "Overall typography",
+                "type": "typography",
+                "preview": {
+                    "type": "css-head",
+                    "cssVariable": "--GoogleRatingBar"
+                }
+            },
+            {
+                "name": "blockGoogleRatingsBarCompanyNameTypography",
+                "label": "Company name typography",
+                "type": "typography",
+                "useTextAlign": false,
+                "preview": {
+                    "type": "css-head",
+                    "cssVariable": "--GoogleRatingBar-company"
+                }
+            },
+            {
+                "name": "blockGoogleRatingsBarRatingTypography",
+                "label": "Rating typography",
+                "description": "Styles for the average rating, total number of stars, and total number of reviews",
+                "type": "typography",
+                "useTextAlign": false,
+                "preview": {
+                    "type": "css-head",
+                    "cssVariable": "--GoogleRatingBar-rating"
+                }
+            },
+            {
+                "name": "blockGoogleRatingsBarStarsTypography",
+                "label": "Stars typography",
+                "description": "Styles for the stars and the average rating text before the stars",
+                "type": "typography",
+                "useTextAlign": false,
+                "usePadding": true,
+                "preview": {
+                    "type": "css-head",
+                    "cssVariable": "--GoogleRatingBar-stars"
+                }
+            },
+            {
+                "name": "blockGoogleRatingsBarLinkTypography",
+                "label": "Reviews link typography",
+                "description": "Styles for the link text to view reviews",
+                "type": "typography",
+                "useTextAlign": false,
+                "useHover": true,
+                "preview": {
+                    "type": "css-head",
+                    "cssVariable": "--GoogleRatingBar-link"
+                }
+            }
+        ]
     },
     {
       "description" : "Styles for the \"Image Grid\" block.",
@@ -2587,6 +2587,200 @@
       ],
       "name" : "Blocks - Wrapper With Background Image",
       "sidebarSize" : "small"
+    },
+    {
+        "name": "Blog - Recent Posts Block",
+        "description": "Styles for the blog recent posts block.",
+        "groups": [
+            {
+                "name": "General",
+                "fields": [
+                    {
+                        "name": "blogRecentPostsPadding",
+                        "label": "Padding around the content",
+                        "type": "padding",
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--BlogRecentPosts-padding"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Heading",
+                "fields": [
+                    {
+                        "name": "blogRecentPostsHeadingTypography",
+                        "label": "Typography",
+                        "type": "typography",
+                        "useMargin": true,
+                        "textAlign": {
+                            "defaultValue": "center"
+                        },
+                        "render": {
+                            "type": "css-head",
+                            "cssSelector": ".RecentPosts-heading"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Post - general",
+                "description": "Styles for the individual posts",
+                "fields": [
+                    {
+                        "name": "blogRecentPostsCardBorder",
+                        "label": "Border",
+                        "type": "border",
+                        "render": {
+                            "type": "css-head",
+                            "cssSelector": ".RecentPosts-card"
+                        }
+                    },
+                    {
+                        "name": "blogRecentPostsCardBorderRadius",
+                        "label": "Border radius",
+                        "type": "borderRadius",
+                        "render": {
+                            "type": "css-head",
+                            "cssSelector": ".RecentPosts-card"
+                        }
+                    },
+                    {
+                        "name": "blogRecentPostsCardBackground",
+                        "label": "Background color",
+                        "type": "color",
+                        "render": {
+                            "type": "css-head",
+                            "cssSelector": ".RecentPosts-card",
+                            "cssProperty": "background"
+                        }
+                    },
+                    {
+                        "name": "blogRecentPostsCardPadding",
+                        "label": "Padding",
+                        "type": "padding",
+                        "render": {
+                            "type": "css-head",
+                            "cssSelector": ".RecentPosts-card"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Post - title",
+                "fields": [
+                    {
+                        "name": "blogRecentPostsTitleTypography",
+                        "label": "Typography",
+                        "type": "typography",
+                        "useHover": true,
+                        "fontSize": {
+                            "defaultValue": "2rem"
+                        },
+                        "fontWeight": {
+                            "defaultValue": "700"
+                        },
+                        "textDecoration": {
+                            "defaultValue": "none"
+                        },
+                        "textDecorationHover": {
+                            "defaultValue": "underline"
+                        },
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--BlogGrid-title"
+                        }
+                    },
+                    {
+                        "name": "blogRecentPostsTitleMargin",
+                        "label": "Margin",
+                        "type": "margin",
+                        "defaultValue": "0 0 4px 0",
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--BlogGrid-title-margin"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Post - date",
+                "fields": [
+                    {
+                        "name": "blogRecentPostsDateTypography",
+                        "label": "Typography",
+                        "type": "typography",
+                        "fontSize": {
+                            "defaultValue": "1.6rem"
+                        },
+                        "fontStyle": {
+                            "defaultValue": "italic"
+                        },
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--BlogGrid-date"
+                        }
+                    },
+                    {
+                        "name": "blogRecentPostsDateMargin",
+                        "label": "Margin",
+                        "type": "margin",
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--BlogGrid-date-margin"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Posts - abstract",
+                "fields": [
+                    {
+                        "name": "blogRecentPostsAbstractTypography",
+                        "label": "Typography",
+                        "type": "typography",
+                        "fontSize": {
+                            "defaultValue": "1.6rem"
+                        },
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--BlogGrid-abstract"
+                        }
+                    },
+                    {
+                        "name": "blogRecentPostsAbstractMargin",
+                        "label": "Margin",
+                        "type": "margin",
+                        "defaultValue": "10px 0",
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--BlogGrid-abstract-margin"
+                        }
+                    },
+                    {
+                        "name": "blogRecentPostsAbstractNumLines",
+                        "label": "Number of lines to show",
+                        "type": "radio",
+                        "defaultValue": "4",
+                        "options": {
+                            "1": "1",
+                            "2": "2",
+                            "3": "3",
+                            "4": "4",
+                            "5": "5",
+                            "6": "6",
+                            "7": "7",
+                            "8": "8"
+                        },
+                        "render": {
+                            "type": "css-head",
+                            "cssVariable": "--RecentPosts-abstract-lines"
+                        }
+                    }
+                ]
+            }
+        ]
     },
     {
       "description" : "Base styles for the website body. See the Typography section for core font styles.",
@@ -5888,455 +6082,382 @@
       "name" : "Tables"
     },
     {
-      "description" : "Styles for typography throughout the website.",
-      "groups" : [
-        {
-          "fields" : [
+        "name": "Typography",
+        "description": "Styles for typography throughout the website.",
+        "groups": [
             {
-              "defaultValue" : "25px",
-              "label" : "Default vertical spacing between elements",
-              "name" : "baseVerticalSpacing",
-              "render" : {
-                "cssVariable" : "--base-typography-spacing",
-                "type" : "css-head"
-              },
-              "type" : "size"
+                "name": "Miscellaneous",
+                "fields": [
+                    {
+                        "label": "Default vertical spacing between elements",
+                        "name": "baseVerticalSpacing",
+                        "type": "size",
+                        "default": "25px",
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-spacing"
+                        }
+                    },
+                    {
+                        "label": "Horizontal rule size",
+                        "name": "baseHorizontalRuleSize",
+                        "type": "size",
+                        "default": "1px",
+                        "allowedUnits": ["px"],
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-hrule-width"
+                        }
+                    }
+                ]
             },
             {
-              "allowedUnits" : [
-                "px"
-              ],
-              "default" : "1px",
-              "label" : "Horizontal rule size",
-              "name" : "baseHorizontalRuleSize",
-              "preview" : {
-                "cssVariable" : "--base-typography-hrule-width",
-                "type" : "css-head"
-              },
-              "type" : "size"
+                "name": "Base typography styles",
+                "fields": [
+                    {
+                        "label": "Base",
+                        "name": "baseTypography",
+                        "type": "typography",
+                        "collapsable": false,
+                        "useFontStyle": false,
+                        "useTextAlign": false,
+                        "useTextDecoration": false,
+                        "useTextTransform": false,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#333333"
+                        },
+                        "fontSize": {
+                            "default": "18px",
+                            "allowedUnits": ["px"]
+                        },
+                        "lineHeight": {
+                            "default": "1.58"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Lists",
+                "description": "Styles for ordered and unordered lists.",
+                "fields": [
+                    {
+                        "name": "baseListPadding",
+                        "label": "List padding",
+                        "type": "padding",
+                        "default": "0 0 0 2.4em",
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-list-padding"
+                        }
+                    },
+                    {
+                        "name": "listTextAlign",
+                        "label": "Text alignment",
+                        "default": "left",
+                        "type": "textalign",
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-list-text-align"
+                        }
+                    },
+                    {
+                        "name": "baseListItemMargin",
+                        "label": "List item margin",
+                        "description": "This is for each list item.",
+                        "type": "margin",
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-list-item-margin"
+                        }
+                    },
+                    {
+                        "name": "baseListItemPadding",
+                        "label": "List item padding",
+                        "description": "This is for each list item.",
+                        "type": "padding",
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-list-item-padding"
+                        }
+                    },
+                    {
+                        "name": "columnListGap",
+                        "label": "Column list gap",
+                        "description": "When converting an ordered or unordered list to display in columns, this is the gap between the columns.",
+                        "type": "size",
+                        "default": "50px",
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--ColumnList-list-gap"
+                        }
+                    },
+                    {
+                        "name": "columnListBulletStyle",
+                        "label": "Column list bullet style",
+                        "description": "When converting an ordered or unordered list to display in columns, this is the style of the bullets.",
+                        "type": "select",
+                        "default": "none",
+                        "options": {
+                            "none": "No bullets or numbers",
+                            "initial": "Default bullets or numbers"
+                        },
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--ColumnList-list-style"
+                        }
+                    },
+                    {
+                        "name": "columnListPadding",
+                        "label": "Column list padding",
+                        "description": "When converting an ordered or unordered list to display in columns, this is the padding for the ordered or unordered list.",
+                        "type": "padding",
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--ColumnList-padding"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Links",
+                "fields": [
+                    {
+                        "label": "Links",
+                        "name": "baseTypographyLink",
+                        "type": "typography",
+                        "useHover": true,
+                        "collapsable": false,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-link"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#0000EE"
+                        },
+                        "colorHover": {
+                            "default": "#0000CD"
+                        },
+                        "textDecoration": {
+                            "default": "underline"
+                        },
+                        "textDecorationHover": {
+                            "default": "underline"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Heading 1",
+                "fields": [
+                    {
+                        "label": "H1",
+                        "name": "baseTypographyH1",
+                        "type": "typography",
+                        "collapsable": false,
+                        "useMargin": true,
+                        "useTextShadow": true,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-h1"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#333333"
+                        },
+                        "fontSize": {
+                            "default": "32px",
+                            "allowedUnits": ["px"]
+                        },
+                        "fontWeight": {
+                            "default": "700"
+                        },
+                        "lineHeight": {
+                            "default": "1.58"
+                        },
+                        "margin": {
+                            "default": {
+                                "top": "2.5rem",
+                                "bottom": "1.25rem"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Heading 2",
+                "fields": [
+                    {
+                        "label": "H2",
+                        "name": "baseTypographyH2",
+                        "type": "typography",
+                        "collapsable": false,
+                        "useMargin": true,
+                        "useTextShadow": true,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-h2"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#333333"
+                        },
+                        "fontSize": {
+                            "default": "28px",
+                            "allowedUnits": ["px"]
+                        },
+                        "fontWeight": {
+                            "default": "700"
+                        },
+                        "lineHeight": {
+                            "default": "1.58"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Heading 3",
+                "fields": [
+                    {
+                        "label": "H3",
+                        "name": "baseTypographyH3",
+                        "type": "typography",
+                        "collapsable": false,
+                        "useMargin": true,
+                        "useTextShadow": true,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-h3"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#333333"
+                        },
+                        "fontSize": {
+                            "default": "24px",
+                            "allowedUnits": ["px"]
+                        },
+                        "fontWeight": {
+                            "default": "700"
+                        },
+                        "lineHeight": {
+                            "default": "1.58"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Heading 4",
+                "fields": [
+                    {
+                        "label": "H4",
+                        "name": "baseTypographyH4",
+                        "type": "typography",
+                        "collapsable": false,
+                        "useMargin": true,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-h4"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#333333"
+                        },
+                        "fontSize": {
+                            "default": "20px",
+                            "allowedUnits": ["px"]
+                        },
+                        "fontWeight": {
+                            "default": "700"
+                        },
+                        "lineHeight": {
+                            "default": "1.58"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Heading 5",
+                "fields": [
+                    {
+                        "label": "H5",
+                        "name": "baseTypographyH5",
+                        "type": "typography",
+                        "collapsable": false,
+                        "useMargin": true,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-h5"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#333333"
+                        },
+                        "fontSize": {
+                            "default": "18px",
+                            "allowedUnits": ["px"]
+                        },
+                        "fontWeight": {
+                            "default": "700"
+                        },
+                        "lineHeight": {
+                            "default": "1.58"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Heading 6",
+                "fields": [
+                    {
+                        "label": "H6",
+                        "name": "baseTypographyH6",
+                        "type": "typography",
+                        "collapsable": false,
+                        "useMargin": true,
+                        "preview": {
+                            "type": "css-head",
+                            "cssVariable": "--base-typography-h6"
+                        },
+                        "fontSizePreview": {
+                            "template": "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
+                        },
+                        "color": {
+                            "default": "#333333"
+                        },
+                        "fontSize": {
+                            "default": "18px",
+                            "allowedUnits": ["px"]
+                        },
+                        "fontWeight": {
+                            "default": "700"
+                        },
+                        "lineHeight": {
+                            "default": "1.58"
+                        }
+                    }
+                ]
             }
-          ],
-          "name" : "Miscellaneous"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "default" : "#333333"
-              },
-              "fontSize" : {
-                "allowedUnits" : [
-                  "px"
-                ],
-                "default" : "18px"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "label" : "Base",
-              "lineHeight" : {
-                "default" : "1.58"
-              },
-              "name" : "baseTypography",
-              "preview" : {
-                "cssVariable" : "--base-typography",
-                "type" : "css-head"
-              },
-              "type" : "typography",
-              "useFontStyle" : false,
-              "useTextAlign" : false,
-              "useTextDecoration" : false,
-              "useTextTransform" : false
-            }
-          ],
-          "name" : "Base typography styles"
-        },
-        {
-          "description" : "Styles for ordered and unordered lists.",
-          "fields" : [
-            {
-              "default" : "0 0 0 2.4em",
-              "label" : "List padding",
-              "name" : "baseListPadding",
-              "preview" : {
-                "cssVariable" : "--base-typography-list-padding",
-                "type" : "css-head"
-              },
-              "type" : "padding"
-            },
-            {
-              "default" : "left",
-              "label" : "Text alignment",
-              "name" : "listTextAlign",
-              "preview" : {
-                "cssVariable" : "--base-typography-list-text-align",
-                "type" : "css-head"
-              },
-              "type" : "textalign"
-            },
-            {
-              "description" : "This is for each list item.",
-              "label" : "List item margin",
-              "name" : "baseListItemMargin",
-              "preview" : {
-                "cssVariable" : "--base-typography-list-item-margin",
-                "type" : "css-head"
-              },
-              "type" : "margin"
-            },
-            {
-              "description" : "This is for each list item.",
-              "label" : "List item padding",
-              "name" : "baseListItemPadding",
-              "preview" : {
-                "cssVariable" : "--base-typography-list-item-padding",
-                "type" : "css-head"
-              },
-              "type" : "padding"
-            },
-            {
-              "default" : "50px",
-              "description" : "When converting an ordered or unordered list to display in columns, this is the gap between the columns.",
-              "label" : "Column list gap",
-              "name" : "columnListGap",
-              "preview" : {
-                "cssVariable" : "--ColumnList-list-gap",
-                "type" : "css-head"
-              },
-              "type" : "size"
-            },
-            {
-              "default" : "none",
-              "description" : "When converting an ordered or unordered list to display in columns, this is the style of the bullets.",
-              "label" : "Column list bullet style",
-              "name" : "columnListBulletStyle",
-              "options" : {
-                "initial" : "Default bullets or numbers",
-                "none" : "No bullets or numbers"
-              },
-              "preview" : {
-                "cssVariable" : "--ColumnList-list-style",
-                "type" : "css-head"
-              },
-              "type" : "select"
-            },
-            {
-              "description" : "When converting an ordered or unordered list to display in columns, this is the padding for the ordered or unordered list.",
-              "label" : "Column list padding",
-              "name" : "columnListPadding",
-              "preview" : {
-                "cssVariable" : "--ColumnList-padding",
-                "type" : "css-head"
-              },
-              "type" : "padding"
-            }
-          ],
-          "name" : "Lists"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "default" : "#0000EE"
-              },
-              "colorHover" : {
-                "default" : "#0000CD"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "label" : "Links",
-              "name" : "baseTypographyLink",
-              "preview" : {
-                "cssVariable" : "--base-typography-link",
-                "type" : "css-head"
-              },
-              "textDecoration" : {
-                "default" : "underline"
-              },
-              "textDecorationHover" : {
-                "default" : "underline"
-              },
-              "type" : "typography",
-              "useHover" : true
-            }
-          ],
-          "name" : "Links"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "default" : "#333333"
-              },
-              "fontSize" : {
-                "allowedUnits" : [
-                  "px"
-                ],
-                "default" : "32px"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "fontWeight" : {
-                "default" : "700"
-              },
-              "label" : "H1",
-              "lineHeight" : {
-                "default" : "1.58"
-              },
-              "margin" : {
-                "default" : {
-                  "bottom" : "1.25rem",
-                  "top" : "2.5rem"
-                }
-              },
-              "name" : "baseTypographyH1",
-              "preview" : {
-                "cssVariable" : "--base-typography-h1",
-                "type" : "css-head"
-              },
-              "type" : "typography",
-              "useMargin" : true,
-              "useTextShadow" : true
-            },
-            {
-              "defaultValue" : "4.39rem",
-              "label" : "Font size (small screens)",
-              "name" : "baseTypographyH1Sm",
-              "render" : {
-                "cssVariable" : "--base-typography-h1-font-size-sm",
-                "type" : "css-head"
-              },
-              "type" : "fontSize"
-            }
-          ],
-          "name" : "Heading 1"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "defaultValue" : "#333333"
-              },
-              "fontSize" : {
-                "defaultValue" : "4.39rem",
-                "default" : "28px"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "fontWeight" : {
-                "default" : "700"
-              },
-              "label" : "H2",
-              "lineHeight" : {
-                "default" : "1.58"
-              },
-              "name" : "baseTypographyH2",
-              "preview" : {
-                "cssVariable" : "--base-typography-h2",
-                "type" : "css-head"
-              },
-              "type" : "typography",
-              "useMargin" : true,
-              "useTextShadow" : true
-            },
-            {
-              "defaultValue" : "3.52rem",
-              "label" : "Font size (small screens)",
-              "name" : "baseTypographyH2Sm",
-              "render" : {
-                "cssVariable" : "--base-typography-h2-font-size-sm",
-                "type" : "css-head"
-              },
-              "type" : "fontSize"
-            }
-          ],
-          "name" : "Heading 2"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "default" : "#333333"
-              },
-              "fontSize" : {
-                "allowedUnits" : [
-                  "px"
-                ],
-                "default" : "24px"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "fontWeight" : {
-                "default" : "700"
-              },
-              "label" : "H3",
-              "lineHeight" : {
-                "default" : "1.58"
-              },
-              "name" : "baseTypographyH3",
-              "preview" : {
-                "cssVariable" : "--base-typography-h3",
-                "type" : "css-head"
-              },
-              "type" : "typography",
-              "useMargin" : true,
-              "useTextShadow" : true
-            },
-            {
-              "defaultValue" : "2.81rem",
-              "label" : "Font size (small screens)",
-              "name" : "baseTypographyH3Sm",
-              "render" : {
-                "cssVariable" : "--base-typography-h3-font-size-sm",
-                "type" : "css-head"
-              },
-              "type" : "fontSize"
-            }
-          ],
-          "name" : "Heading 3"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "default" : "#333333"
-              },
-              "fontSize" : {
-                "allowedUnits" : [
-                  "px"
-                ],
-                "default" : "20px"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "fontWeight" : {
-                "default" : "700"
-              },
-              "label" : "H4",
-              "lineHeight" : {
-                "default" : "1.58"
-              },
-              "name" : "baseTypographyH4",
-              "preview" : {
-                "cssVariable" : "--base-typography-h4",
-                "type" : "css-head"
-              },
-              "type" : "typography",
-              "useMargin" : true
-            },
-            {
-              "defaultValue" : "2.25rem",
-              "label" : "Font size (small screens)",
-              "name" : "baseTypographyH4Sm",
-              "render" : {
-                "cssVariable" : "--base-typography-h4-font-size-sm",
-                "type" : "css-head"
-              },
-              "type" : "fontSize"
-            }
-          ],
-          "name" : "Heading 4"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "default" : "#333333"
-              },
-              "fontSize" : {
-                "allowedUnits" : [
-                  "px"
-                ],
-                "default" : "18px"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "fontWeight" : {
-                "default" : "700"
-              },
-              "label" : "H5",
-              "lineHeight" : {
-                "default" : "1.58"
-              },
-              "name" : "baseTypographyH5",
-              "preview" : {
-                "cssVariable" : "--base-typography-h5",
-                "type" : "css-head"
-              },
-              "type" : "typography",
-              "useMargin" : true
-            },
-            {
-              "defaultValue" : "2.25rem",
-              "label" : "Font size (small screens)",
-              "name" : "baseTypographyH5Sm",
-              "render" : {
-                "cssVariable" : "--base-typography-h5-font-size-sm",
-                "type" : "css-head"
-              },
-              "type" : "fontSize"
-            }
-          ],
-          "name" : "Heading 5"
-        },
-        {
-          "fields" : [
-            {
-              "collapsable" : false,
-              "color" : {
-                "default" : "#333333"
-              },
-              "fontSize" : {
-                "allowedUnits" : [
-                  "px"
-                ],
-                "default" : "18px"
-              },
-              "fontSizePreview" : {
-                "template" : "{% if value.size %}{{ value.size / 10 }}rem{% endif %}"
-              },
-              "fontWeight" : {
-                "default" : "700"
-              },
-              "label" : "H6",
-              "lineHeight" : {
-                "default" : "1.58"
-              },
-              "name" : "baseTypographyH6",
-              "preview" : {
-                "cssVariable" : "--base-typography-h6",
-                "type" : "css-head"
-              },
-              "type" : "typography",
-              "useMargin" : true
-            },
-            {
-              "defaultValue" : "1.8rem",
-              "label" : "Font size (small screens)",
-              "name" : "baseTypographyH6Sm",
-              "render" : {
-                "cssVariable" : "--base-typography-h6-font-size-sm",
-                "type" : "css-head"
-              },
-              "type" : "fontSize"
-            }
-          ],
-          "name" : "Heading 6"
-        }
-      ]
+        ]
     }
   ]
 }

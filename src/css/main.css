@@ -55,13 +55,13 @@
 
 /* Height and width (sm) */
 
-/* @import 'cacao-css/dist/height/sm/height-1.css';
-@import 'cacao-css/dist/width/sm/width-1.css'; */
+@import 'cacao-css/dist/height/sm/height-1.css';
+@import 'cacao-css/dist/width/sm/width-1.css';
 
 /* Height and width (md) */
 
-/* @import 'cacao-css/dist/height/md/height-1.css';
-@import 'cacao-css/dist/width/md/width-1.css'; */
+@import 'cacao-css/dist/height/md/height-1.css';
+@import 'cacao-css/dist/width/md/width-1.css';
 
 /* Height and width (lg) */
 @import 'cacao-css/dist/height/lg/height-1.css';
@@ -69,8 +69,8 @@
 
 /* Height and width (xl) */
 
-/* @import 'cacao-css/dist/height/xl/height-1.css';
-@import 'cacao-css/dist/width/xl/width-1.css'; */
+@import 'cacao-css/dist/height/xl/height-1.css';
+@import 'cacao-css/dist/width/xl/width-1.css';
 
 /* Typography */
 @import 'cacao-css/dist/typography/align.css';
@@ -118,9 +118,11 @@
 @import 'cacao-css/dist/grid/num-columns.css';
 
 /* Grid (sm) */
+
 @import 'cacao-css/dist/grid/sm/num-columns.css';
 
 /* Grid (md) */
+
 @import 'cacao-css/dist/grid/md/num-columns.css';
 
 /* Grid (lg) */

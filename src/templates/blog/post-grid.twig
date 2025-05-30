@@ -1,18 +1,18 @@
 {# Set variables based on theme settings, but with defaults #}
-{% set imageAspectRatio = _core.theme.settings.blogGridImagAspectRatio.ratioSlash ?? '4/3' %}
 {% set datePosition = _core.theme.settings.blogGridDatePosition ?? 'below' %}
 {% set showReadMore = _core.theme.settings.blogGridShowReadMore ?? true %}
 {% set readMoreText = _core.theme.settings.blogGridReadMoreText ?? 'Read more' %}
 
 {% if posts|length > 0 %}
     <div class="Container Container--pad">
-        <div class="BlogGrid grid g-5">
+        <h1>Blogs</h1>
+        <div class="BlogGrid grid g-5 flex justify-center">
             {% for post in posts %}
                 <div class="col-1-1 col-1-2-md col-1-3-lg">
                     <a href="{{ post.url }}" class="BlogGrid-item">
                         <div class="BlogGrid-image">
                             {% do post.image.alt.default(post.postTitle) %}
-                            {% do post.image.crop(imageAspectRatio) %}
+                            {% do post.image.crop('4x3') %}
                             {% do post.image.lazy() %}
                             {{ post.image.tag }}
                         </div>

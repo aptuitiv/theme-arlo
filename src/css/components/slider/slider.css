@@ -13,7 +13,7 @@
     --Slider-content-color: #333;
     --Slider-content-background--hover: #333;
     --Slider-content-color--hover: #fff;
-    
+
     --Slider-arrow-background: #fff;
     --Slider-arrow-color: #333;
     --Slider-arrow-background--hover: #333;
@@ -23,6 +23,12 @@
 /* @define Slider */
 .Slider {
     padding: 0 50px;
+}
+
+@media (width <= 768px) {
+    .Slider {
+        padding: 0;
+    }
 }
 
 .Slider-wrapper,
@@ -51,7 +57,7 @@
     .Slider-wrapper:hover {
         text-decoration: none;
     }
-    
+
     .Slider-wrapper:hover .Slider-content {
         background-color: var(--Slider-content-background--hover);
         color: var(--Slider-content-color--hover);
@@ -92,7 +98,7 @@
     .Slider .splide__arrow:hover {
         background: var(--Slider-arrow-background--hover);
     }
-    
+
     /* postcss-bem-linter: ignore */
     .Slider .splide__arrow:hover svg {
         fill: var(--Slider-arrow-color--hover);

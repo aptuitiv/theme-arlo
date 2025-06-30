@@ -1,4 +1,4 @@
-const stickyHeader = { // eslint-disable-line no-unused-vars
+const stickyHeader = {
     lastScrollY: 0,
     header: null,
 
@@ -6,6 +6,7 @@ const stickyHeader = { // eslint-disable-line no-unused-vars
         this.header = document.querySelector(".HeaderWrap");
 
         if (!this.header) {
+            // eslint-disable-next-line no-console
             console.error("HeaderWrap not found!");
             return;
         }
@@ -19,6 +20,7 @@ const stickyHeader = { // eslint-disable-line no-unused-vars
         const boundaryEl = document.querySelector('.js-stickyHeaderBoundary');
 
         if (!headerEl || !boundaryEl) {
+            // eslint-disable-next-line no-console
             console.error('StickyHeader or Boundary not found!');
             return;
         }

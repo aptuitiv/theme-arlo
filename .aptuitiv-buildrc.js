@@ -22,7 +22,7 @@ export default {
         buildFiles: '*.css'
     },
     eslint: {
-        ignorePatterns: ['fslightbox.js']
+        ignores: ['fslightbox.js']
     },
     javascript: {
         bundles: [

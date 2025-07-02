@@ -71,6 +71,18 @@
       "description" : "Content for the footer that is used on all pages",
       "fields" : [
         {
+          "after" : "px",
+          "defaultValue" : "425",
+          "label" : "Logo width",
+          "name" : "footerLogoWidth",
+          "type" : "stepper",
+          "render" : {
+            "cssVariable" : "--Footer-logo-width",
+            "template" : "{{ value }}px",
+            "type" : "css-head"
+          }
+        },
+        {
           "defaultValue" : "yes",
           "label" : "Show navigation",
           "name" : "footerShowNavigation",

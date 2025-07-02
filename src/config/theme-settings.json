@@ -1,286 +1,286 @@
 {
-  "groups" : [
-    {
-      "description" : "These settings set the responsive sizes for the \"Full Width Image\" block.",
-      "fields" : [
+    "groups": [
         {
-          "children" : [
-            {
-              "after" : "px",
-              "label" : "Max width",
-              "name" : "maxWidth",
-              "type" : "stepper"
-            }
-          ],
-          "itemName" : "Image size",
-          "label" : "Image Sizes",
-          "name" : "blockFullWidthImageSizes",
-          "type" : "repeatingGrid"
+            "name": "Blocks - Full Width Image",
+            "description": "These settings set the responsive sizes for the \"Full Width Image\" block.",
+            "fields": [
+                {
+                    "name": "blockFullWidthImageSizes",
+                    "label": "Image Sizes",
+                    "type": "repeatingGrid",
+                    "children": [
+                        {
+                            "name": "maxWidth",
+                            "label": "Max width",
+                            "type": "stepper",
+                            "after": "px"
+                        }
+                    ],
+                    "itemName": "Image size"
+                }
+            ],
+            "sidebarSize": "small"
+        },
+        {
+            "name": "Blog",
+            "description": "These settings are for the promotional bar that shows at the top of the page.",
+            "fields": [
+                {
+                    "name": "promoBarLeftContent",
+                    "label": "Left content",
+                    "type": "richTextEditor",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".PromoBar-left"
+                    }
+                },
+                {
+                    "name": "promoBarRightContent",
+                    "label": "Right content",
+                    "type": "richTextEditor",
+                    "preview": {
+                        "type": "replace",
+                        "contentSelector": ".PromoBar-right"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Customer Reviews & Ratings",
+            "description": "Settings for the ratings",
+            "fields": [
+                {
+                    "name": "customerRatingsBarReviewsLink",
+                    "label": "URL to view reviews",
+                    "type": "url",
+                    "showLinkTextField": true
+                },
+                {
+                    "name": "customerRatingsBarTotalReviews",
+                    "label": "Total number of reviews",
+                    "type": "text"
+                },
+                {
+                    "name": "customerRatingsBarAverageRating",
+                    "label": "Average rating",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "name": "Footer",
+            "description": "Content for the footer that is used on all pages",
+            "fields": [
+                {
+                    "name": "footerLogoWidth",
+                    "label": "Logo width",
+                    "type": "stepper",
+                    "after": "px",
+                    "defaultValue": "425",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--Footer-logo-width",
+                        "template": "{{ value }}px"
+                    }
+                },
+                {
+                    "name": "footerShowNavigation",
+                    "label": "Show navigation",
+                    "type": "switch",
+                    "defaultValue": "yes"
+                },
+                {
+                    "name": "footerNavigationMenu",
+                    "label": "Which navigation menu to use in the footer",
+                    "type": "radio",
+                    "defaultValue": "main",
+                    "options": {
+                        "footer": "Use the separate footer navigation menu",
+                        "main": "Same as the main navigation menu"
+                    }
+                },
+                {
+                    "name": "footerShowAddress",
+                    "label": "Show address",
+                    "type": "switch",
+                    "defaultValue": "yes"
+                },
+                {
+                    "name": "footerShowEmail",
+                    "label": "Show email",
+                    "type": "switch",
+                    "defaultValue": "no"
+                },
+                {
+                    "name": "footerShowPhone",
+                    "label": "Show phone number",
+                    "type": "switch",
+                    "defaultValue": "yes"
+                },
+                {
+                    "name": "footerShowCredit",
+                    "label": "Show Aptuitiv credit",
+                    "type": "switch",
+                    "defaultValue": "yes"
+                }
+            ]
+        },
+        {
+            "name": "Header",
+            "description": "Content for the header that is used on all pages.",
+            "groups": [
+                {
+                    "name": "Image Logo",
+                    "fields": [
+                        {
+                            "name": "headerLogo",
+                            "label": "Logo",
+                            "type": "image",
+                            "path": "images",
+                            "render": {
+                                "type": "replace",
+                                "contentSelector": "#header-logo",
+                                "template": "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\"><img src=\"{{ url }}\" height=\"{{ imageHeight }}\" width=\"{{ imageWidth }}\" alt=\"{{ alt }}\" class=\"Header-logo\"></a></div>"
+                            }
+                        },
+                        {
+                            "name": "headerLogoWidth",
+                            "label": "Logo width",
+                            "type": "stepper",
+                            "after": "px",
+                            "defaultValue": "425",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-logo-width",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Text Logo",
+                    "description": "Alternative option to the image logo if none is available.",
+                    "fields": [
+                        {
+                            "name": "headerTextLogo",
+                            "label": "Text logo",
+                            "type": "text",
+                            "render": {
+                                "type": "replace",
+                                "contentSelector": "#header-logo",
+                                "template": "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\">{% if fields.headerLogo %}<img src=\"{{ fields.headerLogo.url }}\" class=\"Header-logo\">{% elseif value %}<div class=\"Header-textLogo\">{{ value }}</div>{% endif %}</a></div>"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Information",
+                    "fields": [
+                        {
+                            "name": "headerShowAddress",
+                            "label": "Show address",
+                            "type": "switch",
+                            "defaultValue": "no"
+                        },
+                        {
+                            "name": "headerShowPhone",
+                            "label": "Show phone",
+                            "type": "switch",
+                            "defaultValue": "yes"
+                        },
+                        {
+                            "name": "headerShowEmail",
+                            "label": "Show email",
+                            "type": "switch",
+                            "defaultValue": "no"
+                        },
+                        {
+                            "name": "headerShowSocial",
+                            "label": "Show social icons",
+                            "type": "switch",
+                            "defaultValue": "yes"
+                        },
+                        {
+                            "name": "headerShowHours",
+                            "label": "Show hours of operation",
+                            "type": "switch",
+                            "defaultValue": "no"
+                        },
+                        {
+                            "name": "headerHours",
+                            "label": "Hours of operation",
+                            "type": "textarea",
+                            "description": "If you want to show the hours of operation in the header then enter them here."
+                        }
+                    ]
+                }
+            ],
+            "sidebarSize": "small"
+        },
+        {
+            "name": "Header buttons",
+            "fields": [
+                {
+                    "name": "headerShowButtons",
+                    "label": "Show buttons",
+                    "type": "switch",
+                    "defaultValue": "yes"
+                },
+                {
+                    "name": "headerButtons",
+                    "label": "Buttons",
+                    "type": "repeatingGrid",
+                    "children": [
+                        {
+                            "name": "button",
+                            "label": "Button",
+                            "type": "url",
+                            "linkTextFieldLabel": "Button text",
+                            "showLinkTextField": true
+                        }
+                    ],
+                    "itemName": "Button"
+                }
+            ],
+            "sidebarSize": "medium"
+        },
+        {
+            "name": "Social Icons",
+            "description": "Set the links and icons to use for your social networks in the footer of each page.",
+            "fields": [
+                {
+                    "name": "social",
+                    "label": "Social Networks",
+                    "type": "repeatingGrid",
+                    "children": [
+                        {
+                            "name": "icon",
+                            "label": "Icon",
+                            "type": "select",
+                            "columnWidth": "1fr",
+                            "options": {
+                                "facebook": "Facebook",
+                                "google": "Google",
+                                "instagram": "Instagram",
+                                "linkedin": "LinkedIn",
+                                "pinterest": "Pinterest",
+                                "tiktok": "TikTok",
+                                "whatsapp": "WhatsApp",
+                                "x": "X (Twitter)",
+                                "youtube": "YouTube"
+                            }
+                        },
+                        {
+                            "name": "url",
+                            "label": "URL to your page on this social network",
+                            "type": "text",
+                            "columnWidth": "2fr"
+                        }
+                    ],
+                    "itemName": "Social Network"
+                }
+            ],
+            "sidebarSize": "medium"
         }
-      ],
-      "name" : "Blocks - Full Width Image",
-      "sidebarSize" : "small"
-    },
-    {
-      "name" : "Customer Reviews & Ratings",
-      "description" : "Settings for the ratings",
-      "fields" : [
-        {
-          "label" : "URL to view reviews",
-          "name" : "customerRatingsBarReviewsLink",
-          "showLinkTextField" : true,
-          "type" : "url"
-        },
-        {
-          "label" : "Total number of reviews",
-          "name" : "customerRatingsBarTotalReviews",
-          "type" : "text"
-        },
-        {
-          "label" : "Average rating",
-          "name" : "customerRatingsBarAverageRating",
-          "type" : "text"
-        }
-      ]
-    },
-    {
-      "description" : "These settings are for the promotional bar that shows at the top of the page.",
-      "fields" : [
-        {
-          "label" : "Left content",
-          "name" : "promoBarLeftContent",
-          "preview" : {
-            "contentSelector" : ".PromoBar-left",
-            "type" : "replace"
-          },
-          "type" : "richTextEditor"
-        },
-        {
-          "label" : "Right content",
-          "name" : "promoBarRightContent",
-          "preview" : {
-            "contentSelector" : ".PromoBar-right",
-            "type" : "replace"
-          },
-          "type" : "richTextEditor"
-        }
-      ],
-      "name" : "Blog"
-    },
-    {
-      "description" : "Content for the footer that is used on all pages",
-      "fields" : [
-        {
-          "after" : "px",
-          "defaultValue" : "425",
-          "label" : "Logo width",
-          "name" : "footerLogoWidth",
-          "type" : "stepper",
-          "render" : {
-            "cssVariable" : "--Footer-logo-width",
-            "template" : "{{ value }}px",
-            "type" : "css-head"
-          }
-        },
-        {
-          "defaultValue" : "yes",
-          "label" : "Show navigation",
-          "name" : "footerShowNavigation",
-          "type" : "switch"
-        },
-        {
-          "defaultValue" : "main",
-          "label" : "Which navigation menu to use in the footer",
-          "name" : "footerNavigationMenu",
-          "options" : {
-            "footer" : "Use the separate footer navigation menu",
-            "main" : "Same as the main navigation menu"
-          },
-          "type" : "radio"
-        },
-        {
-          "defaultValue" : "yes",
-          "label" : "Show address",
-          "name" : "footerShowAddress",
-          "type" : "switch"
-        },
-        {
-          "defaultValue" : "no",
-          "label" : "Show email",
-          "name" : "footerShowEmail",
-          "type" : "switch"
-        },
-        {
-          "defaultValue" : "yes",
-          "label" : "Show phone number",
-          "name" : "footerShowPhone",
-          "type" : "switch"
-        },
-        {
-          "defaultValue" : "yes",
-          "label" : "Show Aptuitiv credit",
-          "name" : "footerShowCredit",
-          "type" : "switch"
-        }
-      ],
-      "name" : "Footer"
-    },
-    {
-      "description" : "Content for the header that is used on all pages.",
-      "groups" : [
-        {
-          "fields" : [
-            {
-              "label" : "Logo",
-              "name" : "headerLogo",
-              "path" : "images",
-              "render" : {
-                "contentSelector" : "#header-logo",
-                "template" : "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\"><img src=\"{{ url }}\" height=\"{{ imageHeight }}\" width=\"{{ imageWidth }}\" alt=\"{{ alt }}\" class=\"Header-logo\"></a></div>",
-                "type" : "replace"
-              },
-              "type" : "image"
-            },
-            {
-              "after" : "px",
-              "defaultValue" : "425",
-              "label" : "Logo width",
-              "name" : "headerLogoWidth",
-              "render" : {
-                "cssVariable" : "--Header-logo-width",
-                "template" : "{{ value }}px",
-                "type" : "css-head"
-              },
-              "type" : "stepper"
-            }
-          ],
-          "name" : "Image Logo"
-        },
-        {
-          "description" : "Alternative option to the image logo if none is available.",
-          "fields" : [
-            {
-              "label" : "Text logo",
-              "name" : "headerTextLogo",
-              "render" : {
-                "contentSelector" : "#header-logo",
-                "template" : "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\">{% if fields.headerLogo %}<img src=\"{{ fields.headerLogo.url }}\" class=\"Header-logo\">{% elseif value %}<div class=\"Header-textLogo\">{{ value }}</div>{% endif %}</a></div>",
-                "type" : "replace"
-              },
-              "type" : "text"
-            }
-          ],
-          "name" : "Text Logo"
-        },
-        {
-          "fields" : [
-            {
-              "defaultValue" : "no",
-              "label" : "Show address",
-              "name" : "headerShowAddress",
-              "type" : "switch"
-            },
-            {
-              "defaultValue" : "yes",
-              "label" : "Show phone",
-              "name" : "headerShowPhone",
-              "type" : "switch"
-            },
-            {
-              "defaultValue" : "no",
-              "label" : "Show email",
-              "name" : "headerShowEmail",
-              "type" : "switch"
-            },
-            {
-              "defaultValue" : "yes",
-              "label" : "Show social icons",
-              "name" : "headerShowSocial",
-              "type" : "switch"
-            },
-            {
-              "defaultValue" : "no",
-              "label" : "Show hours of operation",
-              "name" : "headerShowHours",
-              "type" : "switch"
-            },
-            {
-              "description" : "If you want to show the hours of operation in the header then enter them here.",
-              "label" : "Hours of operation",
-              "name" : "headerHours",
-              "type" : "textarea"
-            }
-          ],
-          "name" : "Information"
-        }
-      ],
-      "name" : "Header",
-      "sidebarSize" : "small"
-    },
-    {
-      "fields" : [
-        {
-          "defaultValue" : "yes",
-          "label" : "Show buttons",
-          "name" : "headerShowButtons",
-          "type" : "switch"
-        },
-        {
-          "children" : [
-            {
-              "label" : "Button",
-              "linkTextFieldLabel" : "Button text",
-              "name" : "button",
-              "showLinkTextField" : true,
-              "type" : "url"
-            }
-          ],
-          "itemName" : "Button",
-          "label" : "Buttons",
-          "name" : "headerButtons",
-          "type" : "repeatingGrid"
-        }
-      ],
-      "name" : "Header buttons",
-      "sidebarSize" : "medium"
-    },
-    {
-      "description" : "Set the links and icons to use for your social networks in the footer of each page.",
-      "fields" : [
-        {
-          "children" : [
-            {
-              "columnWidth" : "1fr",
-              "label" : "Icon",
-              "name" : "icon",
-              "options" : {
-                "facebook" : "Facebook",
-                "google" : "Google",
-                "instagram" : "Instagram",
-                "linkedin" : "LinkedIn",
-                "pinterest" : "Pinterest",
-                "tiktok" : "TikTok",
-                "whatsapp" : "WhatsApp",
-                "x" : "X (Twitter)",
-                "youtube" : "YouTube"
-              },
-              "type" : "select"
-            },
-            {
-              "columnWidth" : "2fr",
-              "label" : "URL to your page on this social network",
-              "name" : "url",
-              "type" : "text"
-            }
-          ],
-          "itemName" : "Social Network",
-          "label" : "Social Networks",
-          "name" : "social",
-          "type" : "repeatingGrid"
-        }
-      ],
-      "name" : "Social Icons",
-      "sidebarSize" : "medium"
-    }
-  ]
+    ]
 }

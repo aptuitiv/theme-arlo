@@ -3,14 +3,13 @@
     {% for imageOption in imageSizes %}
         {% do image.addSource("(max-width: " ~ imageOption.maxWidth ~ "px)").resize(imageOption.maxWidth) %}
     {% endfor %}
-    {# {% set image.picture.class = "Banner-picture" %} #}
     {% set largestSize = imageSizes|last %}
     {% if largestSize|length > 0 %}
         {% do image.resize(largestSize.maxWidth ) %}
     {% endif %}
 {% endmacro %}
 
-
+ 
 {% if image %}
     {% set fullWidthImageSizes = _core.theme.settings.blockImageFullWidthSizes|sort_by_key("maxWidth") %}
     {% set largeWidthImageSizes = _core.theme.settings.blockImageLargeWidthSizes|sort_by_key("maxWidth") %}
@@ -28,8 +27,8 @@
     {% endif %}
 
     {% do image.alt.default(caption) %}
-    {% set image.class = 'FullWidthImage' %}
     {% do image.lazy() %}
+
     {# Setup caption #}
     {% if caption %}
         {% set caption = '<div class="ImageCaption">' ~ caption ~ '</div>' %}
@@ -42,7 +41,7 @@
         {% set imageContent = link.tag %}
     {% endif %}
 
-    {# Display the image based on alignment #}
+    {# Display the image based on alignment #} 
     {% if alignment == 'center' %}
         <div class="ImageWrapper ImageWrapper--center">{{ imageContent }}{{ caption }}</div>
     {% elseif alignment == 'left' %}

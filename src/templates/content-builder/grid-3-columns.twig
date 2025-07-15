@@ -1,0 +1,31 @@
+{# Set the column sizes #}
+{% set sizes = ['col-1-1 col-1-3-md', 'col-1-1 col-1-3-md', 'col-1-1 col-1-3-md'] %}
+{% if fields.columnSizes == '1/2-1/4-1/4' %}
+    {% set sizes = ['col-1-1 col-1-3-md col-1-2-lg', 'col-1-1 col-1-3-sm col-1-4-lg', 'col-1-1 col-1-3-sm col-1-4-lg'] %}
+{% elseif fields.columnSizes == '1/4-1/2-1/4' %}
+    {% set sizes = ['col-1-1 col-1-3-sm col-1-4-lg', 'col-1-1 col-1-3-md col-1-2-lg', 'col-1-1 col-1-3-sm col-1-4-lg'] %}
+{% elseif fields.columnSizes == '1/4-1/4-1/2' %}
+    {% set sizes = ['col-1-1 col-1-3-sm col-1-4-lg', 'col-1-1 col-1-3-sm col-1-4-lg', 'col-1-1 col-1-3-md col-1-2-lg'] %}
+{% endif %}
+
+{# Set the vertical alignment #}
+{% set alignment = '' %}
+{% if fields.verticalAlignment == 'center' %}
+    {% set alignment = ' align-center' %}
+{% elseif fields.verticalAlignment == 'bottom' %}
+    {% set alignment = ' align-end' %}
+{% endif %}
+
+{# Build the grid #}
+<div class="grid g-4 nc-1 nc-3-sm{{ alignment }}">
+    {% for key, column in columns %}
+        <div class="{{ sizes[key] }}">
+            {% for element in column.elements %}
+                {{ element.content }}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+{# Include the CSS for the grid. If you have your own grid styles you can remove this. #}
+{% do _page.addCss('/ap/ui/public/css/grid-cacao-1.css') %}

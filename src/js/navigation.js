@@ -6,124 +6,76 @@
  * Small screen navigation
  */
 
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars -- This is a global variable
 const smallScreenNav = {
+
+    /**
+     * Initialization
+     */
     init() {
-        // Setup open/close
+        // The max window width where the small screen navigation is shown
+        const width = 1024;
+
+        // Select elements
         const body = document.querySelector('body');
-        const menu = document.querySelector('.Menu');
-        const menuButtons = document.querySelector('.Menu-buttons');
-        const openButton = document.querySelector('.js-menuOpenBtn');
-        const closeButton = document.querySelector('.js-menuCloseBtn');
+        const button = document.querySelector('.js-ssNavBtn');
+        const nav = document.querySelector('.js-navBar');
+        const dropdowns = document.querySelectorAll('.js-dropdown');
 
-        /**
-         * Function to handle the mousedown event outside of the menu
-         *
-         * @param {Event} e The event object
-         */
-        function handleMenuMouseDown(e) {
-            if (!menu.contains(e.target)) {
-                // The user clicked outside of the menu dom node.
-                // Hide the menu
-                hideMenu(); // eslint-disable-line no-use-before-define
-            }
-        }
-
-        /**
-         * Function to hide the menu
-         */
-        function hideMenu() {
-            // Hide the menu
-            menu.classList.remove('is-open');
-            menu.classList.add('is-closed');
-            body.classList.remove('Scroll-lock');
-
-            document.removeEventListener('mousedown', handleMenuMouseDown);
-        }
-
-        /**
-         * Function to show the menu
-         */
-        function showMenu() {
-            // Show the menu
-            menu.classList.add('is-open');
-            menu.classList.remove('is-closed');
-            body.classList.add('Scroll-lock');
-
-            // When the menu shows add a mousedown event listener
-            document.addEventListener('mousedown', handleMenuMouseDown);
-        }
-
-        if (openButton) {
-            openButton.addEventListener('click', showMenu);
-        }
-        if (closeButton) {
-            closeButton.addEventListener('click', hideMenu);
-        }
-        if (menuButtons) {
-            menuButtons.addEventListener('click', hideMenu);
-        }
-
-        // Setup dropdowns
-        const menuItems = document.querySelectorAll('.MenuNav-item');
-        menuItems.forEach((menuItem) => {
-            const dropdownLink = menuItem.querySelector('span.MenuNav-link');
-            if (dropdownLink !== null) {
-                dropdownLink.addEventListener('click', () => {
-                    dropdownLink.classList.toggle('is-current');
-                });
+        // Make sure that the navigation gets displayed if the window resizes.
+        // If you resize to make the small screen nav display, show and hide the nav,
+        // and then resize so that regular nav should show, the regular nav doesn't show
+        // because there are inline styles on the nav to hide it.
+        // We do this by clearing out any inline CSS styles so that the styles
+        // from the stylesheet are used.
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= width) {
+                nav.style.display = '';
+                nav.style.opacity = '';
             }
         });
 
-        // The following code is for showing/hiding the header on mobile.
-        // This was implemented on some of the other pest sites (GetEm, for example);
+        /**
+         * Function to toggle showing and hiding the small screen navigation
+         */
+        function toggleNav() {
+            button.classList.toggle('is-active');
+            if (nav.dataset.open === 'yes') {
+                // Hide the menu
+                nav.dataset.open = 'no';
+                button.setAttribute('aria-expanded', 'false');
+                body.style.overflow = '';
+            } else {
+                // Show the menu
+                nav.dataset.open = 'yes';
+                button.setAttribute('aria-expanded', 'true');
+                // Set the offset position for the menu
+                const buttonPosition = button.getBoundingClientRect().top + button.offsetHeight + 10;
+                nav.style.setProperty('--navbar-offset', `${buttonPosition}px`);
+                // Prevent scrolling on the body tag.
+                // Unfortunately, this doesn't work on iOS devices as of 2024. This is a known issue with no good workaround
+                // except to add "position: fixed" to the body tag, but that causes other issues.
+                body.style.overflow = 'hidden';
+            }
+        }
 
-        // Provide event throttling utility
-        // let throttleTimer;
-        // const throttle = (callback, time) => {
-        //     if (throttleTimer) return;
-        //     throttleTimer = true;
-        //     setTimeout(() => {
-        //         callback();
-        //         throttleTimer = false;
-        //     }, time);
-        // };
+        if (button !== null) {
+            // Small screen nav menu (hamburger) button click
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggleNav();
+            });
+        }
 
-        // Handle showing/hiding the header on mobile
-        // let lastScroll = 0;
-        // const header = document.querySelector('.Header-main');
-        // const calcScroll = () => {
-        //     const currScroll = window.scrollY;
-        //     if (currScroll < lastScroll) {
-        //         header.classList.add('is-shown');
-        //         header.classList.remove('is-closed');
-        //     } else {
-        //         header.classList.add('is-closed');
-        //         header.classList.remove('is-shown');
-        //     }
-        //     lastScroll = currScroll;
-        // };
-
-        // Handle mobile header hide/show on scroll
-        // const handleScollHeader = () => {
-        //     document.addEventListener('scroll', () => {
-        //         throttle(calcScroll, 250);
-        //     }, { passive: true });
-        // };
-
-        // const checkForScollHeader = () => {
-        //     if (window.innerWidth <= 800) {
-        //         handleScollHeader();
-        //     } else {
-        //         window.addEventListener('resize', () => {
-        //             if (window.innerWidth <= 800) {
-        //                 handleScollHeader();
-        //             }
-        //         });
-        //     }
-        // };
-
-        // checkForScollHeader();
+        Array.from(dropdowns).forEach((dropdown) => {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= width) {
+                    e.preventDefault();
+                    e.target.classList.toggle('is-active');
+                    e.target.parentElement.classList.toggle('is-active');
+                }
+            });
+        });
     },
 };
 
@@ -151,14 +103,13 @@ const smallScreenNav = {
  * Add "js-dropdownParent" class to a <li> tag that contains a sub list for a drop down.
  * Add "js-dropdown" to any link tags that have a drop down.
  */
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars -- This is a global variable
 const navAccess = {
     init() {
         const menus = document.querySelectorAll('[data-access-nav]');
-        const self = this;
         if (menus.length > 0) {
             menus.forEach((menu) => {
-                self.setupMenu(menu);
+                this.setupMenu(menu);
             });
         }
     },
@@ -166,11 +117,10 @@ const navAccess = {
     /**
      * Sets up the menu for accessibility
      *
-     * @param {Element} menu The menu element to set up
+     * @param {Element} menu The menu to work with
      */
     setupMenu(menu) {
         const nav = menu.querySelectorAll('.js-navLink');
-        const self = this;
         let key;
         const next = ['ArrowDown', 'Down', 'Tab', 'Spacebar', ' '];
         const prev = ['ArrowUp', 'Up', 'Tab', 'Spacebar', ' '];
@@ -185,30 +135,30 @@ const navAccess = {
                     // Going forwards
                     if (e.shiftKey) {
                         // Shift key was down
-                        self.focus(e, e.target);
+                        this.focus(e, e.target);
                     } else {
                         // Moving forward
-                        self.focus(e, e.target, true);
+                        this.focus(e, e.target, true);
                     }
                 } else if (prev.indexOf(key) >= 0) {
                     // Going backwards
                     if (e.shiftKey) {
                         // Negating going backwards so going forwards
-                        self.focus(e, e.target, true);
+                        this.focus(e, e.target, true);
                     } else {
-                        self.focus(e, e.target);
+                        this.focus(e, e.target);
                     }
                 } else if (left.indexOf(key) >= 0) {
                     // Jumping backwards
-                    self.focus(e, e.target, false, true);
+                    this.focus(e, e.target, false, true);
                 } else if (right.indexOf(key) >= 0) {
                     // Jumping forwards
-                    self.focus(e, e.target, true, true);
+                    this.focus(e, e.target, true, true);
                 } else if (key === 'Escape') {
                     // Close the menu
-                    const parentLi = self.getParent(e.target).parentNode;
+                    const parentLi = this.getParent(e.target).parentNode;
                     if (parentLi !== null) {
-                        focusEl = self.getLink(parentLi);
+                        focusEl = this.getLink(parentLi);
                         focusEl.focus();
                     }
                 }
@@ -222,7 +172,7 @@ const navAccess = {
      * @param {object} event The event that triggered the focus
      * @param {Element} el The target of the keydown event
      * @param {boolean} [next] Whether or not moving to the next item
-     * @param {boolean} jumping Whether jumping to the next/previous top level navigation link
+     * @param {boolean} jumping Whether or not jumping to the next top level navigation link
      */
     focus(event, el, next, jumping) {
         let focusEl = null;
@@ -288,6 +238,10 @@ const navAccess = {
             el.classList.add('is-active');
             // change the aria-expanded and aria-hidden values on the <ul> tag
             el.querySelector('a').setAttribute('aria-expanded', 'true');
+            const dropdownMenu = el.querySelector('ul.js-dropdownMenu');
+            if (dropdownMenu) {
+                dropdownMenu.setAttribute('aria-hidden', 'false');
+            }
         }
     },
 
@@ -301,13 +255,17 @@ const navAccess = {
         parent.parentNode.classList.remove('is-active');
         // change the aria-expanded and aria-hidden values on the <ul> tag
         parent.setAttribute('aria-expanded', 'false');
+        const dropdownMenu = parent.querySelector('ul.js-dropdownMenu');
+        if (dropdownMenu) {
+            dropdownMenu.setAttribute('aria-hidden', 'true');
+        }
     },
 
     /**
      * Returns returns true is the first element of a dropdown list
      *
-     * @param {Element} el The element to check
-     * @returns {boolean}
+     * @param {Element} el The element to work with
+     * @returns {Element}
      */
     isDropdownFirst(el) {
         const dropdownNavs = Array.prototype.slice.call(
@@ -320,8 +278,8 @@ const navAccess = {
     /**
      * Returns true if the last element of a dropdown
      *
-     * @param {Element} el The element to check
-     * @returns {boolean}
+     * @param {Element} el The element to work with
+     * @returns {Element}
      */
     isDropdownLast(el) {
         const dropdownNavs = Array.prototype.slice.call(
@@ -334,7 +292,7 @@ const navAccess = {
      * Returns the index of this link out of all other navLinks
      *
      * @param {Element} el The element to work with
-     * @returns {number}
+     * @returns {Element}
      */
     getLinkIndex(el) {
         const list = Array.prototype.slice.call(
@@ -347,7 +305,7 @@ const navAccess = {
      * Returns the index of the parent top level navigation
      *
      * @param {Element} el The element to work with
-     * @returns {number}
+     * @returns {Element}
      */
     getParentIndex(el) {
         const list = Array.prototype.slice.call(el.parentNode.children);
@@ -368,7 +326,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the next navLink
+     * Returns the next navLink
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -381,7 +339,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the parent navigation link
+     * Returns the parent navigation link
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -401,7 +359,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the direct sibling navigation link before the active one
+     * Returns the direct sibling navigation link before the active one
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -411,7 +369,7 @@ const navAccess = {
     },
 
     /**
-     *  Returns the direct sibling navigation link after the active one
+     * Returns the direct sibling navigation link after the active one
      *
      * @param {Element} el The element to work with
      * @returns {Element}
@@ -423,7 +381,7 @@ const navAccess = {
     /**
      * Gets the first navigation in the element
      *
-     * @param {Element} el The element to work with
+     * @param {Element} el The element to get the link for
      * @returns {Element}
      */
     getLink(el) {

@@ -19,15 +19,14 @@
 {% endif %}
 
 {# Build the grid #}
-<div class="grid g-4 nc-1 nc-2-sm{{ alignment }}">
-    {% for key, column in columns %}
-        <div class="{{ sizes[key] }}">
-            {% for element in column.elements %}
-                {{ element.content }}
-            {% endfor %}
-        </div>
-    {% endfor %}
+<div class="Container Container--pad">
+    <div class="grid g-4 nc-1 nc-2-sm{{ alignment }}">
+        {% for key, column in columns %}
+            <div class="{{ sizes[key] }}">
+                {% for element in column.elements %}
+                    {{ element.content }}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
 </div>
-
-{# Include the CSS for the grid. If you have your own grid styles you can remove this. #}
-{% do _page.addCss('/ap/ui/public/css/grid-cacao-1.css') %}

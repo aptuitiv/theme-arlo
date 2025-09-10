@@ -1442,11 +1442,28 @@
             ]
         },
         {
-            "name": "Blocks - Image Slider",
-            "description": "Styles for the \"Image Slider\" block.",
-            "sections": [
+            "name": "Blocks - Image Gallery / Slider",
+            "description": "Styles for the \"Image Gallery\" block. This includes styles when it's displayed as a Grid or as a Slider.",
+            "groups": [
                 {
-                    "name": "General",
+                    "name": "Grid - General",
+                    "description": "General styles for the image gallery when it's displayed as a Grid.",
+                    "fields": [
+                        {
+                            "name": "blocksImageGalleryGridMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "defaultValue": "2.5rem 0 2.5rem 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--ImageGallery-margin"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Slider - General",
+                    "description": "General styles for the image gallery when it's displayed as a Slider.",
                     "fields": [
                         {
                             "name": "blocksImageSliderMargin",
@@ -1461,166 +1478,88 @@
                     ]
                 },
                 {
-                    "name": "Content",
+                    "name": "Slider - Content",
+                    "description": "Styles for the content that shows on the slider.",
                     "fields": [
                         {
-                            "name": "sliderContentPaddingVertical",
-                            "label": "Vertical padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "20",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-content-paddingVertical",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "sliderContentPaddingHorizontal",
-                            "label": "Horizontal padding",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "20",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-content-paddingHorizontal",
-                                "template": "{{ value }}px"
-                            }
-                        },
-                        {
-                            "name": "sliderContentFontSize",
-                            "label": "Font size",
-                            "type": "stepper",
-                            "after": "px",
-                            "default": "20",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-content-fontSize",
-                                "template": "{{ value / 10 }}rem"
-                            }
-                        },
-                        {
-                            "name": "sliderContentFontWeight",
-                            "label": "Font weight",
-                            "type": "fontWeight",
-                            "default": "700",
-                            "fontFamilyField": "themeTypographyFontFamily",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-content-fontWeight"
-                            }
-                        },
-                        {
-                            "name": "sliderContentLineHeight",
-                            "label": "Line height",
-                            "type": "stepper",
-                            "step": "0.1",
-                            "decimals": "2",
-                            "default": "1.58",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-content-lineHeight"
-                            }
-                        },
-                        {
-                            "name": "sliderContentTextTransform",
-                            "label": "Text case",
-                            "type": "select",
-                            "default": "none",
-                            "options": {
-                                "none": "Default",
-                                "capitalize": "Capitalize",
-                                "uppercase": "UPPERCASE",
-                                "lowercase": "lowercase"
-                            },
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-content-textTransform"
-                            }
-                        },
-                        {
-                            "name": "sliderContentBackground",
+                            "name": "blocksImageSliderContentBackground",
                             "label": "Background color",
                             "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "defaultValue": "#fff",
+                            "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Slider-content-background"
                             }
                         },
                         {
-                            "name": "sliderContentColor",
-                            "label": "Text color",
-                            "type": "color",
-                            "default": "#333",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-content-color"
-                            }
-                        },
-                        {
-                            "name": "sliderContentBackgroundHover",
+                            "name": "blocksImageSliderContentBackgroundHover",
                             "label": "Background color (hover)",
                             "type": "color",
-                            "default": "#333",
-                            "preview": {
+                            "defaultValue": "#333",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Slider-content-background--hover"
+                                "cssVariable": "--Slider-content-background-hover"
                             }
                         },
                         {
-                            "name": "sliderContentColorHover",
-                            "label": "Text color (hover)",
-                            "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "name": "blocksImageSliderTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "usePadding": true,
+                            "padding": {
+                                "defaultValue": "20px"
+                            },
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Slider-content-color--hover"
+                                "cssVariable": "--Slider-content"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "Arrows",
+                    "name": "Slider - Arrows",
+                    "description": "Styles for the arrows on the slider.",
                     "fields": [
                         {
-                            "name": "sliderArrowBackground",
+                            "name": "blocksImageSliderArrowBackground",
                             "label": "Background color",
                             "type": "color",
-                            "default": "#fff",
-                            "preview": {
+                            "defaultValue": "#fff",
+                            "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Slider-arrow-background"
                             }
                         },
                         {
-                            "name": "sliderArrowColor",
+                            "name": "blocksImageSliderArrowColorHover",
+                            "label": "Text color (hover)",
+                            "type": "color",
+                            "defaultValue": "#fff",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Slider-arrow-color-hover"
+                            }
+                        },
+                        {
+                            "name": "blocksImageSliderArrowColor",
                             "label": "Text color",
                             "type": "color",
-                            "default": "#333",
-                            "preview": {
+                            "defaultValue": "#333",
+                            "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Slider-arrow-color"
                             }
                         },
                         {
-                            "name": "sliderArrowBackgroundHover",
+                            "name": "blocksImageSliderArrowBackgroundHover",
                             "label": "Background color (hover)",
                             "type": "color",
-                            "default": "#333",
-                            "preview": {
+                            "defaultValue": "#333",
+                            "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Slider-arrow-background--hover"
-                            }
-                        },
-                        {
-                            "name": "sliderArrowColorHover",
-                            "label": "Text color (hover)",
-                            "type": "color",
-                            "default": "#fff",
-                            "preview": {
-                                "type": "css-head",
-                                "cssVariable": "--Slider-arrow-color--hover"
+                                "cssVariable": "--Slider-arrow-background-hover"
                             }
                         }
                     ]

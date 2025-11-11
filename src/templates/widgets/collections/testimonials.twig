@@ -1,12 +1,7 @@
-{# {% import 'macros/macros' as macros %} #}
 {% if items|length > 0 %}
     {% import 'macros/macros' as macros %}
-    {# {% for item in items %}
-        {{ item|debug }}
-    {% endfor %} #}
 
     {% set item = items|first %}
-    {# {{ items|debug }} #}
     <div class="Testimonial">
         <div class="Container Container--pad">
             <div class="Testimonial-inner">
@@ -55,14 +50,26 @@
                     <div class="Testimonial-rating">
                         {# Display the number of review stars #}
                         {# Get just the decimal part of the rating #}
-                        {% set decimal = _core.theme.settings.customerRatingsBarAverageRating - _core.theme.settings.customerRatingsBarAverageRating|floor %}
-                        {# Set up the number of whole, half, and empty stars to show #}
-                        {% set numWholeStars = _core.settings.theme.customerRatingsBarAverageRating|floor %}
-                        {% set numHalfStars = 0 %}
-                        {% if decimal > 0.3 && decimal < 0.9 %}
-                            {% set numHalfStars = 1 %}
-                        {% elseif decimal >= 0.9 %}
-                            {% set numWholeStars = numWholeStars + 1 %}
+                        {% if _core.theme.settings.customerRatingsBarAverageRating %}
+                            {% set decimal = _core.theme.settings.customerRatingsBarAverageRating - _core.theme.settings.customerRatingsBarAverageRating|floor %}
+                            {# Set up the number of whole, half, and empty stars to show #}
+                            {% set numWholeStars = _core.settings.theme.customerRatingsBarAverageRating|floor %}
+                            {% set numHalfStars = 0 %}
+                            {% if decimal > 0.3 && decimal < 0.9 %}
+                                {% set numHalfStars = 1 %}
+                            {% elseif decimal >= 0.9 %}
+                                {% set numWholeStars = numWholeStars + 1 %}
+                            {% endif %}
+                        {% else %}
+                            {% set numWholeStars = 0 %}
+                            {% set numHalfStars = 0 %}
+                        {% endif %}
+
+                        {# Set up the number of empty stars to show #}
+                        {% if _core.theme.settings.customerRatingsBarAverageRating %}
+                            {% set numEmptyStars = 5 - numWholeStars - numHalfStars %}
+                        {% else %}
+                            {% set numEmptyStars = 5 %}
                         {% endif %}
 
                         {% set numEmptyStars = 5 - numWholeStars - numHalfStars %}

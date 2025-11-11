@@ -22,30 +22,6 @@
             "sidebarSize": "small"
         },
         {
-            "name": "Blog",
-            "description": "These settings are for the promotional bar that shows at the top of the page.",
-            "fields": [
-                {
-                    "name": "promoBarLeftContent",
-                    "label": "Left content",
-                    "type": "richTextEditor",
-                    "preview": {
-                        "type": "replace",
-                        "contentSelector": ".PromoBar-left"
-                    }
-                },
-                {
-                    "name": "promoBarRightContent",
-                    "label": "Right content",
-                    "type": "richTextEditor",
-                    "preview": {
-                        "type": "replace",
-                        "contentSelector": ".PromoBar-right"
-                    }
-                }
-            ]
-        },
-        {
             "name": "Customer Reviews & Ratings",
             "description": "Settings for the ratings",
             "fields": [

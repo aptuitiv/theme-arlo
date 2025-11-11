@@ -108,9 +108,7 @@
                             "label": "Icon size",
                             "type": "size",
                             "default": "12px",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--Accordion-icon-size"
@@ -1373,9 +1371,7 @@
                             "name": "promoBarCol1Width",
                             "label": "Column 1 width",
                             "type": "size",
-                            "allowedUnits": [
-                                "%"
-                            ],
+                            "allowedUnits": ["%"],
                             "default": "50%",
                             "preview": {
                                 "type": "css-head",
@@ -1386,9 +1382,7 @@
                             "name": "promoBarCol2WidthLg",
                             "label": "Column 2 width",
                             "type": "size",
-                            "allowedUnits": [
-                                "%"
-                            ],
+                            "allowedUnits": ["%"],
                             "default": "50%",
                             "preview": {
                                 "type": "css-head",
@@ -1671,9 +1665,7 @@
                             "name": "size",
                             "label": "Size",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ]
+                            "allowedUnits": ["px"]
                         }
                     ],
                     "itemName": "width"
@@ -1991,9 +1983,7 @@
                                 "defaultValue": "#fff"
                             },
                             "fontSize": {
-                                "allowedUnits": [
-                                    "px"
-                                ],
+                                "allowedUnits": ["px"],
                                 "default": "18px"
                             },
                             "fontSizePreview": {
@@ -2093,9 +2083,7 @@
                                 "default": "#333333"
                             },
                             "fontSize": {
-                                "allowedUnits": [
-                                    "px"
-                                ],
+                                "allowedUnits": ["px"],
                                 "default": "18px"
                             },
                             "fontSizePreview": {
@@ -2195,9 +2183,7 @@
                                 "default": "#333333"
                             },
                             "fontSize": {
-                                "allowedUnits": [
-                                    "px"
-                                ],
+                                "allowedUnits": ["px"],
                                 "default": "18px"
                             },
                             "fontSizePreview": {
@@ -2350,9 +2336,7 @@
                             "name": "calendarGridCellBorderSize",
                             "label": "Border size",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "defaultValue": "1px",
                             "render": {
                                 "type": "css-head",
@@ -2445,9 +2429,7 @@
                             "label": "Today cell outline size",
                             "type": "size",
                             "description": "The outline size of the current day cell. Use an outline instead of a background color for a subtle highlight",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "default": "2px",
                             "render": {
                                 "type": "css-head",
@@ -2500,9 +2482,7 @@
                             "name": "calendarMiniGridCellBorderSize",
                             "label": "Border size",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "defaultValue": "1px",
                             "render": {
                                 "type": "css-head",
@@ -3004,9 +2984,7 @@
                             "name": "textInputBorderWidth",
                             "label": "Border width",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "default": "1px",
                             "preview": {
                                 "type": "css-head",
@@ -3072,9 +3050,7 @@
                             "name": "selectInputBorderWidth",
                             "label": "Border width",
                             "type": "size",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "default": "1px",
                             "preview": {
                                 "type": "css-head",
@@ -3399,9 +3375,7 @@
                             },
                             "fontSize": {
                                 "default": "18px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "lineHeight": {
                                 "default": "1.4"
@@ -5224,9 +5198,7 @@
                             "label": "Horizontal rule size",
                             "type": "size",
                             "default": "1px",
-                            "allowedUnits": [
-                                "px"
-                            ],
+                            "allowedUnits": ["px"],
                             "preview": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-hrule-width"
@@ -5258,9 +5230,7 @@
                             },
                             "fontSize": {
                                 "default": "18px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "lineHeight": {
                                 "default": "1.58"
@@ -5428,9 +5398,7 @@
                             },
                             "fontSize": {
                                 "default": "32px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "fontWeight": {
                                 "default": "700"
@@ -5469,9 +5437,7 @@
                             },
                             "fontSize": {
                                 "default": "28px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "fontWeight": {
                                 "default": "700"
@@ -5504,9 +5470,7 @@
                             },
                             "fontSize": {
                                 "default": "24px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "fontWeight": {
                                 "default": "700"
@@ -5538,9 +5502,7 @@
                             },
                             "fontSize": {
                                 "default": "20px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "fontWeight": {
                                 "default": "700"
@@ -5572,9 +5534,7 @@
                             },
                             "fontSize": {
                                 "default": "18px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "fontWeight": {
                                 "default": "700"
@@ -5606,9 +5566,7 @@
                             },
                             "fontSize": {
                                 "default": "18px",
-                                "allowedUnits": [
-                                    "px"
-                                ]
+                                "allowedUnits": ["px"]
                             },
                             "fontWeight": {
                                 "default": "700"

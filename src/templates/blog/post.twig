@@ -3,7 +3,7 @@
 
 {% block banner %}
     {% set content = '<h1>' ~ post.postTitle ~ '</h1><p>' ~ post.publishedOnDate ~ '</p>' %}
-    {% include 'content-builder/banner-bar' %}
+    {% include 'content-builder/banner' %}
     {# Use a content snippet for any custom blocks in the header #}
     {{ _api.contentSnippet.get('blog-post-header') }}
 {% endblock %}

@@ -1334,10 +1334,10 @@
                 "display_order": "2",
                 "elements": [
                     {
-                        "key": "banner-bar",
+                        "key": "banner",
                         "name": "Banner Bar",
                         "type": "full",
-                        "template": "banner-bar",
+                        "template": "banner",
                         "enabled": true,
                         "parse": true,
                         "description": "",
@@ -1410,7 +1410,7 @@
                         "description": ""
                     },
                     {
-                        "key": "banner-bar-2-2",
+                        "key": "banner-2-2",
                         "name": "Large Banner",
                         "type": "full",
                         "template": "banner-large",
@@ -1477,7 +1477,7 @@
                         ]
                     },
                     {
-                        "key": "banner-bar-2",
+                        "key": "banner-2",
                         "name": "Large Banner Slider",
                         "type": "full",
                         "template": "banner-large-slider",
@@ -2015,9 +2015,7 @@
             "name": "One Column",
             "default": true,
             "adminBar": true,
-            "contentAreas": [
-                "banner"
-            ]
+            "contentAreas": ["banner"]
         },
         {
             "key": "404",
@@ -2222,7 +2220,7 @@
             "name": "Testimonials"
         },
         {
-            "key": "content-builder/banner-bar",
+            "key": "content-builder/banner",
             "name": "Banner Bar"
         },
         {

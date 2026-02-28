@@ -7,7 +7,7 @@
                     <span class="Accordion-title"{% if contentIsFaqs %} itemprop="name"{% endif %}>{{ item.heading }}</span>
                     <span class="Accordion-icon"></span>
                 </div>
-                <div class="Accordion-content clearfix last-child-sb-0 js-accordionContent"{% if contentIsFaqs %} itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"{% endif %}>
+                <div class="Accordion-content clearfix last-child-mb-0 js-accordionContent"{% if contentIsFaqs %} itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"{% endif %}>
                     {% if contentIsFaqs %}<div itemprop="text">{% endif %}
                     {{ item.content }}
                     {% if contentIsFaqs %}</div>{% endif %}

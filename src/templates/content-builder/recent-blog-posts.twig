@@ -1,6 +1,5 @@
 {% import 'macros/macros' as macros %}
 {% set posts = _api.blog.recentPosts.limit(numberOfPosts) %}
-
 {% if posts %}
     <div class="Wrapper Wrapper--bg{{ background|pascal}}{#{% if background == 'None' %} Wrapper--noPad{% endif %}#}">
         <div class="Container {{ width == 'Narrow' ? 'Container--narrow' : 'Container--pad' }}">

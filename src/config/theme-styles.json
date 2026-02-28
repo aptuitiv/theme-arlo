@@ -633,32 +633,6 @@
             ]
         },
         {
-            "name": "Blocks - Full Width Image",
-            "description": "Styles for the \"Full Width Image\" block.",
-            "fields": [
-                {
-                    "name": "fullWidthImageWidth",
-                    "label": "Image width",
-                    "type": "radio",
-                    "defaultValue": "full",
-                    "options": {
-                        "full": "Span the full width of the page",
-                        "contained": "Maximum width is the container width"
-                    }
-                },
-                {
-                    "name": "fullWidthImagCaptionTypography",
-                    "label": "Caption typography",
-                    "type": "typography",
-                    "useMargin": "true",
-                    "render": {
-                        "type": "css-head",
-                        "cssVariable": "--FullWidthImage-caption-typography"
-                    }
-                }
-            ]
-        },
-        {
             "name": "Blocks - Google Ratings Bar",
             "description": "Styles for the \"Google Ratings Bar\" block.",
             "fields": [
@@ -870,6 +844,102 @@
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--IconGrid-scale-stepper"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Image",
+            "description": "Styles for the \"Image\" block.",
+            "sidebarSize": "small",
+            "groups": [
+                {
+                    "name": "Image Sizes",
+                    "description": "The image can be set to \"Full width\", \"Large\", \"Medium\" or \"Small\" sizes. Below are the widths for those sizes. Only the width is set to allow the image to be any height. If additional widths are set then they will be used to resize the image smaller at those widths.",
+                    "fields": [
+                        {
+                            "name": "blockImageFullWidthSizes",
+                            "label": "Full-width image widths",
+                            "type": "repeatingGrid",
+                            "itemName": "Image size",
+                            "children": [
+                                {
+                                    "name": "maxWidth",
+                                    "label": "Max width",
+                                    "type": "stepper",
+                                    "after": "px"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "blockImageLargeWidthSizes",
+                            "label": "Large image widths",
+                            "type": "repeatingGrid",
+                            "itemName": "Image size",
+                            "children": [
+                                {
+                                    "name": "maxWidth",
+                                    "label": "Max width",
+                                    "type": "stepper",
+                                    "after": "px"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "blockImageMediumWidthSizes",
+                            "label": "Medium image widths",
+                            "type": "repeatingGrid",
+                            "itemName": "Image size",
+                            "children": [
+                                {
+                                    "name": "maxWidth",
+                                    "label": "Max width",
+                                    "type": "stepper",
+                                    "after": "px"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "blockImageSmallWidthSizes",
+                            "label": "Small image widths",
+                            "type": "repeatingGrid",
+                            "itemName": "Image size",
+                            "children": [
+                                {
+                                    "name": "maxWidth",
+                                    "label": "Max width",
+                                    "type": "stepper",
+                                    "after": "px"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Caption",
+                    "fields": [
+                        {
+                            "name": "imagCaptionTypography",
+                            "label": "Caption typography",
+                            "type": "typography",
+                            "usePadding": "true",
+                            "fontSize": {
+                                "defaultValue": "1.4rem"
+                            },
+                            "fontStyle": {
+                                "defaultValue": "italic"
+                            },
+                            "padding": {
+                                "defaultValue": "2px 0 0 0"
+                            },
+                            "textAlign": {
+                                "defaultValue": "center"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".ImageCaption"
                             }
                         }
                     ]

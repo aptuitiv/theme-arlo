@@ -5,7 +5,7 @@
 /* @define Menu */
 .Menu {
     background-color: var(--Menu-background-color, #fff);
-    box-shadow: var(--Menu-drop-shadow-offset-x, 0) var(--Menu-drop-shadow-offset-x, 0)
+    box-shadow: var(--Menu-drop-shadow-offset-x, 0) var(--Menu-drop-shadow-offset-y, 0)
         var(--Menu-drop-shadow-blur-radius, 0) var(--Menu-drop-shadow-color, #000);
     height: 100vh;
     margin: 0;

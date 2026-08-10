@@ -3,8 +3,8 @@
 \* =========================================================================== */
 
 .FormLabel {
-    display: inline-block;
     color: var(--FormLabel-color, #333);
+    display: inline-block;
     font-family: var(--FormLabel-font-family);
     font-size: var(--FormLabel-font-size);
     font-weight: var(--FormLabel-font-weight, 700);

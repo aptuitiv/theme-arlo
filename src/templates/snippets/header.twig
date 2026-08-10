@@ -27,7 +27,7 @@
                     <div class="Header-nav">
                         {{ _api.navigation.get.key('main') }}
                         <div class="Header-hamburger">
-                            <button type="button" class="Hamburger js-menuOpenBtn" aria-label="open menu">
+                            <button type="button" class="Hamburger js-menuOpenBtn" aria-label="Navigation menu" aria-expanded="false" aria-controls="popOutMenu">
                                 <svg class="Hamburger-icon Icon"><use xlink:href="#icon-menu" /></svg>
                             </button>
                         </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="Menu is-closed">
+        <div class="Menu is-closed js-menu" id="popOutMenu" inert>
             <div class="Menu-top{% if not _core.theme.settings.menuLogo %} Menu-top--noLogo{% endif %}">
                 {% if _core.theme.settings.menuLogo %}
                     {% do _core.theme.settings.menuLogo.alt.default(_core.settings.companyName) %}

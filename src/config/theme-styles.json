@@ -1476,6 +1476,117 @@
             ]
         },
         {
+            "name": "Blocks - Testimonials",
+            "description": "Styles for the \"Testimonials\" block. The content comes from the \"Testimonials\" Collection Widget",
+            "groups": [
+                {
+                    "name": "Content",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsDefaultImage",
+                            "label": "Default image",
+                            "type": "image",
+                            "description": "This image is used if the testimonial does not have an image."
+                        },
+                        {
+                            "name": "blockTestimonialsHeading",
+                            "label": "Heading",
+                            "type": "richTextEditor"
+                        },
+                        {
+                            "name": "blockTestimonialsReviewsLink",
+                            "label": "URL to view reviews",
+                            "type": "url",
+                            "showLinkTextField": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Divider",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsDividerColor",
+                            "label": "Divider color",
+                            "type": "color",
+                            "defaultValue": "#d4d4d4",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Testimonial-divider-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial text",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsTextTypography",
+                            "label": "Testimonial typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-text"
+                            },
+                            "usePadding": true,
+                            "useTextAlign": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial name",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsNameTypography",
+                            "label": "Name typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-name"
+                            },
+                            "usePadding": true,
+                            "useTextAlign": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial reviews link",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsReviewsLinkTypography",
+                            "label": "Name typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-reviewLink"
+                            },
+                            "useHover": true,
+                            "useTextAlign": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Textimonial star rating",
+                    "fields": [
+                        {
+                            "name": "blockTestimonialsReviewsRatingTypography",
+                            "label": "Ratings typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Testimonial-rating"
+                            },
+                            "usePadding": true,
+                            "useTextAlign": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Blocks - Staff",
             "description": "Styles for the \"Staff\" block.",
             "groups": [
@@ -1900,6 +2011,18 @@
                 {
                     "name": "Posts - abstract",
                     "fields": [
+                        {
+                            "name": "blogRecentPostsAbstractTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "fontSize": {
+                                "defaultValue": "1.6rem"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--BlogGrid-abstract"
+                            }
+                        },
                         {
                             "name": "blogRecentPostsAbstractMargin",
                             "label": "Margin",
@@ -2752,6 +2875,17 @@
                             }
                         },
                         {
+                            "name": "footerColor",
+                            "label": "Text color",
+                            "type": "color",
+                            "description": "You can override this color in some sections below",
+                            "render": {
+                                "type": "css-head",
+                                "cssProperty": "color",
+                                "cssSelector": ".Footer"
+                            }
+                        },
+                        {
                             "name": "footerSpacing",
                             "label": "Spacing",
                             "type": "spacing",
@@ -2778,6 +2912,185 @@
                                 "type": "css-head",
                                 "cssVariable": "--Footer-sm"
                             }
+                        }
+                    ]
+                },
+                {
+                    "name": "Company name above address",
+                    "fields": [
+                        {
+                            "name": "footerAddressCompanyNameTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-companyName"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Address and phone",
+                    "fields": [
+                        {
+                            "name": "footerAddressTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-address"
+                            },
+                            "usePadding": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Text above phone number",
+                    "description": "Styles for the text above the phone numer on the right",
+                    "fields": [
+                        {
+                            "name": "footerAbovePhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-phoneContent"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone number on right",
+                    "description": "Styles for the phone numer on the right",
+                    "fields": [
+                        {
+                            "name": "footerPhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-phone[href^='tel']"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Social icons",
+                    "fields": [
+                        {
+                            "name": "footerSocialColor",
+                            "label": "Color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssProperty": "color",
+                                "cssSelector": ".Footer-socialLink"
+                            }
+                        },
+                        {
+                            "name": "footerSocialColorHover",
+                            "label": "Color (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssProperty": "color",
+                                "cssSelector": ".Footer-socialLink",
+                                "state": "hover"
+                            }
+                        },
+                        {
+                            "name": "footerSocialBackground",
+                            "label": "Background",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssProperty": "background-color",
+                                "cssSelector": ".Footer-socialLink"
+                            }
+                        },
+                        {
+                            "name": "footerSocialBackgroundHover",
+                            "label": "Background (hover)",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssProperty": "background-color",
+                                "cssSelector": ".Footer-socialLink",
+                                "state": "hover"
+                            }
+                        },
+                        {
+                            "name": "footerSocialSize",
+                            "label": "Size",
+                            "type": "size",
+                            "defaultValue": "30px",
+                            "render": {
+                                "type": "css-head",
+                                "cssProperty": "height",
+                                "cssSelector": ".Footer-socialLink"
+                            }
+                        },
+                        {
+                            "name": "footerSocialPadding",
+                            "label": "Padding around all the icons",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Footer-socialIcons"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Bottom bar",
+                    "fields": [
+                        {
+                            "name": "footerBottomBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#fff",
+                            "render": {
+                                "type": "css-head",
+                                "cssProperty": "background-color",
+                                "cssSelector": ".FooterBottom"
+                            }
+                        },
+                        {
+                            "name": "footerBottomGap",
+                            "label": "Gap between the text and navigation in the bottom bar",
+                            "type": "size",
+                            "defaultValue": "20px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Footer-bottom-gap"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Bottom bar typography",
+                    "fields": [
+                        {
+                            "name": "footerBottomTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterBottom"
+                            },
+                            "textAlignPreview": {
+                                "cssProperty": "justify-content"
+                            },
+                            "textDecorationHover": {
+                                "defaultValue": "underline"
+                            },
+                            "useHover": true,
+                            "useTextAlign": false
                         }
                     ]
                 },
@@ -2829,6 +3142,30 @@
                             "colorRender": {
                                 "cssSelector": "",
                                 "cssVariable": "--FooterNav"
+                            }
+                        },
+                        {
+                            "name": "footerNavigationSeparator",
+                            "label": "Text separator between each link",
+                            "type": "text",
+                            "size": "tiny"
+                        },
+                        {
+                            "name": "footerNavigationSeparatorPadding",
+                            "label": "Padding around the text separator",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterNav-separator"
+                            }
+                        },
+                        {
+                            "name": "footerNavigationPadding",
+                            "label": "Padding between links",
+                            "type": "padding",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".FooterNav-item"
                             }
                         }
                     ]
@@ -3445,6 +3782,77 @@
             "description": "Styles for the header of the website.",
             "groups": [
                 {
+                    "name": "General",
+                    "fields": [
+                        {
+                            "name": "headerBackground",
+                            "label": "Background color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-background"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Sticky header",
+                    "fields": [
+                        {
+                            "name": "headerStickyEnabled",
+                            "label": "Enable sticky header",
+                            "type": "switch",
+                            "defaultValue": "yes"
+                        },
+                        {
+                            "name": "headerStickyHeaderBackground",
+                            "label": "Header background when sticky",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-sticky-background"
+                            }
+                        },
+                        {
+                            "name": "headerStickyHeaderLogoWidth",
+                            "label": "Logo width when sticky",
+                            "type": "size",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-sticky-logo-width"
+                            }
+                        },
+                        {
+                            "name": "headerStickyHeaderHeight",
+                            "label": "Approximate sticky header height",
+                            "type": "size",
+                            "description": "This is used to offset any anchor links so that they don't end up under the sticky header.",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-sticky-height"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Landing page header phone number",
+                    "fields": [
+                        {
+                            "name": "headerLandingPhoneTypography",
+                            "label": "Phone typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "useHover": true,
+                            "useTextAlign": false,
+                            "usePadding": true,
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".LandingPageHeader-phone[href^='tel']"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Padding",
                     "fields": [
                         {
@@ -4026,6 +4434,62 @@
             ]
         },
         {
+            "name": "Main Navigation - Hamburger Menu Button",
+            "description": "Styles for the hamburger menu button.",
+            "fields": [
+                {
+                    "name": "hamburgerMenuNavigationGap",
+                    "label": "Space between the main navigation and the hamburger menu",
+                    "type": "size",
+                    "defaultValue": "20px",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--Header-navigation-menu-gap"
+                    }
+                },
+                {
+                    "name": "hamburgerMenuColor",
+                    "label": "Color",
+                    "type": "color",
+                    "defaultValue": "#464646",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--HamburgerMenu-color"
+                    }
+                },
+                {
+                    "name": "hamburgerMenuColorHover",
+                    "label": "Hover color",
+                    "type": "color",
+                    "defaultValue": "#000",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--HamburgerMenu-color-hover"
+                    }
+                },
+                {
+                    "name": "hamburgerMenuPadding",
+                    "label": "Padding",
+                    "type": "padding",
+                    "defaultValue": "10px",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--HamburgerMenu-padding"
+                    }
+                },
+                {
+                    "name": "hamburgerMenuFontSize",
+                    "label": "Size",
+                    "type": "size",
+                    "defaultValue": "3.5rem",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--HamburgerMenu-font-size"
+                    }
+                }
+            ]
+        },
+        {
             "name": "Main Navigation - Menu Button",
             "description": "Styles for the hamburger menu button seen on small screens.",
             "fields": [
@@ -4054,6 +4518,30 @@
             "name": "Messages",
             "description": "Used to show a message upon successful form submission on certain pages like the account edit page.",
             "fields": [
+                {
+                    "name": "messagePaddingVertical",
+                    "label": "Vertical padding",
+                    "type": "stepper",
+                    "after": "px",
+                    "defaultValue": "20",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--Message-paddingVertical",
+                        "template": "{{ value }}px"
+                    }
+                },
+                {
+                    "name": "messagePaddingHorizontal",
+                    "label": "Horizontal padding",
+                    "type": "stepper",
+                    "after": "px",
+                    "defaultValue": "20",
+                    "render": {
+                        "type": "css-head",
+                        "cssVariable": "--Message-paddingHorizontal",
+                        "template": "{{ value }}px"
+                    }
+                },
                 {
                     "name": "messagePadding",
                     "label": "Padding",
@@ -4592,6 +5080,332 @@
                                 "type": "css-head",
                                 "cssSelector": ".Pagination .Pagination-item--next:hover,.Pagination .Pagination-item--previous:hover"
                             }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Pop Out Menu",
+            "description": "Styles for the popout menu.",
+            "groups": [
+                {
+                    "name": "General display",
+                    "fields": [
+                        {
+                            "name": "menuBackgroundColor",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#fff",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-background-color"
+                            }
+                        },
+                        {
+                            "name": "menuWidth",
+                            "label": "Width",
+                            "type": "size",
+                            "defaultValue": "500px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-width"
+                            }
+                        },
+                        {
+                            "name": "menuPadding",
+                            "label": "Padding",
+                            "type": "padding",
+                            "defaultValue": "40px 35px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-padding"
+                            }
+                        },
+                        {
+                            "name": "menuPaddingSm",
+                            "label": "Padding (small screens)",
+                            "type": "padding",
+                            "defaultValue": "20",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-padding-sm"
+                            }
+                        },
+                        {
+                            "name": "menuDropShadowOffsetX",
+                            "label": "Offset X",
+                            "type": "size",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-drop-shadow-offset-x"
+                            }
+                        },
+                        {
+                            "name": "menuDropShadowOffsetY",
+                            "label": "Offset Y",
+                            "type": "size",
+                            "allowNegative": true,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-drop-shadow-offset-y"
+                            }
+                        },
+                        {
+                            "name": "menuDropShadowBlurRadius",
+                            "label": "Blur Radius",
+                            "type": "size",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-drop-shadow-blur-radius"
+                            }
+                        },
+                        {
+                            "name": "menu-drop-shadow-color",
+                            "label": "Color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-drop-shadow-color"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Top section",
+                    "description": "These are for the top of the menu where the close button and logo is.",
+                    "fields": [
+                        {
+                            "name": "menuTopMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "defaultValue": "0 0 10px 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-top-margin"
+                            }
+                        },
+                        {
+                            "name": "menuCloseButtonColor",
+                            "label": "Close button color",
+                            "type": "color",
+                            "defaultValue": "#333",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-close-button-color"
+                            }
+                        },
+                        {
+                            "name": "menuCloseButtonColorHover",
+                            "label": "Close button color (hover)",
+                            "type": "color",
+                            "defaultValue": "#333",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-close-button-color-hover"
+                            }
+                        },
+                        {
+                            "name": "menuCloseButtonSize",
+                            "label": "Close button size",
+                            "type": "size",
+                            "defaultValue": "40px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-close-button-size"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Navigation menu",
+                    "fields": [
+                        {
+                            "name": "menuNavigationMargin",
+                            "label": "Margin around the menu",
+                            "type": "margin",
+                            "defaultValue": "0 0 20px 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-navigation-margin"
+                            }
+                        },
+                        {
+                            "name": "menuNavigationListStyle",
+                            "label": "List style",
+                            "type": "select",
+                            "defaultValue": "none",
+                            "options": {
+                                "circle": "Circle",
+                                "disc": "Disc",
+                                "none": "None",
+                                "square": "Square"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-navigation-list-style"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Navigation links",
+                    "fields": [
+                        {
+                            "name": "menuNavigationTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-navigation-item"
+                            },
+                            "useHover": true,
+                            "useSpacing": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Sub navigation menu",
+                    "fields": [
+                        {
+                            "name": "menuSubNavigationMargin",
+                            "label": "Margin around the sub navigation menu",
+                            "type": "margin",
+                            "defaultValue": "0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-sub-navigation-margin"
+                            }
+                        },
+                        {
+                            "name": "menuSubNavigationListStyle",
+                            "label": "List style",
+                            "type": "select",
+                            "defaultValue": "none",
+                            "options": {
+                                "circle": "Circle",
+                                "disc": "Disc",
+                                "none": "None",
+                                "square": "Square"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-sub-navigation-list-style"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Sub Navigation links",
+                    "fields": [
+                        {
+                            "name": "menuSubNavigationTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-sub-navigation-item"
+                            },
+                            "useHover": true,
+                            "useSpacing": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Button below navigation",
+                    "fields": [
+                        {
+                            "name": "menuButtonMargin",
+                            "label": "Margin around the button",
+                            "type": "margin",
+                            "defaultValue": "0 0 45px 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-button-margin"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Text above phone number",
+                    "fields": [
+                        {
+                            "name": "menuPhoneTextTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-phone-text"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone number",
+                    "fields": [
+                        {
+                            "name": "menuPhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-phone"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Social icons at the bottom of the menu",
+                    "fields": [
+                        {
+                            "name": "menuShowSocial",
+                            "label": "Show social icons",
+                            "type": "switch",
+                            "defaultValue": "yes"
+                        },
+                        {
+                            "name": "menuSocialIconGap",
+                            "label": "Space between icons",
+                            "type": "size",
+                            "defaultValue": "15px",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-social-icon-gap"
+                            }
+                        },
+                        {
+                            "name": "menuSocialIconMargin",
+                            "label": "Margin around icons",
+                            "type": "margin",
+                            "defaultValue": "10px 0 0 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-social-icon-margin"
+                            }
+                        },
+                        {
+                            "name": "menuSocialIconTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "collapsable": false,
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Menu-social-icon"
+                            },
+                            "textAlign": {
+                                "defaultValue": "center"
+                            },
+                            "useFontFamily": false,
+                            "useFontStyle": false,
+                            "useFontWeight": false,
+                            "useLetterSpacing": false,
+                            "useLineHeight": false,
+                            "useTextDecoration": false,
+                            "useTextTransform": false
                         }
                     ]
                 }

@@ -108,7 +108,9 @@
                             "label": "Icon size",
                             "type": "size",
                             "defaultValue": "12px",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Accordion-icon-size"
@@ -1476,6 +1478,114 @@
             ]
         },
         {
+            "name": "Blocks - Staff",
+            "description": "Styles for the \"Staff\" block.",
+            "groups": [
+                {
+                    "name": "Person's name",
+                    "description": "Styles for the person's name",
+                    "fields": [
+                        {
+                            "name": "blockStaffNameTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useMargin": true,
+                            "margin": {
+                                "defaultValue": "0 0 6px 0"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-name"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Title",
+                    "description": "Styles for the person's title",
+                    "fields": [
+                        {
+                            "name": "blockStaffTitleTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "useMargin": true,
+                            "fontWeight": {
+                                "defaultValue": "700"
+                            },
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-title"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Email",
+                    "description": "Styles for the person's email link",
+                    "fields": [
+                        {
+                            "name": "blockStaffEmailTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-emailLink"
+                            }
+                        },
+                        {
+                            "name": "blockStaffEmailMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-email"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Phone",
+                    "description": "Styles for the person's phone number",
+                    "fields": [
+                        {
+                            "name": "blockStaffPhoneTypography",
+                            "label": "Typography",
+                            "type": "typography",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-phoneLink"
+                            }
+                        },
+                        {
+                            "name": "blockStaffPhoneMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-phone"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Biography",
+                    "description": "Styles for the person's biography or description",
+                    "fields": [
+                        {
+                            "name": "blockStaffBioMargin",
+                            "label": "Margin",
+                            "type": "margin",
+                            "defaultValue": "20px 0 0 0",
+                            "render": {
+                                "type": "css-head",
+                                "cssSelector": ".Staff-bio"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Blocks - Testimonials",
             "description": "Styles for the \"Testimonials\" block. The content comes from the \"Testimonials\" Collection Widget",
             "groups": [
@@ -1581,114 +1691,6 @@
                             },
                             "usePadding": true,
                             "useTextAlign": false
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Blocks - Staff",
-            "description": "Styles for the \"Staff\" block.",
-            "groups": [
-                {
-                    "name": "Person's name",
-                    "description": "Styles for the person's name",
-                    "fields": [
-                        {
-                            "name": "blockStaffNameTypography",
-                            "label": "Typography",
-                            "type": "typography",
-                            "useMargin": true,
-                            "margin": {
-                                "defaultValue": "0 0 6px 0"
-                            },
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Staff-name"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Title",
-                    "description": "Styles for the person's title",
-                    "fields": [
-                        {
-                            "name": "blockStaffTitleTypography",
-                            "label": "Typography",
-                            "type": "typography",
-                            "useMargin": true,
-                            "fontWeight": {
-                                "defaultValue": "700"
-                            },
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Staff-title"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Email",
-                    "description": "Styles for the person's email link",
-                    "fields": [
-                        {
-                            "name": "blockStaffEmailTypography",
-                            "label": "Typography",
-                            "type": "typography",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Staff-emailLink"
-                            }
-                        },
-                        {
-                            "name": "blockStaffEmailMargin",
-                            "label": "Margin",
-                            "type": "margin",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Staff-email"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Phone",
-                    "description": "Styles for the person's phone number",
-                    "fields": [
-                        {
-                            "name": "blockStaffPhoneTypography",
-                            "label": "Typography",
-                            "type": "typography",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Staff-phoneLink"
-                            }
-                        },
-                        {
-                            "name": "blockStaffPhoneMargin",
-                            "label": "Margin",
-                            "type": "margin",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Staff-phone"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Biography",
-                    "description": "Styles for the person's biography or description",
-                    "fields": [
-                        {
-                            "name": "blockStaffBioMargin",
-                            "label": "Margin",
-                            "type": "margin",
-                            "defaultValue": "20px 0 0 0",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Staff-bio"
-                            }
                         }
                     ]
                 }
@@ -1857,7 +1859,9 @@
                             "name": "size",
                             "label": "Size",
                             "type": "size",
-                            "allowedUnits": ["px"]
+                            "allowedUnits": [
+                                "px"
+                            ]
                         }
                     ]
                 }
@@ -2552,7 +2556,9 @@
                             "label": "Border size",
                             "type": "size",
                             "defaultValue": "1px",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--CalendarGrid-cell-border-size"
@@ -2645,7 +2651,9 @@
                             "type": "size",
                             "description": "The outline size of the current day cell. Use an outline instead of a background color for a subtle highlight",
                             "default": "2px",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--CalendarGrid-today-cell-outline-size"
@@ -2698,7 +2706,9 @@
                             "label": "Border size",
                             "type": "size",
                             "defaultValue": "1px",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--CalendarMiniGrid-cell-border-size"
@@ -3659,7 +3669,9 @@
                             "name": "selectMenuBorderWidth",
                             "label": "Border width",
                             "type": "size",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "defaultValue": "1px",
                             "render": {
                                 "type": "css-head",
@@ -3746,7 +3758,9 @@
                             "name": "textInputBorderWidth",
                             "label": "Border width",
                             "type": "size",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "defaultValue": "1px",
                             "render": {
                                 "type": "css-head",
@@ -4306,7 +4320,9 @@
                             "name": "dropdownMinWidth",
                             "label": "Minimum width",
                             "type": "size",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "defaultValue": "220",
                             "render": {
                                 "type": "css-head",
@@ -4317,7 +4333,9 @@
                             "name": "dropdownMaxWidth",
                             "label": "Maximum width",
                             "type": "size",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "defaultValue": "300",
                             "render": {
                                 "type": "css-head",
@@ -5979,7 +5997,9 @@
                             "label": "Horizontal rule size",
                             "type": "size",
                             "defaultValue": "1px",
-                            "allowedUnits": ["px"],
+                            "allowedUnits": [
+                                "px"
+                            ],
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--base-typography-hrule-width"

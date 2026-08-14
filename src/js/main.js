@@ -6,6 +6,7 @@ import accordion from './accordion';
 import { setCookie } from './lib/cookie';
 import popOutMenu from './navigation/pop-out-menu';
 import navAccessibility from './navigation/accessibility';
+import video from './video';
 
 /* global MicroModal:readonly notificationBarCookieExpirationDuration */
 
@@ -21,6 +22,7 @@ const main = {
         accordion.init();
         popOutMenu.init();
         navAccessibility.init();
+        video.init();
         MicroModal.init({
             disableFocus: true,
         });

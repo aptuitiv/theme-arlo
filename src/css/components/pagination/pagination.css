@@ -37,3 +37,45 @@
 .Pagination-icon {
     margin: 0 !important;
 }
+
+/**
+ * Keep the previous and next links from shrinking
+ * when there isn't enough space for the pagination.
+ */
+
+.Pagination-item--previous,
+.Pagination-item--next {
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.Pagination-prevNext {
+    display: none;
+}
+
+@media (--m-md) {
+    .Pagination-prevNext {
+        display: inline;
+    }
+}
+
+/**
+ * On small screens hide the page numbers that aren't close to the current page
+ * so that the pagination fits. Ellipses show where the pages are hidden.
+ */
+
+.Pagination-ellipsis {
+    line-height: 1;
+}
+
+@media (--m-md-below) {
+    .Pagination .Pagination-item--far {
+        display: none;
+    }
+}
+
+@media (--m-md) {
+    .Pagination-ellipsis {
+        display: none;
+    }
+}

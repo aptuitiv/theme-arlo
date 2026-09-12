@@ -1,3 +1,4 @@
+{% import 'macros/macros' as macros %}
 <!doctype html>
 <html lang="en"{% if _core.theme.settings.headerStickyEnabled == 'yes' %} class="has-sticky-header"{% endif %}>
 <head>
@@ -23,6 +24,7 @@
 </head>
 <body{{ _page.body.attributes() }}>
     {{ _page.bodyStartCode() }}
+    <a class="HeaderSkipToMain" href="#main">skip to main content {{ macros.iconAriaHidden("chevron-small-right") }}</a>
     <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
     {{ _api.widgets.collection.get('notifications') }}
 

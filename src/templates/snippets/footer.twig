@@ -96,9 +96,9 @@
                 {% if _core.theme.settings.popupDisplay == 'yes' and _core.theme.settings.popupContent and not _page.cookies.announcementPopup %}
                     <div class="Modal Modal-slide" id="announcement-modal" aria-hidden="true">
                         <div class="Modal-overlay" tabindex="-1" data-micromodal-close>
-                            <div class="Modal-container" role="dialog" aria-modal="true">
+                            <div class="Modal-container" role="dialog" aria-modal="true" aria-label="Announcement">
                                 <div class="Modal-header">
-                                    <button class="Modal-close" data-micromodal-close></button>
+                                    <button type="button" class="Modal-close" aria-label="Close" data-micromodal-close></button>
                                 </div>
                                 <div class="Modal-content last-child-sb-0">
                                     {{ _core.theme.settings.popupContent }}
@@ -110,9 +110,8 @@
                         loadjs.ready('main', {
                             success: function() {
                                 setTimeout(() => {
-                                    MicroModal.show('announcement-modal', {
-                                        disableFocus: true
-                                    });
+                                    {# Focus moves into the popup when it opens so that keyboard and screen reader users are taken to it #}
+                                    MicroModal.show('announcement-modal');
                                     setCookie('announcementPopup', "hide", {{ _core.theme.settings.popupCookieExpiration }});
                                 }, {{ _core.theme.settings.popupSeconds }}000);
                             }

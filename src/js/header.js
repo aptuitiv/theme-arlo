@@ -13,6 +13,11 @@ const stickyHeader = {
 
         this.setupIntersectionObserver();
         this.setupScrollListener();
+
+        // Bring a hidden header back when keyboard focus moves into it
+        this.header.addEventListener('focusin', () => {
+            this.header.classList.remove('is-hidden');
+        });
     },
 
     setupIntersectionObserver() {
@@ -61,7 +66,8 @@ const stickyHeader = {
                 this.header.classList.remove("is-hidden");
                 this.lastScrollY = currentScrollY;
             } else {
-                if (currentScrollY > this.lastScrollY) {
+                // Don't hide the header while keyboard focus is inside it (WCAG 2.4.11)
+                if (currentScrollY > this.lastScrollY && !this.header.contains(document.activeElement)) {
                     this.header.classList.add("is-hidden");
                 } else if (currentScrollY < this.lastScrollY) {
                     this.header.classList.remove("is-hidden");

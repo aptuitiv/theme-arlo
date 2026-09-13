@@ -3,7 +3,7 @@
         <div class="HeaderBar{% if _core.theme.settings.headerBarWidth == 'contained' %} HeaderBar--contained{% endif %}">
             <div class="Container Container--pad">
                 <div class="HeaderBar-inner">
-                    <div class="HeaderBar-navigation">{{ _api.navigation.get.key('header-bar') }}</div>
+                    <nav class="HeaderBar-navigation" aria-label="Header">{{ _api.navigation.get.key('header-bar') }}</nav>
                     <div class="HeaderBar-contact">
                         {% set phoneText = '' %}
                         {% if _core.theme.settings.headerPhonePrefix %}{% set phoneText = '<span class="HeaderBar-phoneText">' ~ _core.theme.settings.headerPhonePrefix ~ '</span> ' %}{% endif %}

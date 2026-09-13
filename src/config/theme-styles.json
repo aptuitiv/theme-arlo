@@ -4801,30 +4801,6 @@
             "description": "Used to show a message upon successful form submission on certain pages like the account edit page.",
             "fields": [
                 {
-                    "name": "messagePaddingVertical",
-                    "label": "Vertical padding",
-                    "type": "stepper",
-                    "after": "px",
-                    "defaultValue": "20",
-                    "render": {
-                        "type": "css-head",
-                        "cssVariable": "--Message-paddingVertical",
-                        "template": "{{ value }}px"
-                    }
-                },
-                {
-                    "name": "messagePaddingHorizontal",
-                    "label": "Horizontal padding",
-                    "type": "stepper",
-                    "after": "px",
-                    "defaultValue": "20",
-                    "render": {
-                        "type": "css-head",
-                        "cssVariable": "--Message-paddingHorizontal",
-                        "template": "{{ value }}px"
-                    }
-                },
-                {
                     "name": "messagePadding",
                     "label": "Padding",
                     "type": "padding",

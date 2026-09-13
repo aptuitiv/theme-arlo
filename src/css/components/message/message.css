@@ -2,21 +2,11 @@
     Message
 \* =========================================================================== */
 
-/* :root {
-    --Message-paddingVertical: 20px;
-    --Message-paddingHorizontal: 20px;
-    --Message-borderRadius: 0;
-    --Message-background--success: #0c263c;
-    --Message-color--success: #fff;
-    --Message-background--failure: #992c41;
-    --Message-color--failure: #fff;
-} */
-
 /* @define Message */
 .Message {
     border-bottom: var(--Message-border-bottom, none);
     border-left: var(--Message-border-left, none);
-    border-radius: var(--Message-borderRadius);
+    border-radius: var(--Message-border-radius);
     border-right: var(--Message-border-right, none);
     border-top: var(--Message-border-top, none);
     font-family: var(--Message-font-family, inherit);
@@ -26,27 +16,27 @@
     letter-spacing: var(--Message-letter-spacing, inherit);
     line-height: var(--Message-line-height, inherit);
     margin-bottom: var(--base-typography-spacing, 2.5rem);
-    padding: var(--Message-paddingVertical) var(--Message-paddingHorizontal);
+    padding: var(--Message-padding, 20px);
     text-align: var(--Message-text-align, inherit);
     text-transform: var(--Message-text-transform, inherit);
 }
 
 .Message--success {
-    background-color: var(--Message-background--success);
-    color: var(--Message-color--success);
+    background-color: var(--Message-background-success);
+    color: var(--Message-color-success);
 }
 
 /* postcss-bem-linter: ignore */
 .Message--success a {
-    color: var(--Message-color--success);
+    color: var(--Message-color-success);
 }
 
 .Message--failure {
-    background-color: var(--Message-background--failure);
-    color: var(--Message-color--failure);
+    background-color: var(--Message-background-failure);
+    color: var(--Message-color-failure);
 }
 
 /* postcss-bem-linter: ignore */
 .Message--failure a {
-    color: var(--Message-color--failure);
+    color: var(--Message-color-failure);
 }

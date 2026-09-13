@@ -2,52 +2,56 @@
     Notifications
 \* =========================================================================== */
 
-/* :root {
-    --Notification-title-fontFamily: sans-serif;
-    --Notification-title-fontSize: 2.4rem;
-    --Notification-title-fontSize--sm: 2rem;
-    --Notification-title-fontWeight: 600;
-    --Notification-title-lineHeight: 1.2;
-    --Notification-title-letterSpacing: 0;
-    --Notification-title-textTransform: uppercase;
-} */
-
 /* @define Notification */
 .Notification {
     background-color: var(--Notification-background);
     color: var(--Notification-color);
-    padding: var(--Notification-paddingVertical) var(--Notification-paddingHorizontal);
+    padding: var(--Notification-padding, 10px);
     text-align: center;
 }
 
 .Notification-more {
     background-color: transparent;
     border: none;
-    color: var(--Notification-color);
-    margin-left: 20px;
-    text-decoration: underline;
-    text-transform: var(--Notification-title-textTransform);
+    color: var(--Notification-more-color, var(--Notification-color));
+    font-family: var(--Notification-more-font-family, inherit);
+    font-size: var(--Notification-more-font-size, inherit);
+    font-style: var(--Notification-more-font-style, inherit);
+    font-weight: var(--Notification-more-font-weight, inherit);
+    letter-spacing: var(--Notification-more-letter-spacing, inherit);
+    line-height: var(--Notification-more-line-height, inherit);
+    margin-left: var(--Notification-more-gap, 20px);
+    text-decoration: var(--Notification-more-text-decoration, underline);
+    text-transform: var(--Notification-more-text-transform, var(--Notification-title-text-transform, inherit));
 }
 
 .Notification-more:focus-visible {
-    color: var(--Notification-color);
+    color: var(--Notification-more-color-hover, var(--Notification-more-color, var(--Notification-color)));
+    font-style: var(--Notification-more-font-style-hover, var(--Notification-more-font-style, inherit));
+    text-decoration: var(--Notification-more-text-decoration-hover, var(--Notification-more-text-decoration, underline));
 }
 
 @media (hover: hover) and (pointer: fine) {
     .Notification-more:hover {
-        color: var(--Notification-color);
+        color: var(--Notification-more-color-hover, var(--Notification-more-color, var(--Notification-color)));
+        font-style: var(--Notification-more-font-style-hover, var(--Notification-more-font-style, inherit));
+        text-decoration: var(
+            --Notification-more-text-decoration-hover,
+            var(--Notification-more-text-decoration, underline)
+        );
     }
 }
 
 .Notification-title {
     align-items: center;
+    color: var(--Notification-title-color, var(--Notification-color));
     display: flex;
-    font-family: var(--Notification-title-fontFamily);
-    font-size: var(--Notification-title-fontSize--sm);
-    font-weight: var(--Notification-title-fontWeight);
-    letter-spacing: var(--Notification-title-letterSpacing);
-    line-height: var(--Notification-title-lineHeight);
-    text-transform: var(--Notification-title-textTransform);
+    font-family: var(--Notification-title-font-family);
+    font-size: var(--Notification-title-font-size-sm, 1.7rem);
+    font-weight: var(--Notification-title-font-weight);
+    letter-spacing: var(--Notification-title-letter-spacing);
+    line-height: var(--Notification-title-line-height);
+    text-transform: var(--Notification-title-text-transform);
 }
 
 .Notification-titleContent {
@@ -57,7 +61,7 @@
 }
 
 .Notification-alert {
-    font-size: calc(var(--Notification-title-fontSize) * 1.5);
+    font-size: var(--Notification-icon-font-size);
     margin-right: 20px;
 }
 
@@ -66,7 +70,7 @@
     border: none;
     color: var(--Notification-color);
     display: flex;
-    font-size: var(--Notification-close-fontSize);
+    font-size: var(--Notification-close-font-size);
     padding: 0;
 }
 
@@ -75,7 +79,8 @@
 }
 
 .Notification-placeholder {
-    width: var(--Notification-close-fontSize);
+    display: none;
+    width: var(--Notification-close-font-size);
 }
 
 @media (--m-md) {
@@ -88,6 +93,6 @@
     }
 
     .Notification-title {
-        font-size: var(--Notification-title-fontSize);
+        font-size: var(--Notification-title-font-size);
     }
 }

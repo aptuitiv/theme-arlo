@@ -25,16 +25,18 @@
                                 {% if notification.icon != "None" %}
                                     <svg class="Notification-alert Icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-{{ notification.icon|camel }}" /></svg>
                                 {% endif %}
-                                {{ notification.itemName }}
-                                {% if notification.message and notification.linkType == "Message popup" %}
-                                    <button type="button" class="Notification-more" data-micromodal-trigger="notification-modal" aria-haspopup="dialog">
-                                        {{ notification.linkText }}
-                                    </button>
-                                {% elseif notification.link and notification.linkType == "Link to a page" %}
-                                    <a href="{{ notification.link }}" class="Notification-more">
-                                        {{ notification.linkText }}
-                                    </a>
-                                {% endif %}
+                                <div class="Notification-titleContent">
+                                    {{ notification.itemName }}
+                                    {% if notification.message and notification.linkType == "Message popup" %}
+                                        <button type="button" class="Notification-more" data-micromodal-trigger="notification-modal" aria-haspopup="dialog">
+                                            {{ notification.linkText }}
+                                        </button>
+                                    {% elseif notification.link and notification.linkType == "Link to a page" %}
+                                        <a href="{{ notification.link }}" class="Notification-more">
+                                            {{ notification.linkText }}
+                                        </a>
+                                    {% endif %}
+                                </div>
                             </div>
                             {% if notification.closable %}
                                 <button type="button" class="Notification-close js-notificationClose" aria-label="Close notification">
@@ -45,7 +47,7 @@
                     </div>
                 </div>
                 {% if notification.message %}
-                    <div class="Modal Modal-slide" id="notification-modal" aria-hidden="true">
+                    <div class="Modal" id="notification-modal" aria-hidden="true">
                         <div class="Modal-overlay" tabindex="-1" data-micromodal-close>
                             <div class="Modal-container" role="dialog" aria-modal="true" aria-labelledby="notification-modal-title">
                                 <div class="Modal-header justify-between">
@@ -65,6 +67,8 @@
                     </div>
                 {% endif %}
             {% endif %}
+        {% else %}
+            <div class="Banner-border"></div>
         {% endif %}
     {% endverbatim %}
 {% endnevercache %}

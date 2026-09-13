@@ -43,13 +43,13 @@
                     {% do _core.theme.settings.menuLogo.resize(_core.theme.settings.menuLogoWidth.size + 100) %}
                     <a href="/" aria-label="Go to home page">{{ _core.theme.settings.menuLogo.tag }}</a>
                 {% endif %}
-                <button class="Menu-close js-menuCloseBtn" aria-label="Close menu">
+                <button type="button" class="Menu-close js-menuCloseBtn" aria-label="Close menu">
                     <svg class="Menu-icon Icon"><use xlink:href="#icon-close" /></svg>
                 </button>
             </div>
-            <div class="Menu-navWrapper">
+            <nav class="Menu-navWrapper" aria-label="Main">
                 {{ _api.navigation.get.key('pop-out-menu') }}
-            </div>
+            </nav>
             {% if _core.theme.settings.menuButton %}
                 <div class="Menu-buttons">
                     {% set _core.theme.settings.menuButton.class = 'Button Menu-button' %}

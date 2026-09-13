@@ -107,8 +107,23 @@ const popOutMenu = {
             dropdown.addEventListener('click', (e) => {
                 if (window.innerWidth <= width) {
                     e.preventDefault();
-                    e.target.classList.toggle('is-active');
-                    e.target.parentElement.classList.toggle('is-active');
+                    const link = e.currentTarget;
+                    link.classList.toggle('is-active');
+                    link.parentElement.classList.toggle('is-active');
+
+                    // Keep the ARIA state in sync with the open state so that screen
+                    // readers can reach the items in a submenu opened by tapping.
+                    const isOpen = link.classList.contains('is-active');
+                    link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    const submenu = link.parentElement.querySelector(
+                        ':scope > .js-dropdownMenu',
+                    );
+                    if (submenu) {
+                        submenu.setAttribute(
+                            'aria-hidden',
+                            isOpen ? 'false' : 'true',
+                        );
+                    }
                 }
             });
         });

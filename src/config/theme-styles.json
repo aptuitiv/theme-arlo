@@ -5021,11 +5021,10 @@
                             "name": "paginationPagesGapSize",
                             "label": "Gap between page numbers",
                             "type": "size",
-                            "defaultValue": "5px",
+                            "defaultValue": "10px",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".Pagination",
-                                "cssProperty": "gap"
+                                "cssVariable": "--Pagination-pages-gap"
                             }
                         },
                         {
@@ -5055,7 +5054,10 @@
                             "type": "border",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Pagination-pages-wrapper-border"
+                                "cssVariable": "--Pagination-pages-wrapper-border",
+                                "config": {
+                                    "combine": false
+                                }
                             }
                         },
                         {

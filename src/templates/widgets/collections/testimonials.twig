@@ -23,7 +23,7 @@
                         <img class="Testimonial-dividerImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAfCAMAAABXofT6AAAAJFBMVEVHcEyRkZGRkZGQkJCRkZGRkZGSkpKSkpKRkZGSkpKRkZGSkpIrXHD2AAAAC3RSTlMAFO0oiHHEQJ/WXOFBdG4AAADiSURBVHjahZRbDsMwCAQB4wfh/vdtXKslC5XK52hYA1FLUI1KcWbTXLOk4hc0Lfds8XAHq9kNpGG43Mw4gcEgdb9rPSWvz+lmnZLU/0hNqnSVRtvvg3MaNWcbYY29DLTt7PnjPTjLwrbfM7DHfWFniO8RDvFS5nRGS8o+HlmwjxTii8uGroxkl8jQ+R01WPuQqHGYPtnibLnwWRFai+Was843v5DImSKHMYBzk5nYjQaS956CjPeT1dJikRVCDGFGeYoVt44d82GF6ZTCiqhZIwINfqRtyQ7SDZBZT/8toRT2AhAuFHokZWIZAAAAAElFTkSuQmCC" width="37" height="31" alt="quote">
                     </div>
                     {% set class = 'js-imageSlider--' ~ random_string() %}
-                    <div class="Slider splide {{ class }}" role="group" aria-label="Image Slider">
+                    <div class="Slider splide {{ class }}" role="group" aria-label="Testimonials">
                         <div class="splide__track">
                             <ul class="splide__list">
                                 {% for test in items %}
@@ -47,13 +47,16 @@
                         {% set _core.theme.settings.blockTestimonialsReviewsLink.class = 'Testimonial-reviewLink' %}
                         {{ _core.theme.settings.blockTestimonialsReviewsLink.tag }}
                     {% endif %}
-                    <div class="Testimonial-rating">
+                    {# The stars are one image for screen readers, named with the rating. Without a rating the
+                       stars are all empty, so they're hidden from screen readers. #}
+                    {% set rating = _core.theme.settings.customerRatingsBarAverageRating %}
+                    <div class="Testimonial-rating"{% if rating %} role="img" aria-label="Rated {{ rating }} out of 5 stars"{% else %} aria-hidden="true"{% endif %}>
                         {# Display the number of review stars #}
                         {# Get just the decimal part of the rating #}
                         {% if _core.theme.settings.customerRatingsBarAverageRating %}
                             {% set decimal = _core.theme.settings.customerRatingsBarAverageRating - _core.theme.settings.customerRatingsBarAverageRating|floor %}
                             {# Set up the number of whole, half, and empty stars to show #}
-                            {% set numWholeStars = _core.settings.theme.customerRatingsBarAverageRating|floor %}
+                            {% set numWholeStars = _core.theme.settings.customerRatingsBarAverageRating|floor %}
                             {% set numHalfStars = 0 %}
                             {% if decimal > 0.3 && decimal < 0.9 %}
                                 {% set numHalfStars = 1 %}
@@ -77,17 +80,17 @@
                         {# Output the stars #}
                         {% if numWholeStars > 0 %}
                             {% for num in 1..numWholeStars %}
-                                {{ macros.iconImg('star', 'Star rating', "Testimonial-star") }}
+                                {{ macros.iconAriaHidden('star', "Testimonial-star") }}
                             {% endfor %}
                         {% endif %}
                         {% if numHalfStars > 0 %}
                             {% for num in 1..numHalfStars %}
-                                {{ macros.iconImg('star-half', 'Half star rating', "Testimonial-star") }}
+                                {{ macros.iconAriaHidden('star-half', "Testimonial-star") }}
                             {% endfor %}
                         {% endif %}
                         {% if numEmptyStars > 0 %}
                             {% for num in 1..numEmptyStars %}
-                                {{ macros.iconImg('star-empty', 'Empty star rating', "Testimonial-star") }}
+                                {{ macros.iconAriaHidden('star-empty', "Testimonial-star") }}
                             {% endfor %}
                         {% endif %}
                     </div>

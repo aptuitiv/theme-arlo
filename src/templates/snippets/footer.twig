@@ -50,8 +50,9 @@
                                     {% import 'macros/macros' as macros %}
                                     {% set socialNames = {facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', pinterest: 'Pinterest', twitter: 'Twitter', youtube: 'YouTube'} %}
                                     {% for social in _core.theme.settings.social %}
-                                        <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopenner noreferrer" class="Footer-socialLink">
+                                        <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopener noreferrer" class="Footer-socialLink">
                                             {{ macros.iconImg(social.icon, attribute(socialNames, social.icon)|default(social.icon), "Footer-icon") }}
+                                            <span class="visually-hidden"> (opens in a new window)</span>
                                         </a>
                                     {% endfor %}
                                 </div>
@@ -64,7 +65,7 @@
                 <div>&copy; {{ _core.date.year }} {{ _core.settings.companyName }} {{ _core.theme.settings.footerAfterCopyrightContent }}</div>
                 {{ _api.navigation.get.key('footer') }}
             {% if _core.theme.settings.footerShowCredit == 'yes' %}
-                <div class="FooterCredit"><a href="https://www.aptuitiv.com" target="_blank" class="FooterCredit-link">Website by Aptuitiv</a></div>
+                <div class="FooterCredit"><a href="https://www.aptuitiv.com" target="_blank" rel="noopener" class="FooterCredit-link">Website by Aptuitiv<span class="visually-hidden"> (opens in a new window)</span></a></div>
             {% endif %}
             </div>
         </footer>

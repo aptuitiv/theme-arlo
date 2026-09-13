@@ -82,3 +82,10 @@ Carmine isn't a good reference for these — each needs a new fix. Items marked 
     - Build not run. `npm run stylelint`: 17 warnings, 0 errors, all in files that weren't changed. `npm run jslint`: 1 error in `js/navigation/accessibility.js` (`no-useless-assignment`), which wasn't changed.
 - [ ] Every changed block renders in the CMS, including the Margin and Width options
 - [ ] Keyboard check: Tab from page load shows the skip link first and it jumps to the main content; accordion headings open with Enter/Space
+
+## Follow-up fixes (2026-09-13)
+
+- [x] **`blocks/columned-content.twig` width override** — removed the `width:` values from `count2`–`count6` and every `{% set width = countN.width %}` line. They overwrote the block's Width field, so the Width setting never took effect (same fix as image-grid, Carmine commit `1745710`).
+- [x] **`widgets/collections/testimonials.twig`** — fixed `_core.settings.theme.customerRatingsBarAverageRating` → `_core.theme.settings.customerRatingsBarAverageRating`, so full stars show again. The stars are now one image for screen readers (`role="img" aria-label="Rated X out of 5 stars"`, icons `aria-hidden`), hidden when there's no rating. The slider's `aria-label` is "Testimonials" instead of "Image Slider".
+- [x] **`snippets/header.twig`** — the header bar menu wrapper is now `<nav class="HeaderBar-navigation" aria-label="Header">`.
+- [x] **`js/header.js`** — hide-on-scroll doesn't hide the header while keyboard focus is inside it, and a `focusin` listener shows it again. Note: `header.js` isn't in `.aptuitiv-buildrc.js` or imported by `main.js`, so it may not be loaded at all.

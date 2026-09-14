@@ -68,6 +68,14 @@
     font-size: 0.8em;
 }
 
+/* The testimonial slider hides its arrows at 600px and below, so it doesn't need the slider's space for them */
+@media (width <= 600px) {
+    /* postcss-bem-linter: ignore */
+    .Testimonial .Slider {
+        padding: 0;
+    }
+}
+
 @media (--m-lg) {
     .Testimonial-image {
         left: auto;

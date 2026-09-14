@@ -2,34 +2,10 @@
     Image Slider Block
 \* =========================================================================== */
 
-/* :root {
-    --Slider-content-paddingVertical: 20px;
-    --Slider-content-paddingHorizontal: 20px;
-    --Slider-content-fontSize: 2rem;
-    --Slider-content-fontWeight: 700;
-    --Slider-content-lineHeight: 1.2;
-    --Slider-content-textTransform: none;
-    --Slider-content-background: #fff;
-    --Slider-content-color: #333;
-    --Slider-content-background--hover: #333;
-    --Slider-content-color--hover: #fff;
-
-    --Slider-arrow-background: #fff;
-    --Slider-arrow-color: #333;
-    --Slider-arrow-background--hover: #333;
-    --Slider-arrow-color--hover: #fff;
-} */
-
 /* @define Slider */
 .Slider {
     margin: var(--Slider-margin, 2.5rem 0);
-    padding: 0 50px;
-}
-
-@media (width <= 768px) {
-    .Slider {
-        padding: 0;
-    }
+    padding: 0 var(--Slider-arrow-width, 50px); /* Leave room on each side for the arrows */
 }
 
 .Slider-wrapper,
@@ -40,18 +16,18 @@
 .Slider-content {
     background-color: var(--Slider-content-background);
     color: var(--Slider-content-color);
-    font-size: var(--Slider-content-fontSize);
-    font-weight: var(--Slider-content-fontWeight);
-    line-height: var(--Slider-content-lineHeight);
-    padding: var(--Slider-content-paddingVertical) var(--Slider-content-paddingHorizontal);
+    font-size: var(--Slider-content-font-size);
+    font-weight: var(--Slider-content-font-weight);
+    line-height: var(--Slider-content-line-height);
+    padding: var(--Slider-content-padding, 20px);
     text-align: center;
-    text-transform: var(--Slider-content-textTransform);
+    text-transform: var(--Slider-content-text-transform);
     transition: all 250ms;
 }
 
 .Slider-wrapper:focus-visible .Slider-content {
-    background-color: var(--Slider-content-background--hover);
-    color: var(--Slider-content-color--hover);
+    background-color: var(--Slider-content-background-hover);
+    color: var(--Slider-content-color-hover);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -60,8 +36,8 @@
     }
 
     .Slider-wrapper:hover .Slider-content {
-        background-color: var(--Slider-content-background--hover);
-        color: var(--Slider-content-color--hover);
+        background-color: var(--Slider-content-background-hover);
+        color: var(--Slider-content-color-hover);
     }
 }
 
@@ -72,11 +48,11 @@
 /* postcss-bem-linter: ignore */
 .Slider .splide__arrow {
     background: var(--Slider-arrow-background);
-    border-radius: 0;
+    border-radius: var(--Slider-arrow-border-radius, 0);
     height: 100%;
     opacity: 1 !important;
     transition: all 250ms;
-    width: 50px;
+    width: var(--Slider-arrow-width, 50px);
 }
 
 /* postcss-bem-linter: ignore */
@@ -86,23 +62,23 @@
 
 /* postcss-bem-linter: ignore */
 .Slider .splide__arrow:focus-visible {
-    background: var(--Slider-arrow-background--hover);
+    background: var(--Slider-arrow-background-hover);
 }
 
 /* postcss-bem-linter: ignore */
 .Slider .splide__arrow:focus-visible svg {
-    fill: var(--Slider-arrow-color--hover);
+    fill: var(--Slider-arrow-color-hover);
 }
 
 @media (hover: hover) and (pointer: fine) {
     /* postcss-bem-linter: ignore */
     .Slider .splide__arrow:hover {
-        background: var(--Slider-arrow-background--hover);
+        background: var(--Slider-arrow-background-hover);
     }
 
     /* postcss-bem-linter: ignore */
     .Slider .splide__arrow:hover svg {
-        fill: var(--Slider-arrow-color--hover);
+        fill: var(--Slider-arrow-color-hover);
     }
 }
 

@@ -17,3 +17,7 @@ node_modules/
 .DS_Store
 .env
 .stylelintcache
+
+_build/
+.claude/*.local.json
+claude.local.md
